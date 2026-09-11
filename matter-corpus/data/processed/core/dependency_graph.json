@@ -1,0 +1,4931 @@
+{
+  "core_10": {
+    "references": [],
+    "referenced_by": [
+      "core_5.3.5.1.2",
+      "core_9.2.10"
+    ]
+  },
+  "core_10.1": {
+    "references": [
+      "core_4.4"
+    ],
+    "referenced_by": []
+  },
+  "core_10.2.1": {
+    "references": [],
+    "referenced_by": [
+      "core_4.4.3.4"
+    ]
+  },
+  "core_10.2.2": {
+    "references": [
+      "core_8.2.5.1"
+    ],
+    "referenced_by": []
+  },
+  "core_10.2.2.2": {
+    "references": [
+      "core_10.7"
+    ],
+    "referenced_by": []
+  },
+  "core_10.2.3": {
+    "references": [
+      "core_10.6.4.3.1",
+      "core_4.4.4"
+    ],
+    "referenced_by": []
+  },
+  "core_10.4": {
+    "references": [],
+    "referenced_by": [
+      "core_10.5"
+    ]
+  },
+  "core_10.5": {
+    "references": [
+      "core_10.4"
+    ],
+    "referenced_by": []
+  },
+  "core_10.6.2.4": {
+    "references": [
+      "core_10.6.4.3.1"
+    ],
+    "referenced_by": []
+  },
+  "core_10.6.4": {
+    "references": [
+      "core_10.6.4.3.1"
+    ],
+    "referenced_by": []
+  },
+  "core_10.6.4.3.1": {
+    "references": [],
+    "referenced_by": [
+      "core_10.2.3",
+      "core_10.6.2.4",
+      "core_10.6.4"
+    ]
+  },
+  "core_10.6.8": {
+    "references": [
+      "core_10.7.2.2",
+      "core_10.7.3.1",
+      "core_10.7.4.1"
+    ],
+    "referenced_by": []
+  },
+  "core_10.7": {
+    "references": [],
+    "referenced_by": [
+      "core_10.2.2.2"
+    ]
+  },
+  "core_10.7.2.2": {
+    "references": [],
+    "referenced_by": [
+      "core_10.6.8"
+    ]
+  },
+  "core_10.7.3.1": {
+    "references": [],
+    "referenced_by": [
+      "core_10.6.8"
+    ]
+  },
+  "core_10.7.4.1": {
+    "references": [],
+    "referenced_by": [
+      "core_10.6.8"
+    ]
+  },
+  "core_10.7.9": {
+    "references": [
+      "core_4.4.4"
+    ],
+    "referenced_by": []
+  },
+  "core_11.1": {
+    "references": [],
+    "referenced_by": [
+      "core_11.10.6.3",
+      "core_9.12.5"
+    ]
+  },
+  "core_11.1.4.4": {
+    "references": [
+      "core_2.11.2.1",
+      "core_2.11.2.2",
+      "core_4.14.2.8",
+      "core_8.5.1"
+    ],
+    "referenced_by": []
+  },
+  "core_11.1.5.1": {
+    "references": [
+      "core_7.1.1"
+    ],
+    "referenced_by": [
+      "core_4.13.1"
+    ]
+  },
+  "core_11.1.5.10": {
+    "references": [
+      "core_11.20.3.3"
+    ],
+    "referenced_by": [
+      "core_11.20.2"
+    ]
+  },
+  "core_11.1.5.22": {
+    "references": [],
+    "referenced_by": [
+      "core_4.13.1"
+    ]
+  },
+  "core_11.1.5.23": {
+    "references": [
+      "core_8.8.2"
+    ],
+    "referenced_by": [
+      "core_4.13.1",
+      "core_8.8.2.2",
+      "core_8.8.2.3"
+    ]
+  },
+  "core_11.1.5.24": {
+    "references": [],
+    "referenced_by": [
+      "core_9.12.5",
+      "core_9.12.6"
+    ]
+  },
+  "core_11.10": {
+    "references": [
+      "core_11.9"
+    ],
+    "referenced_by": [
+      "core_2.8",
+      "core_5.5",
+      "core_5.5.1"
+    ]
+  },
+  "core_11.10.5.4": {
+    "references": [
+      "core_11.10.7.2",
+      "core_5.4.2.3"
+    ],
+    "referenced_by": [
+      "core_11.10.6.2",
+      "core_11.10.7.2"
+    ]
+  },
+  "core_11.10.6.1": {
+    "references": [],
+    "referenced_by": [
+      "core_11.10.7.2"
+    ]
+  },
+  "core_11.10.6.10": {
+    "references": [
+      "core_5.7.4.6"
+    ],
+    "referenced_by": []
+  },
+  "core_11.10.6.11": {
+    "references": [],
+    "referenced_by": [
+      "core_5.4.2.5.6"
+    ]
+  },
+  "core_11.10.6.13": {
+    "references": [
+      "core_5.5"
+    ],
+    "referenced_by": []
+  },
+  "core_11.10.6.2": {
+    "references": [
+      "core_11.10.5.4"
+    ],
+    "referenced_by": [
+      "core_5.5"
+    ]
+  },
+  "core_11.10.6.3": {
+    "references": [
+      "core_11.1"
+    ],
+    "referenced_by": []
+  },
+  "core_11.10.6.5": {
+    "references": [
+      "core_5.5"
+    ],
+    "referenced_by": [
+      "core_5.5"
+    ]
+  },
+  "core_11.10.6.6": {
+    "references": [
+      "core_5.7.4"
+    ],
+    "referenced_by": []
+  },
+  "core_11.10.6.8": {
+    "references": [],
+    "referenced_by": [
+      "core_5.7.4.7"
+    ]
+  },
+  "core_11.10.6.9": {
+    "references": [
+      "core_5.7.3",
+      "core_5.7.4"
+    ],
+    "referenced_by": [
+      "core_5.5"
+    ]
+  },
+  "core_11.10.7": {
+    "references": [
+      "core_5.5.1"
+    ],
+    "referenced_by": []
+  },
+  "core_11.10.7.1": {
+    "references": [],
+    "referenced_by": [
+      "core_11.10.7.3",
+      "core_11.10.7.5",
+      "core_11.10.7.7"
+    ]
+  },
+  "core_11.10.7.2": {
+    "references": [
+      "core_11.10.5.4",
+      "core_11.10.6.1",
+      "core_11.9.6.2",
+      "core_4.13.3.1",
+      "core_6.4.6.1",
+      "core_6.6.2.9"
+    ],
+    "referenced_by": [
+      "core_11.10.5.4",
+      "core_11.18.6.13",
+      "core_11.18.6.5",
+      "core_11.18.6.8",
+      "core_11.18.6.9",
+      "core_11.25.6.1",
+      "core_11.25.6.3",
+      "core_11.9.6.5",
+      "core_11.9.7.1",
+      "core_11.9.7.3",
+      "core_11.9.7.4",
+      "core_11.9.7.6",
+      "core_11.9.7.8",
+      "core_11.9.8.3",
+      "core_5.5"
+    ]
+  },
+  "core_11.10.7.3": {
+    "references": [
+      "core_11.10.7.1"
+    ],
+    "referenced_by": []
+  },
+  "core_11.10.7.4": {
+    "references": [],
+    "referenced_by": [
+      "core_5.5"
+    ]
+  },
+  "core_11.10.7.5": {
+    "references": [
+      "core_11.10.7.1"
+    ],
+    "referenced_by": []
+  },
+  "core_11.10.7.6": {
+    "references": [
+      "core_4.14.2",
+      "core_5.5",
+      "core_6.4",
+      "core_6.6.2.9",
+      "core_9.10"
+    ],
+    "referenced_by": [
+      "core_11.19.8.1",
+      "core_11.19.8.2",
+      "core_11.9.7.8",
+      "core_5.5",
+      "core_5.5.1"
+    ]
+  },
+  "core_11.10.7.7": {
+    "references": [
+      "core_11.10.7.1"
+    ],
+    "referenced_by": []
+  },
+  "core_11.10.7.8": {
+    "references": [
+      "core_11.23.6.23"
+    ],
+    "referenced_by": [
+      "core_5.5"
+    ]
+  },
+  "core_11.12": {
+    "references": [],
+    "referenced_by": [
+      "core_13.4"
+    ]
+  },
+  "core_11.12.6.9": {
+    "references": [
+      "core_11.12.7.1"
+    ],
+    "referenced_by": []
+  },
+  "core_11.12.7.1": {
+    "references": [],
+    "referenced_by": [
+      "core_11.12.6.9"
+    ]
+  },
+  "core_11.14": {
+    "references": [],
+    "referenced_by": [
+      "core_5.5"
+    ]
+  },
+  "core_11.14.5.1": {
+    "references": [],
+    "referenced_by": [
+      "core_11.14.8.1"
+    ]
+  },
+  "core_11.14.8.1": {
+    "references": [
+      "core_11.14.5.1"
+    ],
+    "referenced_by": []
+  },
+  "core_11.15": {
+    "references": [],
+    "referenced_by": [
+      "core_5.5"
+    ]
+  },
+  "core_11.17.11": {
+    "references": [],
+    "referenced_by": [
+      "core_14.3.1"
+    ]
+  },
+  "core_11.17.12": {
+    "references": [
+      "core_11.17.13",
+      "core_3.5.6.1"
+    ],
+    "referenced_by": [
+      "core_14.3.1"
+    ]
+  },
+  "core_11.17.13": {
+    "references": [
+      "core_11.17.15"
+    ],
+    "referenced_by": [
+      "core_11.17.12",
+      "core_11.17.8.4"
+    ]
+  },
+  "core_11.17.14": {
+    "references": [
+      "core_11.17.15"
+    ],
+    "referenced_by": []
+  },
+  "core_11.17.15": {
+    "references": [],
+    "referenced_by": [
+      "core_11.17.13",
+      "core_11.17.14",
+      "core_11.17.5.3"
+    ]
+  },
+  "core_11.17.5.1": {
+    "references": [],
+    "referenced_by": [
+      "core_5.5"
+    ]
+  },
+  "core_11.17.5.2": {
+    "references": [],
+    "referenced_by": [
+      "core_5.5"
+    ]
+  },
+  "core_11.17.5.3": {
+    "references": [
+      "core_11.17.15"
+    ],
+    "referenced_by": []
+  },
+  "core_11.17.5.4": {
+    "references": [],
+    "referenced_by": [
+      "core_5.5"
+    ]
+  },
+  "core_11.17.8.4": {
+    "references": [
+      "core_11.17.13"
+    ],
+    "referenced_by": [
+      "core_5.5"
+    ]
+  },
+  "core_11.17.8.5": {
+    "references": [],
+    "referenced_by": [
+      "core_5.5"
+    ]
+  },
+  "core_11.17.8.6": {
+    "references": [
+      "core_11.17.8.7"
+    ],
+    "referenced_by": []
+  },
+  "core_11.17.8.7": {
+    "references": [],
+    "referenced_by": [
+      "core_11.17.8.6"
+    ]
+  },
+  "core_11.17.9.1": {
+    "references": [
+      "core_3.5.6.1"
+    ],
+    "referenced_by": [
+      "core_5.5"
+    ]
+  },
+  "core_11.17.9.2": {
+    "references": [],
+    "referenced_by": [
+      "core_5.5"
+    ]
+  },
+  "core_11.17.9.3": {
+    "references": [],
+    "referenced_by": [
+      "core_5.5"
+    ]
+  },
+  "core_11.17.9.4": {
+    "references": [],
+    "referenced_by": [
+      "core_5.5"
+    ]
+  },
+  "core_11.17.9.5": {
+    "references": [],
+    "referenced_by": [
+      "core_5.5"
+    ]
+  },
+  "core_11.17.9.6": {
+    "references": [],
+    "referenced_by": [
+      "core_5.5"
+    ]
+  },
+  "core_11.18": {
+    "references": [],
+    "referenced_by": [
+      "core_2.8",
+      "core_5.5.1"
+    ]
+  },
+  "core_11.18.4.5": {
+    "references": [
+      "core_6.4.10",
+      "core_6.4.5.3"
+    ],
+    "referenced_by": []
+  },
+  "core_11.18.4.7": {
+    "references": [
+      "core_6.3",
+      "core_6.3.2"
+    ],
+    "referenced_by": [
+      "core_11.18.6.2",
+      "core_6.2.3.1"
+    ]
+  },
+  "core_11.18.4.9": {
+    "references": [
+      "core_6.4.6.1"
+    ],
+    "referenced_by": [
+      "core_11.18.6.6",
+      "core_6.4.6.1"
+    ]
+  },
+  "core_11.18.5": {
+    "references": [],
+    "referenced_by": [
+      "core_G"
+    ]
+  },
+  "core_11.18.5.5": {
+    "references": [],
+    "referenced_by": [
+      "core_12.2.5",
+      "core_12.2.6"
+    ]
+  },
+  "core_11.18.6.10": {
+    "references": [],
+    "referenced_by": [
+      "core_12.2.5"
+    ]
+  },
+  "core_11.18.6.11": {
+    "references": [],
+    "referenced_by": [
+      "core_5.5"
+    ]
+  },
+  "core_11.18.6.12": {
+    "references": [
+      "core_7.19.2.23"
+    ],
+    "referenced_by": [
+      "core_12.2.5",
+      "core_12.2.6",
+      "core_12.2.7"
+    ]
+  },
+  "core_11.18.6.13": {
+    "references": [
+      "core_11.10.7.2"
+    ],
+    "referenced_by": [
+      "core_12.2.5",
+      "core_12.2.6",
+      "core_5.5"
+    ]
+  },
+  "core_11.18.6.15": {
+    "references": [
+      "core_6.4.10"
+    ],
+    "referenced_by": []
+  },
+  "core_11.18.6.16": {
+    "references": [
+      "core_6.4.10.1"
+    ],
+    "referenced_by": []
+  },
+  "core_11.18.6.2": {
+    "references": [
+      "core_11.18.4.7"
+    ],
+    "referenced_by": []
+  },
+  "core_11.18.6.5": {
+    "references": [
+      "core_11.10.7.2",
+      "core_11.18.6.8",
+      "core_11.18.6.9"
+    ],
+    "referenced_by": [
+      "core_5.5",
+      "core_6.4.6.1"
+    ]
+  },
+  "core_11.18.6.6": {
+    "references": [
+      "core_11.18.4.9"
+    ],
+    "referenced_by": []
+  },
+  "core_11.18.6.7": {
+    "references": [
+      "core_6.4.5.1"
+    ],
+    "referenced_by": []
+  },
+  "core_11.18.6.8": {
+    "references": [
+      "core_11.10.7.2",
+      "core_11.2.7.1",
+      "core_5.5"
+    ],
+    "referenced_by": [
+      "core_11.18.6.5",
+      "core_6.6.5",
+      "core_9.10.6.1"
+    ]
+  },
+  "core_11.18.6.9": {
+    "references": [
+      "core_11.10.7.2"
+    ],
+    "referenced_by": [
+      "core_11.18.6.5"
+    ]
+  },
+  "core_11.19": {
+    "references": [
+      "core_5.6.2",
+      "core_5.6.3"
+    ],
+    "referenced_by": [
+      "core_12.5",
+      "core_5.6.1"
+    ]
+  },
+  "core_11.19.6": {
+    "references": [],
+    "referenced_by": [
+      "core_11.19.8",
+      "core_11.19.8.1"
+    ]
+  },
+  "core_11.19.8": {
+    "references": [
+      "core_11.19.6"
+    ],
+    "referenced_by": []
+  },
+  "core_11.19.8.1": {
+    "references": [
+      "core_11.10.7.6",
+      "core_11.19.6",
+      "core_3.10",
+      "core_3.9",
+      "core_4.3.1",
+      "core_4.3.1.5",
+      "core_5.4.2.3",
+      "core_5.5"
+    ],
+    "referenced_by": [
+      "core_11.19.8.3",
+      "core_12.5",
+      "core_5.6.3.1"
+    ]
+  },
+  "core_11.19.8.2": {
+    "references": [
+      "core_11.10.7.6",
+      "core_4.3.1",
+      "core_5.4.2.3",
+      "core_5.5"
+    ],
+    "referenced_by": [
+      "core_11.19.8.3",
+      "core_12.5"
+    ]
+  },
+  "core_11.19.8.3": {
+    "references": [
+      "core_11.19.8.1",
+      "core_11.19.8.2",
+      "core_4.3.1"
+    ],
+    "referenced_by": []
+  },
+  "core_11.2": {
+    "references": [],
+    "referenced_by": [
+      "core_4.17.4",
+      "core_4.18.4"
+    ]
+  },
+  "core_11.2.4.2": {
+    "references": [
+      "core_11.27"
+    ],
+    "referenced_by": []
+  },
+  "core_11.2.5.4": {
+    "references": [
+      "core_4.17.3"
+    ],
+    "referenced_by": []
+  },
+  "core_11.2.6.3": {
+    "references": [
+      "core_2.11.1.2"
+    ],
+    "referenced_by": []
+  },
+  "core_11.2.6.4": {
+    "references": [
+      "core_2.11.1.2"
+    ],
+    "referenced_by": []
+  },
+  "core_11.2.7.1": {
+    "references": [
+      "core_2.11.1.2"
+    ],
+    "referenced_by": [
+      "core_11.18.6.8"
+    ]
+  },
+  "core_11.20": {
+    "references": [],
+    "referenced_by": [
+      "core_13.5",
+      "core_9.12.10"
+    ]
+  },
+  "core_11.20.2": {
+    "references": [
+      "core_11.1.5.10",
+      "core_11.23"
+    ],
+    "referenced_by": []
+  },
+  "core_11.20.3.1": {
+    "references": [
+      "core_2.5.5"
+    ],
+    "referenced_by": [
+      "core_11.20.3.2"
+    ]
+  },
+  "core_11.20.3.2": {
+    "references": [
+      "core_11.20.3.1",
+      "core_11.20.3.3",
+      "core_11.20.3.5",
+      "core_11.20.3.6"
+    ],
+    "referenced_by": [
+      "core_11.20.3.6",
+      "core_11.20.6.4",
+      "core_11.20.6.5"
+    ]
+  },
+  "core_11.20.3.3": {
+    "references": [
+      "core_11.23.8"
+    ],
+    "referenced_by": [
+      "core_11.1.5.10",
+      "core_11.20.3.2"
+    ]
+  },
+  "core_11.20.3.4": {
+    "references": [
+      "core_11.23.7.12"
+    ],
+    "referenced_by": [
+      "core_11.20.6.5",
+      "core_12.2.6"
+    ]
+  },
+  "core_11.20.3.5": {
+    "references": [],
+    "referenced_by": [
+      "core_11.20.3.2",
+      "core_11.20.6.5"
+    ]
+  },
+  "core_11.20.3.6": {
+    "references": [
+      "core_11.20.3.2"
+    ],
+    "referenced_by": [
+      "core_11.20.3.2",
+      "core_11.20.6.4",
+      "core_11.20.6.5"
+    ]
+  },
+  "core_11.20.4.2": {
+    "references": [
+      "core_13.5"
+    ],
+    "referenced_by": [
+      "core_11.21.3",
+      "core_13.4",
+      "core_13.5"
+    ]
+  },
+  "core_11.20.5.1": {
+    "references": [
+      "core_11.20.5.2"
+    ],
+    "referenced_by": []
+  },
+  "core_11.20.5.2": {
+    "references": [],
+    "referenced_by": [
+      "core_11.20.5.1"
+    ]
+  },
+  "core_11.20.6.4": {
+    "references": [
+      "core_11.20.3.2",
+      "core_11.20.3.6"
+    ],
+    "referenced_by": []
+  },
+  "core_11.20.6.5": {
+    "references": [
+      "core_11.20.3.2",
+      "core_11.20.3.4",
+      "core_11.20.3.5",
+      "core_11.20.3.6"
+    ],
+    "referenced_by": []
+  },
+  "core_11.21.2.4": {
+    "references": [
+      "core_6.2"
+    ],
+    "referenced_by": []
+  },
+  "core_11.21.3": {
+    "references": [
+      "core_11.20.4.2"
+    ],
+    "referenced_by": []
+  },
+  "core_11.22.1": {
+    "references": [
+      "core_4.12"
+    ],
+    "referenced_by": []
+  },
+  "core_11.22.3.1": {
+    "references": [],
+    "referenced_by": [
+      "core_4.4.3.4"
+    ]
+  },
+  "core_11.22.5.1": {
+    "references": [
+      "core_11.22.7"
+    ],
+    "referenced_by": []
+  },
+  "core_11.22.5.2": {
+    "references": [
+      "core_11.22.7"
+    ],
+    "referenced_by": []
+  },
+  "core_11.22.5.3": {
+    "references": [
+      "core_11.22.7"
+    ],
+    "referenced_by": []
+  },
+  "core_11.22.6.1": {
+    "references": [],
+    "referenced_by": [
+      "core_11.22.6.4",
+      "core_11.22.6.5",
+      "core_11.22.6.6",
+      "core_11.22.6.7"
+    ]
+  },
+  "core_11.22.6.4": {
+    "references": [
+      "core_11.22.6.1"
+    ],
+    "referenced_by": []
+  },
+  "core_11.22.6.5": {
+    "references": [
+      "core_11.22.6.1"
+    ],
+    "referenced_by": []
+  },
+  "core_11.22.6.6": {
+    "references": [
+      "core_11.22.6.1"
+    ],
+    "referenced_by": []
+  },
+  "core_11.22.6.7": {
+    "references": [
+      "core_11.22.6.1"
+    ],
+    "referenced_by": []
+  },
+  "core_11.22.7": {
+    "references": [],
+    "referenced_by": [
+      "core_11.22.5.1",
+      "core_11.22.5.2",
+      "core_11.22.5.3"
+    ]
+  },
+  "core_11.23": {
+    "references": [],
+    "referenced_by": [
+      "core_11.20.2",
+      "core_4.3.1.11",
+      "core_5.7",
+      "core_5.7.1",
+      "core_5.7.2",
+      "core_6.3.2",
+      "core_9.12.10"
+    ]
+  },
+  "core_11.23.1": {
+    "references": [
+      "core_13.6.10"
+    ],
+    "referenced_by": []
+  },
+  "core_11.23.4.11": {
+    "references": [
+      "core_6.1.2"
+    ],
+    "referenced_by": []
+  },
+  "core_11.23.4.5": {
+    "references": [
+      "core_6.1"
+    ],
+    "referenced_by": []
+  },
+  "core_11.23.4.6": {
+    "references": [
+      "core_6.1"
+    ],
+    "referenced_by": []
+  },
+  "core_11.23.4.9": {
+    "references": [
+      "core_6.1"
+    ],
+    "referenced_by": []
+  },
+  "core_11.23.5": {
+    "references": [
+      "core_6.4.5.2",
+      "core_6.4.5.3"
+    ],
+    "referenced_by": []
+  },
+  "core_11.23.5.10": {
+    "references": [
+      "core_6.1"
+    ],
+    "referenced_by": []
+  },
+  "core_11.23.5.12": {
+    "references": [
+      "core_6.1.2"
+    ],
+    "referenced_by": []
+  },
+  "core_11.23.5.5": {
+    "references": [
+      "core_6.1"
+    ],
+    "referenced_by": []
+  },
+  "core_11.23.5.6": {
+    "references": [
+      "core_6.1"
+    ],
+    "referenced_by": []
+  },
+  "core_11.23.6.1": {
+    "references": [],
+    "referenced_by": [
+      "core_11.23.7.1"
+    ]
+  },
+  "core_11.23.6.10": {
+    "references": [],
+    "referenced_by": [
+      "core_5.7.1",
+      "core_5.7.2"
+    ]
+  },
+  "core_11.23.6.11": {
+    "references": [],
+    "referenced_by": [
+      "core_5.7.1",
+      "core_5.7.2"
+    ]
+  },
+  "core_11.23.6.12": {
+    "references": [
+      "core_5.6.3"
+    ],
+    "referenced_by": []
+  },
+  "core_11.23.6.14": {
+    "references": [
+      "core_5.7.5"
+    ],
+    "referenced_by": [
+      "core_5.7.5",
+      "core_5.7.5.1",
+      "core_5.7.5.2",
+      "core_5.7.5.3"
+    ]
+  },
+  "core_11.23.6.16": {
+    "references": [],
+    "referenced_by": [
+      "core_4.3.1.11",
+      "core_5.7.2",
+      "core_9.16.6.7"
+    ]
+  },
+  "core_11.23.6.2": {
+    "references": [],
+    "referenced_by": [
+      "core_11.23.7.2"
+    ]
+  },
+  "core_11.23.6.23": {
+    "references": [],
+    "referenced_by": [
+      "core_11.10.7.8",
+      "core_5.5",
+      "core_5.7.4.7"
+    ]
+  },
+  "core_11.23.6.24": {
+    "references": [],
+    "referenced_by": [
+      "core_5.7.4.2.1",
+      "core_5.7.4.6",
+      "core_5.7.4.7"
+    ]
+  },
+  "core_11.23.6.25": {
+    "references": [],
+    "referenced_by": [
+      "core_5.7.4.1",
+      "core_5.7.4.2.1"
+    ]
+  },
+  "core_11.23.6.26": {
+    "references": [],
+    "referenced_by": [
+      "core_5.7.4.1"
+    ]
+  },
+  "core_11.23.6.7": {
+    "references": [
+      "core_5.1.3"
+    ],
+    "referenced_by": [
+      "core_5.7.5.1"
+    ]
+  },
+  "core_11.23.6.8": {
+    "references": [],
+    "referenced_by": [
+      "core_5.7.1",
+      "core_5.7.2"
+    ]
+  },
+  "core_11.23.6.9": {
+    "references": [
+      "core_5.7.3"
+    ],
+    "referenced_by": [
+      "core_5.7.5.3"
+    ]
+  },
+  "core_11.23.7.1": {
+    "references": [
+      "core_11.23.6.1"
+    ],
+    "referenced_by": []
+  },
+  "core_11.23.7.12": {
+    "references": [],
+    "referenced_by": [
+      "core_11.20.3.4"
+    ]
+  },
+  "core_11.23.7.2": {
+    "references": [
+      "core_11.23.6.2"
+    ],
+    "referenced_by": []
+  },
+  "core_11.23.7.7": {
+    "references": [
+      "core_6.3.2"
+    ],
+    "referenced_by": []
+  },
+  "core_11.23.7.8": {
+    "references": [
+      "core_11.23.8.1"
+    ],
+    "referenced_by": []
+  },
+  "core_11.23.7.9": {
+    "references": [
+      "core_6.2"
+    ],
+    "referenced_by": []
+  },
+  "core_11.23.8": {
+    "references": [],
+    "referenced_by": [
+      "core_11.20.3.3"
+    ]
+  },
+  "core_11.23.8.1": {
+    "references": [],
+    "referenced_by": [
+      "core_11.23.7.8"
+    ]
+  },
+  "core_11.23.9": {
+    "references": [
+      "core_6.2"
+    ],
+    "referenced_by": [
+      "core_6.2.4"
+    ]
+  },
+  "core_11.23.9.1": {
+    "references": [
+      "core_6.2.2.2"
+    ],
+    "referenced_by": []
+  },
+  "core_11.23.9.11": {
+    "references": [
+      "core_6.2"
+    ],
+    "referenced_by": []
+  },
+  "core_11.23.9.2": {
+    "references": [
+      "core_6.2.2.2"
+    ],
+    "referenced_by": []
+  },
+  "core_11.23.9.5": {
+    "references": [
+      "core_11.23.9.6"
+    ],
+    "referenced_by": []
+  },
+  "core_11.23.9.6": {
+    "references": [],
+    "referenced_by": [
+      "core_11.23.9.5"
+    ]
+  },
+  "core_11.24": {
+    "references": [],
+    "referenced_by": [
+      "core_12.2.2"
+    ]
+  },
+  "core_11.24.4.1": {
+    "references": [
+      "core_11.24.4.9",
+      "core_11.24.7.10",
+      "core_11.24.7.13"
+    ],
+    "referenced_by": []
+  },
+  "core_11.24.4.2": {
+    "references": [
+      "core_11.24.4.9"
+    ],
+    "referenced_by": []
+  },
+  "core_11.24.4.3": {
+    "references": [
+      "core_11.24.7.11"
+    ],
+    "referenced_by": []
+  },
+  "core_11.24.4.5": {
+    "references": [],
+    "referenced_by": [
+      "core_11.24.4.9"
+    ]
+  },
+  "core_11.24.4.9": {
+    "references": [
+      "core_11.24.4.5",
+      "core_11.24.7.15",
+      "core_11.24.7.19",
+      "core_11.24.7.4"
+    ],
+    "referenced_by": [
+      "core_11.24.4.1",
+      "core_11.24.4.2"
+    ]
+  },
+  "core_11.24.7.10": {
+    "references": [],
+    "referenced_by": [
+      "core_11.24.4.1"
+    ]
+  },
+  "core_11.24.7.11": {
+    "references": [],
+    "referenced_by": [
+      "core_11.24.4.3"
+    ]
+  },
+  "core_11.24.7.13": {
+    "references": [],
+    "referenced_by": [
+      "core_11.24.4.1"
+    ]
+  },
+  "core_11.24.7.15": {
+    "references": [],
+    "referenced_by": [
+      "core_11.24.4.9"
+    ]
+  },
+  "core_11.24.7.19": {
+    "references": [],
+    "referenced_by": [
+      "core_11.24.4.9"
+    ]
+  },
+  "core_11.24.7.4": {
+    "references": [],
+    "referenced_by": [
+      "core_11.24.4.9"
+    ]
+  },
+  "core_11.25.5.1": {
+    "references": [],
+    "referenced_by": [
+      "core_12.2.5",
+      "core_12.2.5.4"
+    ]
+  },
+  "core_11.25.6.1": {
+    "references": [
+      "core_11.10.7.2"
+    ],
+    "referenced_by": [
+      "core_12.2.5.4"
+    ]
+  },
+  "core_11.25.6.2": {
+    "references": [],
+    "referenced_by": [
+      "core_12.2.5.4"
+    ]
+  },
+  "core_11.25.6.3": {
+    "references": [
+      "core_11.10.7.2"
+    ],
+    "referenced_by": [
+      "core_12.2.5",
+      "core_12.2.5.4"
+    ]
+  },
+  "core_11.25.6.5": {
+    "references": [],
+    "referenced_by": [
+      "core_12.2.5"
+    ]
+  },
+  "core_11.25.6.6": {
+    "references": [],
+    "referenced_by": [
+      "core_12.2.6"
+    ]
+  },
+  "core_11.25.6.7": {
+    "references": [],
+    "referenced_by": [
+      "core_12.2.6"
+    ]
+  },
+  "core_11.25.6.8": {
+    "references": [],
+    "referenced_by": [
+      "core_12.2.6"
+    ]
+  },
+  "core_11.25.6.9": {
+    "references": [],
+    "referenced_by": [
+      "core_12.2.5"
+    ]
+  },
+  "core_11.27": {
+    "references": [],
+    "referenced_by": [
+      "core_11.2.4.2"
+    ]
+  },
+  "core_11.7.7.1": {
+    "references": [],
+    "referenced_by": [
+      "core_11.7.7.2"
+    ]
+  },
+  "core_11.7.7.2": {
+    "references": [
+      "core_11.7.7.1"
+    ],
+    "referenced_by": []
+  },
+  "core_11.9": {
+    "references": [],
+    "referenced_by": [
+      "core_11.10",
+      "core_2.8",
+      "core_5.5",
+      "core_5.5.1"
+    ]
+  },
+  "core_11.9.6.2": {
+    "references": [],
+    "referenced_by": [
+      "core_11.10.7.2"
+    ]
+  },
+  "core_11.9.6.3": {
+    "references": [
+      "core_11.9.7.1"
+    ],
+    "referenced_by": []
+  },
+  "core_11.9.6.4": {
+    "references": [],
+    "referenced_by": [
+      "core_11.9.7.8"
+    ]
+  },
+  "core_11.9.6.5": {
+    "references": [
+      "core_11.10.7.2"
+    ],
+    "referenced_by": []
+  },
+  "core_11.9.7.1": {
+    "references": [
+      "core_11.10.7.2"
+    ],
+    "referenced_by": [
+      "core_11.9.6.3",
+      "core_5.5"
+    ]
+  },
+  "core_11.9.7.2": {
+    "references": [
+      "core_4.4.4"
+    ],
+    "referenced_by": []
+  },
+  "core_11.9.7.3": {
+    "references": [
+      "core_11.10.7.2",
+      "core_11.9.7.5"
+    ],
+    "referenced_by": [
+      "core_5.5"
+    ]
+  },
+  "core_11.9.7.4": {
+    "references": [
+      "core_11.10.7.2",
+      "core_11.9.7.5"
+    ],
+    "referenced_by": [
+      "core_5.5"
+    ]
+  },
+  "core_11.9.7.5": {
+    "references": [],
+    "referenced_by": [
+      "core_11.9.7.3",
+      "core_11.9.7.4"
+    ]
+  },
+  "core_11.9.7.6": {
+    "references": [
+      "core_11.10.7.2"
+    ],
+    "referenced_by": [
+      "core_5.5.1"
+    ]
+  },
+  "core_11.9.7.8": {
+    "references": [
+      "core_11.10.7.2",
+      "core_11.10.7.6",
+      "core_11.9.6.4"
+    ],
+    "referenced_by": [
+      "core_5.5"
+    ]
+  },
+  "core_11.9.8": {
+    "references": [
+      "core_5.5"
+    ],
+    "referenced_by": []
+  },
+  "core_11.9.8.1": {
+    "references": [
+      "core_9.2"
+    ],
+    "referenced_by": []
+  },
+  "core_11.9.8.3": {
+    "references": [
+      "core_11.10.7.2",
+      "core_5.5.1"
+    ],
+    "referenced_by": []
+  },
+  "core_12.2": {
+    "references": [],
+    "referenced_by": [
+      "core_12.2.4.1",
+      "core_12.2.4.2",
+      "core_12.2.5",
+      "core_12.2.7"
+    ]
+  },
+  "core_12.2.2": {
+    "references": [
+      "core_11.24"
+    ],
+    "referenced_by": []
+  },
+  "core_12.2.4.1": {
+    "references": [
+      "core_12.2"
+    ],
+    "referenced_by": [
+      "core_12.2.6",
+      "core_12.2.7",
+      "core_6.6.2.1.2"
+    ]
+  },
+  "core_12.2.4.2": {
+    "references": [
+      "core_12.2"
+    ],
+    "referenced_by": [
+      "core_12.2.6",
+      "core_6.6.2.1.2"
+    ]
+  },
+  "core_12.2.5": {
+    "references": [
+      "core_11.18.5.5",
+      "core_11.18.6.10",
+      "core_11.18.6.12",
+      "core_11.18.6.13",
+      "core_11.25.5.1",
+      "core_11.25.6.3",
+      "core_11.25.6.5",
+      "core_11.25.6.9",
+      "core_12.2",
+      "core_5.1",
+      "core_5.5",
+      "core_5.6.3.1",
+      "core_6.4.10",
+      "core_7.13.6"
+    ],
+    "referenced_by": [
+      "core_12.2.6"
+    ]
+  },
+  "core_12.2.5.3": {
+    "references": [
+      "core_6.4.10"
+    ],
+    "referenced_by": []
+  },
+  "core_12.2.5.4": {
+    "references": [
+      "core_11.25.5.1",
+      "core_11.25.6.1",
+      "core_11.25.6.2",
+      "core_11.25.6.3",
+      "core_4.2"
+    ],
+    "referenced_by": [
+      "core_12.2.6"
+    ]
+  },
+  "core_12.2.6": {
+    "references": [
+      "core_11.18.5.5",
+      "core_11.18.6.12",
+      "core_11.18.6.13",
+      "core_11.20.3.4",
+      "core_11.25.6.6",
+      "core_11.25.6.7",
+      "core_11.25.6.8",
+      "core_12.2.4.1",
+      "core_12.2.4.2",
+      "core_12.2.5",
+      "core_12.2.5.4"
+    ],
+    "referenced_by": [
+      "core_12.2.7.1"
+    ]
+  },
+  "core_12.2.7": {
+    "references": [
+      "core_11.18.6.12",
+      "core_12.2",
+      "core_12.2.4.1"
+    ],
+    "referenced_by": []
+  },
+  "core_12.2.7.1": {
+    "references": [
+      "core_12.2.6"
+    ],
+    "referenced_by": []
+  },
+  "core_12.3": {
+    "references": [
+      "core_5.6.4"
+    ],
+    "referenced_by": []
+  },
+  "core_12.4": {
+    "references": [
+      "core_5.6.2",
+      "core_5.6.3"
+    ],
+    "referenced_by": []
+  },
+  "core_12.5": {
+    "references": [
+      "core_11.19",
+      "core_11.19.8.1",
+      "core_11.19.8.2"
+    ],
+    "referenced_by": []
+  },
+  "core_12.6.8.4": {
+    "references": [
+      "core_4.3.1",
+      "core_5.4.2.7"
+    ],
+    "referenced_by": []
+  },
+  "core_13.3": {
+    "references": [
+      "core_3.9",
+      "core_5.4.2.3",
+      "core_5.5"
+    ],
+    "referenced_by": []
+  },
+  "core_13.4": {
+    "references": [
+      "core_11.12",
+      "core_11.20.4.2",
+      "core_6.4.11",
+      "core_6.4.3",
+      "core_6.6.3",
+      "core_7.12.1",
+      "core_7.14"
+    ],
+    "referenced_by": []
+  },
+  "core_13.5": {
+    "references": [
+      "core_11.20",
+      "core_11.20.4.2",
+      "core_9.10"
+    ],
+    "referenced_by": [
+      "core_11.20.4.2"
+    ]
+  },
+  "core_13.6": {
+    "references": [],
+    "referenced_by": [
+      "core_5.5"
+    ]
+  },
+  "core_13.6.10": {
+    "references": [],
+    "referenced_by": [
+      "core_11.23.1"
+    ]
+  },
+  "core_13.7": {
+    "references": [
+      "core_5.6.2",
+      "core_5.6.3"
+    ],
+    "referenced_by": []
+  },
+  "core_14.3.1": {
+    "references": [
+      "core_11.17.11",
+      "core_11.17.12"
+    ],
+    "referenced_by": []
+  },
+  "core_14.3.3": {
+    "references": [],
+    "referenced_by": [
+      "core_G"
+    ]
+  },
+  "core_14.4.6.8": {
+    "references": [
+      "core_4.2"
+    ],
+    "referenced_by": []
+  },
+  "core_2.11.1.1": {
+    "references": [],
+    "referenced_by": [
+      "core_9.10.6.3"
+    ]
+  },
+  "core_2.11.1.2": {
+    "references": [],
+    "referenced_by": [
+      "core_11.2.6.3",
+      "core_11.2.6.4",
+      "core_11.2.7.1",
+      "core_G"
+    ]
+  },
+  "core_2.11.2.1": {
+    "references": [],
+    "referenced_by": [
+      "core_11.1.4.4",
+      "core_G"
+    ]
+  },
+  "core_2.11.2.2": {
+    "references": [],
+    "referenced_by": [
+      "core_11.1.4.4",
+      "core_G"
+    ]
+  },
+  "core_2.2": {
+    "references": [
+      "core_4.14.1",
+      "core_4.14.2",
+      "core_4.16"
+    ],
+    "referenced_by": [
+      "core_3.8"
+    ]
+  },
+  "core_2.3": {
+    "references": [],
+    "referenced_by": [
+      "core_3.10",
+      "core_3.10.1",
+      "core_3.10.2",
+      "core_3.5.1",
+      "core_3.8",
+      "core_4.2"
+    ]
+  },
+  "core_2.3.2": {
+    "references": [
+      "core_4.2",
+      "core_4.2.1",
+      "core_4.3"
+    ],
+    "referenced_by": []
+  },
+  "core_2.5.1": {
+    "references": [
+      "core_7.5"
+    ],
+    "referenced_by": [
+      "core_4.14.2.7",
+      "core_6.5.6.3"
+    ]
+  },
+  "core_2.5.2": {
+    "references": [],
+    "referenced_by": [
+      "core_5.4.2.4.2"
+    ]
+  },
+  "core_2.5.3": {
+    "references": [
+      "core_5.4.2"
+    ],
+    "referenced_by": [
+      "core_5.4.2.4.3"
+    ]
+  },
+  "core_2.5.4": {
+    "references": [
+      "core_4.17"
+    ],
+    "referenced_by": []
+  },
+  "core_2.5.5": {
+    "references": [
+      "core_4.3.2"
+    ],
+    "referenced_by": [
+      "core_11.20.3.1"
+    ]
+  },
+  "core_2.5.5.4": {
+    "references": [
+      "core_6.6.2.1.1"
+    ],
+    "referenced_by": []
+  },
+  "core_2.5.5.5": {
+    "references": [
+      "core_6.6.2.1.2"
+    ],
+    "referenced_by": []
+  },
+  "core_2.5.6.2": {
+    "references": [
+      "core_3.1"
+    ],
+    "referenced_by": [
+      "core_4.16.2"
+    ]
+  },
+  "core_2.6": {
+    "references": [
+      "core_6.2",
+      "core_6.4",
+      "core_6.5"
+    ],
+    "referenced_by": []
+  },
+  "core_2.8": {
+    "references": [
+      "core_11.10",
+      "core_11.18",
+      "core_11.9",
+      "core_4.14.1",
+      "core_4.14.2",
+      "core_4.3.2",
+      "core_5.1",
+      "core_5.1.1.6",
+      "core_5.4",
+      "core_5.5",
+      "core_6.2",
+      "core_6.4"
+    ],
+    "referenced_by": []
+  },
+  "core_2.9": {
+    "references": [
+      "core_9.15"
+    ],
+    "referenced_by": []
+  },
+  "core_3.1": {
+    "references": [
+      "core_8.4"
+    ],
+    "referenced_by": [
+      "core_2.5.6.2"
+    ]
+  },
+  "core_3.10": {
+    "references": [
+      "core_2.3",
+      "core_3.3",
+      "core_3.4",
+      "core_3.5.1",
+      "core_3.8",
+      "core_3.9",
+      "core_5.1.1.6"
+    ],
+    "referenced_by": [
+      "core_11.19.8.1",
+      "core_4.14.1.1"
+    ]
+  },
+  "core_3.10.1": {
+    "references": [
+      "core_2.3"
+    ],
+    "referenced_by": []
+  },
+  "core_3.10.2": {
+    "references": [
+      "core_2.3"
+    ],
+    "referenced_by": []
+  },
+  "core_3.3": {
+    "references": [
+      "core_6.2"
+    ],
+    "referenced_by": [
+      "core_3.10",
+      "core_3.4"
+    ]
+  },
+  "core_3.4": {
+    "references": [
+      "core_3.3"
+    ],
+    "referenced_by": [
+      "core_3.10",
+      "core_5.7.3.1",
+      "core_5.7.3.2",
+      "core_9.10.9.3"
+    ]
+  },
+  "core_3.5.1": {
+    "references": [
+      "core_2.3"
+    ],
+    "referenced_by": [
+      "core_3.10"
+    ]
+  },
+  "core_3.5.3": {
+    "references": [],
+    "referenced_by": [
+      "core_4.14.2.5",
+      "core_6.5.13",
+      "core_6.5.5"
+    ]
+  },
+  "core_3.5.3.1": {
+    "references": [
+      "core_4.1"
+    ],
+    "referenced_by": []
+  },
+  "core_3.5.5": {
+    "references": [
+      "core_3.5.6"
+    ],
+    "referenced_by": []
+  },
+  "core_3.5.6": {
+    "references": [],
+    "referenced_by": [
+      "core_3.5.5"
+    ]
+  },
+  "core_3.5.6.1": {
+    "references": [
+      "core_6.4.5"
+    ],
+    "referenced_by": [
+      "core_11.17.12",
+      "core_11.17.9.1"
+    ]
+  },
+  "core_3.6": {
+    "references": [],
+    "referenced_by": [
+      "core_4.4.2.1",
+      "core_4.8.1",
+      "core_4.8.1.1"
+    ]
+  },
+  "core_3.6.1": {
+    "references": [
+      "core_6.1"
+    ],
+    "referenced_by": [
+      "core_4.8.2"
+    ]
+  },
+  "core_3.6.2": {
+    "references": [
+      "core_6.2"
+    ],
+    "referenced_by": [
+      "core_4.8.3"
+    ]
+  },
+  "core_3.7": {
+    "references": [],
+    "referenced_by": [
+      "core_4.9"
+    ]
+  },
+  "core_3.7.1": {
+    "references": [
+      "core_6.5"
+    ],
+    "referenced_by": [
+      "core_4.9.3"
+    ]
+  },
+  "core_3.7.2": {
+    "references": [
+      "core_6.5"
+    ],
+    "referenced_by": [
+      "core_4.9.4"
+    ]
+  },
+  "core_3.8": {
+    "references": [
+      "core_2.2",
+      "core_2.3"
+    ],
+    "referenced_by": [
+      "core_3.10",
+      "core_4.17.2",
+      "core_4.17.3.6"
+    ]
+  },
+  "core_3.9": {
+    "references": [
+      "core_5.3"
+    ],
+    "referenced_by": [
+      "core_11.19.8.1",
+      "core_13.3",
+      "core_3.10"
+    ]
+  },
+  "core_4.1": {
+    "references": [],
+    "referenced_by": [
+      "core_3.5.3.1"
+    ]
+  },
+  "core_4.10.2": {
+    "references": [
+      "core_4.4.3.3"
+    ],
+    "referenced_by": [
+      "core_4.4.3.3"
+    ]
+  },
+  "core_4.10.4": {
+    "references": [
+      "core_4.12.5.1"
+    ],
+    "referenced_by": []
+  },
+  "core_4.10.5": {
+    "references": [
+      "core_4.7.2"
+    ],
+    "referenced_by": [
+      "core_4.7.2"
+    ]
+  },
+  "core_4.10.5.1": {
+    "references": [],
+    "referenced_by": [
+      "core_4.12.5.2"
+    ]
+  },
+  "core_4.10.5.3": {
+    "references": [],
+    "referenced_by": [
+      "core_4.12.6.2"
+    ]
+  },
+  "core_4.11.1": {
+    "references": [],
+    "referenced_by": [
+      "core_4.4.3.4"
+    ]
+  },
+  "core_4.11.1.1": {
+    "references": [
+      "core_4.13.3.1"
+    ],
+    "referenced_by": [
+      "core_4.13.3.1"
+    ]
+  },
+  "core_4.11.1.3": {
+    "references": [
+      "core_4.11.1.4",
+      "core_4.11.1.5"
+    ],
+    "referenced_by": [
+      "core_5.5"
+    ]
+  },
+  "core_4.11.1.4": {
+    "references": [
+      "core_4.13.3.1"
+    ],
+    "referenced_by": [
+      "core_4.11.1.3",
+      "core_5.5"
+    ]
+  },
+  "core_4.11.1.5": {
+    "references": [],
+    "referenced_by": [
+      "core_4.11.1.3"
+    ]
+  },
+  "core_4.12": {
+    "references": [],
+    "referenced_by": [
+      "core_11.22.1"
+    ]
+  },
+  "core_4.12.2.1": {
+    "references": [
+      "core_4.3.2"
+    ],
+    "referenced_by": []
+  },
+  "core_4.12.2.2": {
+    "references": [
+      "core_4.6.5"
+    ],
+    "referenced_by": []
+  },
+  "core_4.12.3": {
+    "references": [
+      "core_4.3.1"
+    ],
+    "referenced_by": []
+  },
+  "core_4.12.5.1": {
+    "references": [
+      "core_4.7.1"
+    ],
+    "referenced_by": [
+      "core_4.10.4"
+    ]
+  },
+  "core_4.12.5.2": {
+    "references": [
+      "core_4.10.5.1",
+      "core_4.7.2"
+    ],
+    "referenced_by": [
+      "core_4.6.7",
+      "core_4.7.2"
+    ]
+  },
+  "core_4.12.6.2": {
+    "references": [
+      "core_4.10.5.3"
+    ],
+    "referenced_by": []
+  },
+  "core_4.13.1": {
+    "references": [
+      "core_11.1.5.1",
+      "core_11.1.5.22",
+      "core_11.1.5.23",
+      "core_8.1.1"
+    ],
+    "referenced_by": []
+  },
+  "core_4.13.2.4": {
+    "references": [],
+    "referenced_by": [
+      "core_4.14.1.2",
+      "core_4.14.2.3"
+    ]
+  },
+  "core_4.13.3": {
+    "references": [],
+    "referenced_by": [
+      "core_4.14.2.7"
+    ]
+  },
+  "core_4.13.3.1": {
+    "references": [
+      "core_4.11.1.1",
+      "core_4.6.1.1"
+    ],
+    "referenced_by": [
+      "core_11.10.7.2",
+      "core_4.11.1.1",
+      "core_4.11.1.4",
+      "core_4.14.2.3"
+    ]
+  },
+  "core_4.14.1": {
+    "references": [],
+    "referenced_by": [
+      "core_2.2",
+      "core_2.8",
+      "core_4.23.3.1",
+      "core_5.5"
+    ]
+  },
+  "core_4.14.1.1": {
+    "references": [
+      "core_3.10"
+    ],
+    "referenced_by": []
+  },
+  "core_4.14.1.2": {
+    "references": [
+      "core_4.13.2.4",
+      "core_4.4",
+      "core_4.6.1.1",
+      "core_6.2.3"
+    ],
+    "referenced_by": []
+  },
+  "core_4.14.2": {
+    "references": [],
+    "referenced_by": [
+      "core_11.10.7.6",
+      "core_2.2",
+      "core_2.8",
+      "core_5.5"
+    ]
+  },
+  "core_4.14.2.3": {
+    "references": [
+      "core_4.13.2.4",
+      "core_4.13.3.1",
+      "core_4.4",
+      "core_4.6.1.1"
+    ],
+    "referenced_by": []
+  },
+  "core_4.14.2.5": {
+    "references": [
+      "core_3.5.3"
+    ],
+    "referenced_by": []
+  },
+  "core_4.14.2.6": {
+    "references": [
+      "core_6.2.3"
+    ],
+    "referenced_by": []
+  },
+  "core_4.14.2.7": {
+    "references": [
+      "core_2.5.1",
+      "core_4.13.3"
+    ],
+    "referenced_by": []
+  },
+  "core_4.14.2.8": {
+    "references": [],
+    "referenced_by": [
+      "core_11.1.4.4",
+      "core_G"
+    ]
+  },
+  "core_4.16": {
+    "references": [],
+    "referenced_by": [
+      "core_2.2"
+    ]
+  },
+  "core_4.16.2": {
+    "references": [
+      "core_2.5.6.2",
+      "core_4.7.1"
+    ],
+    "referenced_by": []
+  },
+  "core_4.16.3": {
+    "references": [
+      "core_4.7.2"
+    ],
+    "referenced_by": []
+  },
+  "core_4.17": {
+    "references": [],
+    "referenced_by": [
+      "core_2.5.4"
+    ]
+  },
+  "core_4.17.2": {
+    "references": [
+      "core_3.8",
+      "core_4.17.2.1",
+      "core_4.3.2.2"
+    ],
+    "referenced_by": []
+  },
+  "core_4.17.2.1": {
+    "references": [],
+    "referenced_by": [
+      "core_4.17.2"
+    ]
+  },
+  "core_4.17.3": {
+    "references": [],
+    "referenced_by": [
+      "core_11.2.5.4"
+    ]
+  },
+  "core_4.17.3.1": {
+    "references": [
+      "core_4.17.3.4"
+    ],
+    "referenced_by": []
+  },
+  "core_4.17.3.4": {
+    "references": [],
+    "referenced_by": [
+      "core_4.17.3.1"
+    ]
+  },
+  "core_4.17.3.6": {
+    "references": [
+      "core_3.8"
+    ],
+    "referenced_by": []
+  },
+  "core_4.17.4": {
+    "references": [
+      "core_11.2"
+    ],
+    "referenced_by": []
+  },
+  "core_4.18.2": {
+    "references": [],
+    "referenced_by": [
+      "core_G"
+    ]
+  },
+  "core_4.18.3.1": {
+    "references": [
+      "core_4.18.5"
+    ],
+    "referenced_by": []
+  },
+  "core_4.18.4": {
+    "references": [
+      "core_11.2",
+      "core_4.18.5"
+    ],
+    "referenced_by": [
+      "core_4.6.7"
+    ]
+  },
+  "core_4.18.5": {
+    "references": [
+      "core_4.6.5.1",
+      "core_4.6.7",
+      "core_4.7.1"
+    ],
+    "referenced_by": [
+      "core_4.18.3.1",
+      "core_4.18.4"
+    ]
+  },
+  "core_4.19.2.2": {
+    "references": [
+      "core_4.19.4.8"
+    ],
+    "referenced_by": []
+  },
+  "core_4.19.2.3": {
+    "references": [
+      "core_4.19.4.6"
+    ],
+    "referenced_by": []
+  },
+  "core_4.19.3.1": {
+    "references": [],
+    "referenced_by": [
+      "core_4.19.4.3"
+    ]
+  },
+  "core_4.19.3.2": {
+    "references": [],
+    "referenced_by": [
+      "core_4.19.4.3"
+    ]
+  },
+  "core_4.19.4.1": {
+    "references": [
+      "core_4.19.6"
+    ],
+    "referenced_by": []
+  },
+  "core_4.19.4.11": {
+    "references": [],
+    "referenced_by": [
+      "core_4.19.4.8"
+    ]
+  },
+  "core_4.19.4.2": {
+    "references": [
+      "core_5.4.2.5.7"
+    ],
+    "referenced_by": []
+  },
+  "core_4.19.4.3": {
+    "references": [
+      "core_4.19.3.1",
+      "core_4.19.3.2"
+    ],
+    "referenced_by": []
+  },
+  "core_4.19.4.5": {
+    "references": [
+      "core_4.4.4"
+    ],
+    "referenced_by": []
+  },
+  "core_4.19.4.6": {
+    "references": [],
+    "referenced_by": [
+      "core_4.19.2.3"
+    ]
+  },
+  "core_4.19.4.7": {
+    "references": [
+      "core_4.19.4.8"
+    ],
+    "referenced_by": []
+  },
+  "core_4.19.4.8": {
+    "references": [
+      "core_4.19.4.11",
+      "core_4.19.4.9"
+    ],
+    "referenced_by": [
+      "core_4.19.2.2",
+      "core_4.19.4.7",
+      "core_4.19.4.9"
+    ]
+  },
+  "core_4.19.4.9": {
+    "references": [
+      "core_4.19.4.8"
+    ],
+    "referenced_by": [
+      "core_4.19.4.8"
+    ]
+  },
+  "core_4.19.6": {
+    "references": [],
+    "referenced_by": [
+      "core_4.19.4.1"
+    ]
+  },
+  "core_4.2": {
+    "references": [
+      "core_2.3"
+    ],
+    "referenced_by": [
+      "core_12.2.5.4",
+      "core_14.4.6.8",
+      "core_2.3.2",
+      "core_6.4.6.1"
+    ]
+  },
+  "core_4.2.1": {
+    "references": [],
+    "referenced_by": [
+      "core_2.3.2"
+    ]
+  },
+  "core_4.2.2": {
+    "references": [],
+    "referenced_by": [
+      "core_G"
+    ]
+  },
+  "core_4.20.2.2": {
+    "references": [
+      "core_4.20.3.8"
+    ],
+    "referenced_by": []
+  },
+  "core_4.20.2.3": {
+    "references": [
+      "core_4.20.3.6"
+    ],
+    "referenced_by": []
+  },
+  "core_4.20.3.1": {
+    "references": [],
+    "referenced_by": [
+      "core_4.20.3.3"
+    ]
+  },
+  "core_4.20.3.11": {
+    "references": [],
+    "referenced_by": [
+      "core_4.20.3.8"
+    ]
+  },
+  "core_4.20.3.2": {
+    "references": [],
+    "referenced_by": [
+      "core_4.20.3.3"
+    ]
+  },
+  "core_4.20.3.3": {
+    "references": [
+      "core_4.20.3.1",
+      "core_4.20.3.2"
+    ],
+    "referenced_by": []
+  },
+  "core_4.20.3.5": {
+    "references": [
+      "core_4.4.4"
+    ],
+    "referenced_by": []
+  },
+  "core_4.20.3.6": {
+    "references": [],
+    "referenced_by": [
+      "core_4.20.2.3"
+    ]
+  },
+  "core_4.20.3.7": {
+    "references": [
+      "core_4.20.3.8"
+    ],
+    "referenced_by": []
+  },
+  "core_4.20.3.8": {
+    "references": [
+      "core_4.20.3.11",
+      "core_4.20.3.9"
+    ],
+    "referenced_by": [
+      "core_4.20.2.2",
+      "core_4.20.3.7",
+      "core_4.20.3.9"
+    ]
+  },
+  "core_4.20.3.9": {
+    "references": [
+      "core_4.20.3.8"
+    ],
+    "referenced_by": [
+      "core_4.20.3.8"
+    ]
+  },
+  "core_4.21.4.1": {
+    "references": [
+      "core_5.4.2.4"
+    ],
+    "referenced_by": []
+  },
+  "core_4.22.3.1": {
+    "references": [],
+    "referenced_by": [
+      "core_4.22.4.1",
+      "core_4.22.4.2"
+    ]
+  },
+  "core_4.22.3.2": {
+    "references": [],
+    "referenced_by": [
+      "core_4.22.4.1"
+    ]
+  },
+  "core_4.22.3.3": {
+    "references": [],
+    "referenced_by": [
+      "core_4.22.4.2"
+    ]
+  },
+  "core_4.22.4.1": {
+    "references": [
+      "core_4.22.3.1",
+      "core_4.22.3.2"
+    ],
+    "referenced_by": []
+  },
+  "core_4.22.4.2": {
+    "references": [
+      "core_4.22.3.1",
+      "core_4.22.3.3"
+    ],
+    "referenced_by": []
+  },
+  "core_4.23": {
+    "references": [],
+    "referenced_by": [
+      "core_5.4.1.5",
+      "core_5.4.2.8"
+    ]
+  },
+  "core_4.23.1": {
+    "references": [
+      "core_4.23.1.1",
+      "core_8.4.1",
+      "core_8.4.2"
+    ],
+    "referenced_by": []
+  },
+  "core_4.23.1.1": {
+    "references": [],
+    "referenced_by": [
+      "core_4.23.1",
+      "core_4.23.2.3",
+      "core_5.4.3.5"
+    ]
+  },
+  "core_4.23.2": {
+    "references": [],
+    "referenced_by": [
+      "core_5.4.2.8"
+    ]
+  },
+  "core_4.23.2.3": {
+    "references": [
+      "core_4.23.1.1"
+    ],
+    "referenced_by": []
+  },
+  "core_4.23.3.1": {
+    "references": [
+      "core_4.14.1",
+      "core_4.3.1"
+    ],
+    "referenced_by": [
+      "core_5.4.2.8"
+    ]
+  },
+  "core_4.23.3.2": {
+    "references": [],
+    "referenced_by": [
+      "core_5.4.3.5"
+    ]
+  },
+  "core_4.23.4.1": {
+    "references": [
+      "core_4.3.1"
+    ],
+    "referenced_by": []
+  },
+  "core_4.3": {
+    "references": [],
+    "referenced_by": [
+      "core_2.3.2",
+      "core_5.4.2.2",
+      "core_5.4.2.7",
+      "core_5.4.3.3"
+    ]
+  },
+  "core_4.3.1": {
+    "references": [],
+    "referenced_by": [
+      "core_11.19.8.1",
+      "core_11.19.8.2",
+      "core_11.19.8.3",
+      "core_12.6.8.4",
+      "core_4.12.3",
+      "core_4.23.3.1",
+      "core_4.23.4.1",
+      "core_5.4.2.7",
+      "core_5.4.3.3",
+      "core_5.6.2",
+      "core_5.6.3"
+    ]
+  },
+  "core_4.3.1.1": {
+    "references": [],
+    "referenced_by": [
+      "core_4.3.3"
+    ]
+  },
+  "core_4.3.1.10": {
+    "references": [],
+    "referenced_by": [
+      "core_5.3.5.2"
+    ]
+  },
+  "core_4.3.1.11": {
+    "references": [
+      "core_11.23",
+      "core_11.23.6.16"
+    ],
+    "referenced_by": [
+      "core_5.3.5.2"
+    ]
+  },
+  "core_4.3.1.12": {
+    "references": [
+      "core_6.2"
+    ],
+    "referenced_by": [
+      "core_5.3.5.2"
+    ]
+  },
+  "core_4.3.1.14": {
+    "references": [
+      "core_4.3.1.7"
+    ],
+    "referenced_by": []
+  },
+  "core_4.3.1.2": {
+    "references": [
+      "core_5.4.2.3"
+    ],
+    "referenced_by": []
+  },
+  "core_4.3.1.3": {
+    "references": [],
+    "referenced_by": [
+      "core_5.2.2.1.2",
+      "core_5.2.2.2.3",
+      "core_5.2.2.3.2",
+      "core_5.2.2.3.3",
+      "core_6.3.1"
+    ]
+  },
+  "core_4.3.1.4": {
+    "references": [
+      "core_4.3.4"
+    ],
+    "referenced_by": []
+  },
+  "core_4.3.1.5": {
+    "references": [],
+    "referenced_by": [
+      "core_11.19.8.1",
+      "core_4.3.1.7"
+    ]
+  },
+  "core_4.3.1.6": {
+    "references": [],
+    "referenced_by": [
+      "core_4.3.3",
+      "core_5.2.2.3.2",
+      "core_5.2.2.4.2",
+      "core_5.3.5.2"
+    ]
+  },
+  "core_4.3.1.7": {
+    "references": [
+      "core_4.3.1.5"
+    ],
+    "referenced_by": [
+      "core_4.3.1.14",
+      "core_5.2.2.3.2"
+    ]
+  },
+  "core_4.3.1.8": {
+    "references": [],
+    "referenced_by": [
+      "core_4.3.3",
+      "core_5.2.2.3.2",
+      "core_5.2.2.4.2",
+      "core_5.3.5.2"
+    ]
+  },
+  "core_4.3.1.9": {
+    "references": [],
+    "referenced_by": [
+      "core_4.3.3",
+      "core_5.2.2.3.2",
+      "core_5.2.2.4.2",
+      "core_5.3.5.2"
+    ]
+  },
+  "core_4.3.2": {
+    "references": [],
+    "referenced_by": [
+      "core_2.5.5",
+      "core_2.8",
+      "core_4.12.2.1",
+      "core_5.5",
+      "core_5.9.3"
+    ]
+  },
+  "core_4.3.2.2": {
+    "references": [],
+    "referenced_by": [
+      "core_4.17.2"
+    ]
+  },
+  "core_4.3.2.5": {
+    "references": [],
+    "referenced_by": [
+      "core_4.3.2.7",
+      "core_5.5"
+    ]
+  },
+  "core_4.3.2.6": {
+    "references": [
+      "core_4.3.2.7",
+      "core_4.3.4"
+    ],
+    "referenced_by": []
+  },
+  "core_4.3.2.7": {
+    "references": [
+      "core_4.3.2.5"
+    ],
+    "referenced_by": [
+      "core_4.3.2.6"
+    ]
+  },
+  "core_4.3.3": {
+    "references": [
+      "core_4.3.1.1",
+      "core_4.3.1.6",
+      "core_4.3.1.8",
+      "core_4.3.1.9",
+      "core_4.3.4",
+      "core_5.2.2.4"
+    ],
+    "referenced_by": [
+      "core_5.3.1"
+    ]
+  },
+  "core_4.3.4": {
+    "references": [],
+    "referenced_by": [
+      "core_4.3.1.4",
+      "core_4.3.2.6",
+      "core_4.3.3"
+    ]
+  },
+  "core_4.4": {
+    "references": [],
+    "referenced_by": [
+      "core_10.1",
+      "core_4.14.1.2",
+      "core_4.14.2.3",
+      "core_5.3.3",
+      "core_6.4.3"
+    ]
+  },
+  "core_4.4.1.3": {
+    "references": [
+      "core_4.8.1.1",
+      "core_4.9.3"
+    ],
+    "referenced_by": []
+  },
+  "core_4.4.2.1": {
+    "references": [
+      "core_3.6",
+      "core_4.8.2"
+    ],
+    "referenced_by": []
+  },
+  "core_4.4.3.3": {
+    "references": [
+      "core_4.10.2"
+    ],
+    "referenced_by": [
+      "core_4.10.2"
+    ]
+  },
+  "core_4.4.3.4": {
+    "references": [
+      "core_10.2.1",
+      "core_11.22.3.1",
+      "core_4.11.1",
+      "core_5.3.2"
+    ],
+    "referenced_by": []
+  },
+  "core_4.4.4": {
+    "references": [],
+    "referenced_by": [
+      "core_10.2.3",
+      "core_10.7.9",
+      "core_11.9.7.2",
+      "core_4.19.4.5",
+      "core_4.20.3.5"
+    ]
+  },
+  "core_4.6.1.1": {
+    "references": [],
+    "referenced_by": [
+      "core_4.13.3.1",
+      "core_4.14.1.2",
+      "core_4.14.2.3",
+      "core_4.6.1.2",
+      "core_4.6.1.3",
+      "core_4.6.2",
+      "core_4.6.3"
+    ]
+  },
+  "core_4.6.1.2": {
+    "references": [
+      "core_4.6.1.1"
+    ],
+    "referenced_by": []
+  },
+  "core_4.6.1.3": {
+    "references": [
+      "core_4.6.1.1"
+    ],
+    "referenced_by": [
+      "core_4.6.5.2"
+    ]
+  },
+  "core_4.6.2": {
+    "references": [
+      "core_4.6.1.1"
+    ],
+    "referenced_by": []
+  },
+  "core_4.6.3": {
+    "references": [
+      "core_4.6.1.1"
+    ],
+    "referenced_by": []
+  },
+  "core_4.6.5": {
+    "references": [
+      "core_4.6.5.1"
+    ],
+    "referenced_by": [
+      "core_4.12.2.2"
+    ]
+  },
+  "core_4.6.5.1": {
+    "references": [],
+    "referenced_by": [
+      "core_4.18.5",
+      "core_4.6.5",
+      "core_4.6.7"
+    ]
+  },
+  "core_4.6.5.2": {
+    "references": [
+      "core_4.6.1.3"
+    ],
+    "referenced_by": [
+      "core_4.6.7"
+    ]
+  },
+  "core_4.6.5.3": {
+    "references": [],
+    "referenced_by": [
+      "core_4.6.7"
+    ]
+  },
+  "core_4.6.6": {
+    "references": [],
+    "referenced_by": [
+      "core_4.7.1",
+      "core_4.8.2"
+    ]
+  },
+  "core_4.6.7": {
+    "references": [
+      "core_4.12.5.2",
+      "core_4.18.4",
+      "core_4.6.5.1",
+      "core_4.6.5.2",
+      "core_4.6.5.3"
+    ],
+    "referenced_by": [
+      "core_4.18.5",
+      "core_4.7.2"
+    ]
+  },
+  "core_4.7.1": {
+    "references": [
+      "core_4.6.6",
+      "core_4.8.2",
+      "core_4.9.3"
+    ],
+    "referenced_by": [
+      "core_4.12.5.1",
+      "core_4.16.2",
+      "core_4.18.5",
+      "core_4.9.3"
+    ]
+  },
+  "core_4.7.2": {
+    "references": [
+      "core_4.10.5",
+      "core_4.12.5.2",
+      "core_4.6.7",
+      "core_4.8.3",
+      "core_4.9.4"
+    ],
+    "referenced_by": [
+      "core_4.10.5",
+      "core_4.12.5.2",
+      "core_4.16.3",
+      "core_4.9.4"
+    ]
+  },
+  "core_4.8": {
+    "references": [
+      "core_4.8.1",
+      "core_4.8.2",
+      "core_4.8.3"
+    ],
+    "referenced_by": []
+  },
+  "core_4.8.1": {
+    "references": [
+      "core_3.6"
+    ],
+    "referenced_by": [
+      "core_4.8"
+    ]
+  },
+  "core_4.8.1.1": {
+    "references": [
+      "core_3.6"
+    ],
+    "referenced_by": [
+      "core_4.4.1.3"
+    ]
+  },
+  "core_4.8.2": {
+    "references": [
+      "core_3.6.1",
+      "core_4.6.6"
+    ],
+    "referenced_by": [
+      "core_4.4.2.1",
+      "core_4.7.1",
+      "core_4.8",
+      "core_4.9.3"
+    ]
+  },
+  "core_4.8.3": {
+    "references": [
+      "core_3.6.2"
+    ],
+    "referenced_by": [
+      "core_4.7.2",
+      "core_4.8",
+      "core_4.9.4"
+    ]
+  },
+  "core_4.9": {
+    "references": [
+      "core_3.7",
+      "core_4.9.3",
+      "core_4.9.4"
+    ],
+    "referenced_by": []
+  },
+  "core_4.9.3": {
+    "references": [
+      "core_3.7.1",
+      "core_4.7.1",
+      "core_4.8.2"
+    ],
+    "referenced_by": [
+      "core_4.4.1.3",
+      "core_4.7.1",
+      "core_4.9"
+    ]
+  },
+  "core_4.9.4": {
+    "references": [
+      "core_3.7.2",
+      "core_4.7.2",
+      "core_4.8.3"
+    ],
+    "referenced_by": [
+      "core_4.7.2",
+      "core_4.9"
+    ]
+  },
+  "core_5.1": {
+    "references": [],
+    "referenced_by": [
+      "core_12.2.5",
+      "core_2.8"
+    ]
+  },
+  "core_5.1.1.2": {
+    "references": [
+      "core_5.7"
+    ],
+    "referenced_by": []
+  },
+  "core_5.1.1.3": {
+    "references": [
+      "core_5.7.3"
+    ],
+    "referenced_by": []
+  },
+  "core_5.1.1.4": {
+    "references": [
+      "core_5.4"
+    ],
+    "referenced_by": []
+  },
+  "core_5.1.1.6": {
+    "references": [],
+    "referenced_by": [
+      "core_2.8",
+      "core_3.10"
+    ]
+  },
+  "core_5.1.1.7": {
+    "references": [
+      "core_5.1.5"
+    ],
+    "referenced_by": []
+  },
+  "core_5.1.3": {
+    "references": [],
+    "referenced_by": [
+      "core_11.23.6.7",
+      "core_5.6.3.1"
+    ]
+  },
+  "core_5.1.3.1": {
+    "references": [
+      "core_5.1.7",
+      "core_5.4.2.2"
+    ],
+    "referenced_by": []
+  },
+  "core_5.1.4": {
+    "references": [],
+    "referenced_by": [
+      "core_5.7.5.1"
+    ]
+  },
+  "core_5.1.5": {
+    "references": [],
+    "referenced_by": [
+      "core_5.1.1.7",
+      "core_5.6.3.1"
+    ]
+  },
+  "core_5.1.5.2": {
+    "references": [
+      "core_5.4.2.3"
+    ],
+    "referenced_by": []
+  },
+  "core_5.1.6": {
+    "references": [],
+    "referenced_by": [
+      "core_5.7.6.1"
+    ]
+  },
+  "core_5.1.7": {
+    "references": [],
+    "referenced_by": [
+      "core_5.1.3.1"
+    ]
+  },
+  "core_5.2.1": {
+    "references": [
+      "core_5.2.2.1",
+      "core_5.2.2.2",
+      "core_5.2.2.3",
+      "core_5.2.2.4"
+    ],
+    "referenced_by": []
+  },
+  "core_5.2.2.1": {
+    "references": [],
+    "referenced_by": [
+      "core_5.2.1"
+    ]
+  },
+  "core_5.2.2.1.2": {
+    "references": [
+      "core_4.3.1.3",
+      "core_5.5"
+    ],
+    "referenced_by": []
+  },
+  "core_5.2.2.2": {
+    "references": [],
+    "referenced_by": [
+      "core_5.2.1",
+      "core_5.2.2.2.4"
+    ]
+  },
+  "core_5.2.2.2.2": {
+    "references": [
+      "core_5.5"
+    ],
+    "referenced_by": []
+  },
+  "core_5.2.2.2.3": {
+    "references": [
+      "core_4.3.1.3",
+      "core_7.16.5"
+    ],
+    "referenced_by": []
+  },
+  "core_5.2.2.2.4": {
+    "references": [
+      "core_5.2.2.2"
+    ],
+    "referenced_by": []
+  },
+  "core_5.2.2.3": {
+    "references": [],
+    "referenced_by": [
+      "core_5.2.1",
+      "core_5.2.2.4.3"
+    ]
+  },
+  "core_5.2.2.3.2": {
+    "references": [
+      "core_4.3.1.3",
+      "core_4.3.1.6",
+      "core_4.3.1.7",
+      "core_4.3.1.8",
+      "core_4.3.1.9",
+      "core_5.5"
+    ],
+    "referenced_by": []
+  },
+  "core_5.2.2.3.3": {
+    "references": [
+      "core_4.3.1.3"
+    ],
+    "referenced_by": []
+  },
+  "core_5.2.2.4": {
+    "references": [],
+    "referenced_by": [
+      "core_4.3.3",
+      "core_5.2.1"
+    ]
+  },
+  "core_5.2.2.4.1": {
+    "references": [
+      "core_5.3"
+    ],
+    "referenced_by": []
+  },
+  "core_5.2.2.4.2": {
+    "references": [
+      "core_4.3.1.6",
+      "core_4.3.1.8",
+      "core_4.3.1.9",
+      "core_5.3",
+      "core_5.5"
+    ],
+    "referenced_by": []
+  },
+  "core_5.2.2.4.3": {
+    "references": [
+      "core_5.2.2.3"
+    ],
+    "referenced_by": []
+  },
+  "core_5.3": {
+    "references": [],
+    "referenced_by": [
+      "core_3.9",
+      "core_5.2.2.4.1",
+      "core_5.2.2.4.2"
+    ]
+  },
+  "core_5.3.1": {
+    "references": [
+      "core_4.3.3",
+      "core_5.5"
+    ],
+    "referenced_by": []
+  },
+  "core_5.3.2": {
+    "references": [],
+    "referenced_by": [
+      "core_4.4.3.4"
+    ]
+  },
+  "core_5.3.3": {
+    "references": [
+      "core_4.4"
+    ],
+    "referenced_by": [
+      "core_6.2.4.1"
+    ]
+  },
+  "core_5.3.5.1.1": {
+    "references": [
+      "core_5.3.7.2"
+    ],
+    "referenced_by": []
+  },
+  "core_5.3.5.1.2": {
+    "references": [
+      "core_10",
+      "core_5.3.7.4"
+    ],
+    "referenced_by": []
+  },
+  "core_5.3.5.1.3": {
+    "references": [
+      "core_5.3.7.3"
+    ],
+    "referenced_by": []
+  },
+  "core_5.3.5.1.4": {
+    "references": [
+      "core_5.3.7.5"
+    ],
+    "referenced_by": []
+  },
+  "core_5.3.5.2": {
+    "references": [
+      "core_4.3.1.10",
+      "core_4.3.1.11",
+      "core_4.3.1.12",
+      "core_4.3.1.6",
+      "core_4.3.1.8",
+      "core_4.3.1.9"
+    ],
+    "referenced_by": []
+  },
+  "core_5.3.7.2": {
+    "references": [],
+    "referenced_by": [
+      "core_5.3.5.1.1"
+    ]
+  },
+  "core_5.3.7.3": {
+    "references": [],
+    "referenced_by": [
+      "core_5.3.5.1.3"
+    ]
+  },
+  "core_5.3.7.4": {
+    "references": [],
+    "referenced_by": [
+      "core_5.3.5.1.2"
+    ]
+  },
+  "core_5.3.7.5": {
+    "references": [],
+    "referenced_by": [
+      "core_5.3.5.1.4"
+    ]
+  },
+  "core_5.4": {
+    "references": [],
+    "referenced_by": [
+      "core_2.8",
+      "core_5.1.1.4",
+      "core_5.5"
+    ]
+  },
+  "core_5.4.1.5": {
+    "references": [
+      "core_4.23"
+    ],
+    "referenced_by": []
+  },
+  "core_5.4.2": {
+    "references": [],
+    "referenced_by": [
+      "core_2.5.3"
+    ]
+  },
+  "core_5.4.2.1": {
+    "references": [],
+    "referenced_by": [
+      "core_5.4.3"
+    ]
+  },
+  "core_5.4.2.2": {
+    "references": [
+      "core_4.3",
+      "core_5.4.2.3",
+      "core_5.4.2.7",
+      "core_5.7"
+    ],
+    "referenced_by": [
+      "core_5.1.3.1",
+      "core_5.4.2.5",
+      "core_5.4.2.6",
+      "core_5.4.2.8",
+      "core_5.7",
+      "core_5.7.2"
+    ]
+  },
+  "core_5.4.2.3": {
+    "references": [],
+    "referenced_by": [
+      "core_11.10.5.4",
+      "core_11.19.8.1",
+      "core_11.19.8.2",
+      "core_13.3",
+      "core_4.3.1.2",
+      "core_5.1.5.2",
+      "core_5.4.2.2",
+      "core_5.4.2.6.3",
+      "core_5.4.3.2"
+    ]
+  },
+  "core_5.4.2.3.2": {
+    "references": [
+      "core_5.4.2.5.3"
+    ],
+    "referenced_by": []
+  },
+  "core_5.4.2.3.3": {
+    "references": [],
+    "referenced_by": [
+      "core_5.4.2.5.6"
+    ]
+  },
+  "core_5.4.2.4": {
+    "references": [],
+    "referenced_by": [
+      "core_4.21.4.1"
+    ]
+  },
+  "core_5.4.2.4.1": {
+    "references": [],
+    "referenced_by": [
+      "core_5.4.2.5.6",
+      "core_5.4.2.6.3"
+    ]
+  },
+  "core_5.4.2.4.2": {
+    "references": [
+      "core_2.5.2"
+    ],
+    "referenced_by": [
+      "core_5.4.2.5.6"
+    ]
+  },
+  "core_5.4.2.4.3": {
+    "references": [
+      "core_2.5.3"
+    ],
+    "referenced_by": [
+      "core_5.4.2.5.6"
+    ]
+  },
+  "core_5.4.2.4.4": {
+    "references": [],
+    "referenced_by": [
+      "core_5.4.2.5.7"
+    ]
+  },
+  "core_5.4.2.5": {
+    "references": [
+      "core_5.4.2.2"
+    ],
+    "referenced_by": []
+  },
+  "core_5.4.2.5.3": {
+    "references": [],
+    "referenced_by": [
+      "core_5.4.2.3.2"
+    ]
+  },
+  "core_5.4.2.5.6": {
+    "references": [
+      "core_11.10.6.11",
+      "core_5.4.2.3.3",
+      "core_5.4.2.4.1",
+      "core_5.4.2.4.2",
+      "core_5.4.2.4.3",
+      "core_5.4.2.5.7",
+      "core_5.4.2.9"
+    ],
+    "referenced_by": []
+  },
+  "core_5.4.2.5.7": {
+    "references": [
+      "core_5.4.2.4.4"
+    ],
+    "referenced_by": [
+      "core_4.19.4.2",
+      "core_5.4.2.5.6"
+    ]
+  },
+  "core_5.4.2.6": {
+    "references": [
+      "core_5.4.2.2"
+    ],
+    "referenced_by": [
+      "core_5.4.3.2"
+    ]
+  },
+  "core_5.4.2.6.2": {
+    "references": [],
+    "referenced_by": [
+      "core_5.4.3.2"
+    ]
+  },
+  "core_5.4.2.6.3": {
+    "references": [
+      "core_5.4.2.3",
+      "core_5.4.2.4.1"
+    ],
+    "referenced_by": []
+  },
+  "core_5.4.2.7": {
+    "references": [
+      "core_4.3",
+      "core_4.3.1"
+    ],
+    "referenced_by": [
+      "core_12.6.8.4",
+      "core_5.4.2.2",
+      "core_5.6.2",
+      "core_5.6.3"
+    ]
+  },
+  "core_5.4.2.8": {
+    "references": [
+      "core_4.23",
+      "core_4.23.2",
+      "core_4.23.3.1",
+      "core_5.4.2.2"
+    ],
+    "referenced_by": []
+  },
+  "core_5.4.2.9": {
+    "references": [],
+    "referenced_by": [
+      "core_5.4.2.5.6"
+    ]
+  },
+  "core_5.4.3": {
+    "references": [
+      "core_5.4.2.1",
+      "core_5.5"
+    ],
+    "referenced_by": []
+  },
+  "core_5.4.3.2": {
+    "references": [
+      "core_5.4.2.3",
+      "core_5.4.2.6",
+      "core_5.4.2.6.2",
+      "core_5.5"
+    ],
+    "referenced_by": []
+  },
+  "core_5.4.3.3": {
+    "references": [
+      "core_4.3",
+      "core_4.3.1"
+    ],
+    "referenced_by": []
+  },
+  "core_5.4.3.5": {
+    "references": [
+      "core_4.23.1.1",
+      "core_4.23.3.2"
+    ],
+    "referenced_by": []
+  },
+  "core_5.5": {
+    "references": [
+      "core_11.10",
+      "core_11.10.6.2",
+      "core_11.10.6.5",
+      "core_11.10.6.9",
+      "core_11.10.7.2",
+      "core_11.10.7.4",
+      "core_11.10.7.6",
+      "core_11.10.7.8",
+      "core_11.14",
+      "core_11.15",
+      "core_11.17.5.1",
+      "core_11.17.5.2",
+      "core_11.17.5.4",
+      "core_11.17.8.4",
+      "core_11.17.8.5",
+      "core_11.17.9.1",
+      "core_11.17.9.2",
+      "core_11.17.9.3",
+      "core_11.17.9.4",
+      "core_11.17.9.5",
+      "core_11.17.9.6",
+      "core_11.18.6.11",
+      "core_11.18.6.13",
+      "core_11.18.6.5",
+      "core_11.23.6.23",
+      "core_11.9",
+      "core_11.9.7.1",
+      "core_11.9.7.3",
+      "core_11.9.7.4",
+      "core_11.9.7.8",
+      "core_13.6",
+      "core_4.11.1.3",
+      "core_4.11.1.4",
+      "core_4.14.1",
+      "core_4.14.2",
+      "core_4.3.2",
+      "core_4.3.2.5",
+      "core_5.4",
+      "core_5.7.4.1",
+      "core_6.2.3",
+      "core_6.2.4",
+      "core_6.2.4.2",
+      "core_9.10",
+      "core_9.10.4.2"
+    ],
+    "referenced_by": [
+      "core_11.10.6.13",
+      "core_11.10.6.5",
+      "core_11.10.7.6",
+      "core_11.18.6.8",
+      "core_11.19.8.1",
+      "core_11.19.8.2",
+      "core_11.9.8",
+      "core_12.2.5",
+      "core_13.3",
+      "core_2.8",
+      "core_5.2.2.1.2",
+      "core_5.2.2.2.2",
+      "core_5.2.2.3.2",
+      "core_5.2.2.4.2",
+      "core_5.3.1",
+      "core_5.4.3",
+      "core_5.4.3.2",
+      "core_5.9",
+      "core_6.2.3"
+    ]
+  },
+  "core_5.5.1": {
+    "references": [
+      "core_11.10",
+      "core_11.10.7.6",
+      "core_11.18",
+      "core_11.9",
+      "core_11.9.7.6"
+    ],
+    "referenced_by": [
+      "core_11.10.7",
+      "core_11.9.8.3"
+    ]
+  },
+  "core_5.6.1": {
+    "references": [
+      "core_11.19"
+    ],
+    "referenced_by": []
+  },
+  "core_5.6.2": {
+    "references": [
+      "core_4.3.1",
+      "core_5.4.2.7"
+    ],
+    "referenced_by": [
+      "core_11.19",
+      "core_12.4",
+      "core_13.7",
+      "core_5.8"
+    ]
+  },
+  "core_5.6.3": {
+    "references": [
+      "core_4.3.1",
+      "core_5.4.2.7"
+    ],
+    "referenced_by": [
+      "core_11.19",
+      "core_11.23.6.12",
+      "core_12.4",
+      "core_13.7",
+      "core_5.8"
+    ]
+  },
+  "core_5.6.3.1": {
+    "references": [
+      "core_11.19.8.1",
+      "core_5.1.3",
+      "core_5.1.5"
+    ],
+    "referenced_by": [
+      "core_12.2.5",
+      "core_5.8"
+    ]
+  },
+  "core_5.6.4": {
+    "references": [],
+    "referenced_by": [
+      "core_12.3"
+    ]
+  },
+  "core_5.7": {
+    "references": [
+      "core_11.23",
+      "core_5.4.2.2"
+    ],
+    "referenced_by": [
+      "core_5.1.1.2",
+      "core_5.4.2.2"
+    ]
+  },
+  "core_5.7.1": {
+    "references": [
+      "core_11.23",
+      "core_11.23.6.10",
+      "core_11.23.6.11",
+      "core_11.23.6.8",
+      "core_5.7.5"
+    ],
+    "referenced_by": []
+  },
+  "core_5.7.2": {
+    "references": [
+      "core_11.23",
+      "core_11.23.6.10",
+      "core_11.23.6.11",
+      "core_11.23.6.16",
+      "core_11.23.6.8",
+      "core_5.4.2.2",
+      "core_5.7.3"
+    ],
+    "referenced_by": []
+  },
+  "core_5.7.3": {
+    "references": [
+      "core_5.7.3.1"
+    ],
+    "referenced_by": [
+      "core_11.10.6.9",
+      "core_11.23.6.9",
+      "core_5.1.1.3",
+      "core_5.7.2",
+      "core_5.7.3.1.1",
+      "core_5.7.4",
+      "core_5.7.5.3",
+      "core_5.7.6"
+    ]
+  },
+  "core_5.7.3.1": {
+    "references": [
+      "core_3.4"
+    ],
+    "referenced_by": [
+      "core_5.7.3",
+      "core_5.7.3.4",
+      "core_5.7.5.3"
+    ]
+  },
+  "core_5.7.3.1.1": {
+    "references": [
+      "core_5.7.3",
+      "core_5.7.3.2"
+    ],
+    "referenced_by": []
+  },
+  "core_5.7.3.2": {
+    "references": [
+      "core_3.4"
+    ],
+    "referenced_by": [
+      "core_5.7.3.1.1"
+    ]
+  },
+  "core_5.7.3.4": {
+    "references": [
+      "core_5.7.3.1"
+    ],
+    "referenced_by": []
+  },
+  "core_5.7.4": {
+    "references": [
+      "core_5.7.3"
+    ],
+    "referenced_by": [
+      "core_11.10.6.6",
+      "core_11.10.6.9"
+    ]
+  },
+  "core_5.7.4.1": {
+    "references": [
+      "core_11.23.6.25",
+      "core_11.23.6.26"
+    ],
+    "referenced_by": [
+      "core_5.5"
+    ]
+  },
+  "core_5.7.4.2": {
+    "references": [],
+    "referenced_by": [
+      "core_5.7.4.6"
+    ]
+  },
+  "core_5.7.4.2.1": {
+    "references": [
+      "core_11.23.6.24",
+      "core_11.23.6.25"
+    ],
+    "referenced_by": []
+  },
+  "core_5.7.4.6": {
+    "references": [
+      "core_11.23.6.24",
+      "core_5.7.4.2"
+    ],
+    "referenced_by": [
+      "core_11.10.6.10"
+    ]
+  },
+  "core_5.7.4.7": {
+    "references": [
+      "core_11.10.6.8",
+      "core_11.23.6.23",
+      "core_11.23.6.24"
+    ],
+    "referenced_by": []
+  },
+  "core_5.7.5": {
+    "references": [
+      "core_11.23.6.14"
+    ],
+    "referenced_by": [
+      "core_11.23.6.14",
+      "core_5.7.1"
+    ]
+  },
+  "core_5.7.5.1": {
+    "references": [
+      "core_11.23.6.14",
+      "core_11.23.6.7",
+      "core_5.1.4"
+    ],
+    "referenced_by": []
+  },
+  "core_5.7.5.2": {
+    "references": [
+      "core_11.23.6.14"
+    ],
+    "referenced_by": []
+  },
+  "core_5.7.5.3": {
+    "references": [
+      "core_11.23.6.14",
+      "core_11.23.6.9",
+      "core_5.7.3",
+      "core_5.7.3.1"
+    ],
+    "referenced_by": []
+  },
+  "core_5.7.6": {
+    "references": [
+      "core_5.7.3"
+    ],
+    "referenced_by": []
+  },
+  "core_5.7.6.1": {
+    "references": [
+      "core_5.1.6"
+    ],
+    "referenced_by": []
+  },
+  "core_5.8": {
+    "references": [
+      "core_5.6.2",
+      "core_5.6.3",
+      "core_5.6.3.1"
+    ],
+    "referenced_by": []
+  },
+  "core_5.9": {
+    "references": [
+      "core_5.5"
+    ],
+    "referenced_by": []
+  },
+  "core_5.9.3": {
+    "references": [
+      "core_4.3.2"
+    ],
+    "referenced_by": []
+  },
+  "core_6.1": {
+    "references": [
+      "core_6.2.2.3",
+      "core_6.2.2.4",
+      "core_6.2.2.5"
+    ],
+    "referenced_by": [
+      "core_11.23.4.5",
+      "core_11.23.4.6",
+      "core_11.23.4.9",
+      "core_11.23.5.10",
+      "core_11.23.5.5",
+      "core_11.23.5.6",
+      "core_3.6.1"
+    ]
+  },
+  "core_6.1.1": {
+    "references": [
+      "core_6.5"
+    ],
+    "referenced_by": [
+      "core_6.2.2.2",
+      "core_6.5.6.1",
+      "core_6.5.6.3",
+      "core_6.5.6.4"
+    ]
+  },
+  "core_6.1.2": {
+    "references": [
+      "core_6.2.2.3",
+      "core_6.2.2.4",
+      "core_6.2.2.5",
+      "core_6.5.11.4",
+      "core_6.5.11.5"
+    ],
+    "referenced_by": [
+      "core_11.23.4.11",
+      "core_11.23.5.12",
+      "core_6.5.11.4",
+      "core_6.5.11.5"
+    ]
+  },
+  "core_6.2": {
+    "references": [],
+    "referenced_by": [
+      "core_11.21.2.4",
+      "core_11.23.7.9",
+      "core_11.23.9",
+      "core_11.23.9.11",
+      "core_2.6",
+      "core_2.8",
+      "core_3.3",
+      "core_3.6.2",
+      "core_4.3.1.12"
+    ]
+  },
+  "core_6.2.1": {
+    "references": [
+      "core_6.2.3"
+    ],
+    "referenced_by": []
+  },
+  "core_6.2.2": {
+    "references": [
+      "core_6.2.2.2",
+      "core_6.2.3.1"
+    ],
+    "referenced_by": []
+  },
+  "core_6.2.2.2": {
+    "references": [
+      "core_6.1.1",
+      "core_6.2.2.3",
+      "core_6.2.2.4",
+      "core_6.2.2.5"
+    ],
+    "referenced_by": [
+      "core_11.23.9.1",
+      "core_11.23.9.2",
+      "core_6.2.2"
+    ]
+  },
+  "core_6.2.2.3": {
+    "references": [],
+    "referenced_by": [
+      "core_6.1",
+      "core_6.1.2",
+      "core_6.2.2.2"
+    ]
+  },
+  "core_6.2.2.4": {
+    "references": [],
+    "referenced_by": [
+      "core_6.1",
+      "core_6.1.2",
+      "core_6.2.2.2"
+    ]
+  },
+  "core_6.2.2.5": {
+    "references": [],
+    "referenced_by": [
+      "core_6.1",
+      "core_6.1.2",
+      "core_6.2.2.2"
+    ]
+  },
+  "core_6.2.3": {
+    "references": [
+      "core_5.5",
+      "core_6.2.3.1"
+    ],
+    "referenced_by": [
+      "core_4.14.1.2",
+      "core_4.14.2.6",
+      "core_5.5",
+      "core_6.2.1",
+      "core_6.3.1",
+      "core_6.3.2"
+    ]
+  },
+  "core_6.2.3.1": {
+    "references": [
+      "core_11.18.4.7",
+      "core_6.2.4",
+      "core_6.3.2"
+    ],
+    "referenced_by": [
+      "core_6.2.2",
+      "core_6.2.3"
+    ]
+  },
+  "core_6.2.4": {
+    "references": [
+      "core_11.23.9"
+    ],
+    "referenced_by": [
+      "core_5.5",
+      "core_6.2.3.1"
+    ]
+  },
+  "core_6.2.4.1": {
+    "references": [
+      "core_5.3.3",
+      "core_6.3"
+    ],
+    "referenced_by": [
+      "core_6.2.4.2"
+    ]
+  },
+  "core_6.2.4.2": {
+    "references": [
+      "core_6.2.4.1"
+    ],
+    "referenced_by": [
+      "core_5.5"
+    ]
+  },
+  "core_6.3": {
+    "references": [],
+    "referenced_by": [
+      "core_11.18.4.7",
+      "core_6.2.4.1"
+    ]
+  },
+  "core_6.3.1": {
+    "references": [
+      "core_4.3.1.3",
+      "core_6.2.3"
+    ],
+    "referenced_by": []
+  },
+  "core_6.3.2": {
+    "references": [
+      "core_11.23",
+      "core_6.2.3"
+    ],
+    "referenced_by": [
+      "core_11.18.4.7",
+      "core_11.23.7.7",
+      "core_6.2.3.1"
+    ]
+  },
+  "core_6.4": {
+    "references": [],
+    "referenced_by": [
+      "core_11.10.7.6",
+      "core_2.6",
+      "core_2.8"
+    ]
+  },
+  "core_6.4.10": {
+    "references": [],
+    "referenced_by": [
+      "core_11.18.4.5",
+      "core_11.18.6.15",
+      "core_12.2.5",
+      "core_12.2.5.3"
+    ]
+  },
+  "core_6.4.10.1": {
+    "references": [
+      "core_6.4.10.3"
+    ],
+    "referenced_by": [
+      "core_11.18.6.16",
+      "core_6.4.10.3"
+    ]
+  },
+  "core_6.4.10.2": {
+    "references": [
+      "core_6.4.10.3"
+    ],
+    "referenced_by": [
+      "core_6.4.10.3"
+    ]
+  },
+  "core_6.4.10.3": {
+    "references": [
+      "core_6.4.10.1",
+      "core_6.4.10.2"
+    ],
+    "referenced_by": [
+      "core_6.4.10.1",
+      "core_6.4.10.2"
+    ]
+  },
+  "core_6.4.11": {
+    "references": [],
+    "referenced_by": [
+      "core_13.4"
+    ]
+  },
+  "core_6.4.3": {
+    "references": [
+      "core_4.4",
+      "core_9.10"
+    ],
+    "referenced_by": [
+      "core_13.4"
+    ]
+  },
+  "core_6.4.5": {
+    "references": [],
+    "referenced_by": [
+      "core_3.5.6.1"
+    ]
+  },
+  "core_6.4.5.1": {
+    "references": [],
+    "referenced_by": [
+      "core_11.18.6.7"
+    ]
+  },
+  "core_6.4.5.2": {
+    "references": [],
+    "referenced_by": [
+      "core_11.23.5"
+    ]
+  },
+  "core_6.4.5.3": {
+    "references": [],
+    "referenced_by": [
+      "core_11.18.4.5",
+      "core_11.23.5"
+    ]
+  },
+  "core_6.4.6.1": {
+    "references": [
+      "core_11.18.4.9",
+      "core_11.18.6.5",
+      "core_4.2"
+    ],
+    "referenced_by": [
+      "core_11.10.7.2",
+      "core_11.18.4.9"
+    ]
+  },
+  "core_6.5": {
+    "references": [],
+    "referenced_by": [
+      "core_2.6",
+      "core_3.7.1",
+      "core_3.7.2",
+      "core_6.1.1"
+    ]
+  },
+  "core_6.5.11.4": {
+    "references": [
+      "core_6.1.2"
+    ],
+    "referenced_by": [
+      "core_6.1.2"
+    ]
+  },
+  "core_6.5.11.5": {
+    "references": [
+      "core_6.1.2"
+    ],
+    "referenced_by": [
+      "core_6.1.2"
+    ]
+  },
+  "core_6.5.13": {
+    "references": [
+      "core_3.5.3"
+    ],
+    "referenced_by": []
+  },
+  "core_6.5.14": {
+    "references": [
+      "core_6.5.6.3"
+    ],
+    "referenced_by": []
+  },
+  "core_6.5.5": {
+    "references": [
+      "core_3.5.3"
+    ],
+    "referenced_by": []
+  },
+  "core_6.5.6": {
+    "references": [
+      "core_6.5.6.1"
+    ],
+    "referenced_by": []
+  },
+  "core_6.5.6.1": {
+    "references": [
+      "core_6.1.1"
+    ],
+    "referenced_by": [
+      "core_6.5.6"
+    ]
+  },
+  "core_6.5.6.3": {
+    "references": [
+      "core_2.5.1",
+      "core_6.1.1"
+    ],
+    "referenced_by": [
+      "core_6.5.14"
+    ]
+  },
+  "core_6.5.6.4": {
+    "references": [
+      "core_6.1.1"
+    ],
+    "referenced_by": []
+  },
+  "core_6.6.2": {
+    "references": [
+      "core_9.10.5.2"
+    ],
+    "referenced_by": [
+      "core_6.6.6.1.1",
+      "core_6.6.6.1.2",
+      "core_9.10.4.2",
+      "core_9.10.6.8",
+      "core_9.10.6.9"
+    ]
+  },
+  "core_6.6.2.1": {
+    "references": [
+      "core_6.6.2.9"
+    ],
+    "referenced_by": []
+  },
+  "core_6.6.2.1.1": {
+    "references": [],
+    "referenced_by": [
+      "core_2.5.5.4"
+    ]
+  },
+  "core_6.6.2.1.2": {
+    "references": [
+      "core_12.2.4.1",
+      "core_12.2.4.2"
+    ],
+    "referenced_by": [
+      "core_2.5.5.5"
+    ]
+  },
+  "core_6.6.2.10": {
+    "references": [
+      "core_6.6.6.1.3"
+    ],
+    "referenced_by": []
+  },
+  "core_6.6.2.5": {
+    "references": [
+      "core_6.6.6.1.3"
+    ],
+    "referenced_by": []
+  },
+  "core_6.6.2.9": {
+    "references": [],
+    "referenced_by": [
+      "core_11.10.7.2",
+      "core_11.10.7.6",
+      "core_6.6.2.1",
+      "core_9.10.5.7"
+    ]
+  },
+  "core_6.6.3": {
+    "references": [],
+    "referenced_by": [
+      "core_13.4"
+    ]
+  },
+  "core_6.6.5": {
+    "references": [
+      "core_11.18.6.8"
+    ],
+    "referenced_by": []
+  },
+  "core_6.6.6.1.1": {
+    "references": [
+      "core_6.6.2"
+    ],
+    "referenced_by": []
+  },
+  "core_6.6.6.1.2": {
+    "references": [
+      "core_6.6.2"
+    ],
+    "referenced_by": []
+  },
+  "core_6.6.6.1.3": {
+    "references": [
+      "core_6.6.6.3"
+    ],
+    "referenced_by": [
+      "core_6.6.2.10",
+      "core_6.6.2.5"
+    ]
+  },
+  "core_6.6.6.2": {
+    "references": [
+      "core_6.6.6.3",
+      "core_9.10.5.2"
+    ],
+    "referenced_by": []
+  },
+  "core_6.6.6.3": {
+    "references": [],
+    "referenced_by": [
+      "core_6.6.6.1.3",
+      "core_6.6.6.2"
+    ]
+  },
+  "core_7.1.1": {
+    "references": [],
+    "referenced_by": [
+      "core_11.1.5.1"
+    ]
+  },
+  "core_7.10.1": {
+    "references": [],
+    "referenced_by": [
+      "core_7.10.6"
+    ]
+  },
+  "core_7.10.2": {
+    "references": [
+      "core_7.13.2"
+    ],
+    "referenced_by": []
+  },
+  "core_7.10.6": {
+    "references": [
+      "core_7.10.1"
+    ],
+    "referenced_by": []
+  },
+  "core_7.11.1": {
+    "references": [
+      "core_7.18.3.3",
+      "core_7.18.4",
+      "core_7.3",
+      "core_7.7"
+    ],
+    "referenced_by": []
+  },
+  "core_7.12.1": {
+    "references": [],
+    "referenced_by": [
+      "core_13.4"
+    ]
+  },
+  "core_7.13.2": {
+    "references": [
+      "core_7.3.16"
+    ],
+    "referenced_by": [
+      "core_7.10.2"
+    ]
+  },
+  "core_7.13.6": {
+    "references": [],
+    "referenced_by": [
+      "core_12.2.5"
+    ]
+  },
+  "core_7.13.7": {
+    "references": [
+      "core_7.15.6"
+    ],
+    "referenced_by": []
+  },
+  "core_7.13.8": {
+    "references": [
+      "core_7.15.7"
+    ],
+    "referenced_by": []
+  },
+  "core_7.14": {
+    "references": [],
+    "referenced_by": [
+      "core_13.4",
+      "core_8.2.1.9"
+    ]
+  },
+  "core_7.15.6": {
+    "references": [],
+    "referenced_by": [
+      "core_7.13.7",
+      "core_7.15.7.1",
+      "core_7.15.7.2",
+      "core_7.15.7.3"
+    ]
+  },
+  "core_7.15.7": {
+    "references": [],
+    "referenced_by": [
+      "core_7.13.8"
+    ]
+  },
+  "core_7.15.7.1": {
+    "references": [
+      "core_7.15.6"
+    ],
+    "referenced_by": []
+  },
+  "core_7.15.7.2": {
+    "references": [
+      "core_7.15.6"
+    ],
+    "referenced_by": []
+  },
+  "core_7.15.7.3": {
+    "references": [
+      "core_7.15.6"
+    ],
+    "referenced_by": []
+  },
+  "core_7.16": {
+    "references": [
+      "core_9.2.6"
+    ],
+    "referenced_by": []
+  },
+  "core_7.16.5": {
+    "references": [],
+    "referenced_by": [
+      "core_5.2.2.2.3"
+    ]
+  },
+  "core_7.18.3.3": {
+    "references": [],
+    "referenced_by": [
+      "core_7.11.1"
+    ]
+  },
+  "core_7.18.4": {
+    "references": [],
+    "referenced_by": [
+      "core_7.11.1"
+    ]
+  },
+  "core_7.19.1.8": {
+    "references": [
+      "core_7.6.4"
+    ],
+    "referenced_by": []
+  },
+  "core_7.19.2.18": {
+    "references": [],
+    "referenced_by": [
+      "core_7.19.2.55"
+    ]
+  },
+  "core_7.19.2.23": {
+    "references": [],
+    "referenced_by": [
+      "core_11.18.6.12"
+    ]
+  },
+  "core_7.19.2.46": {
+    "references": [
+      "core_9.5.6.5"
+    ],
+    "referenced_by": []
+  },
+  "core_7.19.2.55": {
+    "references": [
+      "core_7.19.2.18",
+      "core_7.19.2.56"
+    ],
+    "referenced_by": [
+      "core_7.19.2.56"
+    ]
+  },
+  "core_7.19.2.56": {
+    "references": [
+      "core_7.19.2.55"
+    ],
+    "referenced_by": [
+      "core_7.19.2.55"
+    ]
+  },
+  "core_7.3": {
+    "references": [],
+    "referenced_by": [
+      "core_7.11.1",
+      "core_9.2.6"
+    ]
+  },
+  "core_7.3.1": {
+    "references": [
+      "core_7.3.13"
+    ],
+    "referenced_by": []
+  },
+  "core_7.3.13": {
+    "references": [],
+    "referenced_by": [
+      "core_7.3.1"
+    ]
+  },
+  "core_7.3.16": {
+    "references": [],
+    "referenced_by": [
+      "core_7.13.2"
+    ]
+  },
+  "core_7.5": {
+    "references": [],
+    "referenced_by": [
+      "core_2.5.1"
+    ]
+  },
+  "core_7.5.3": {
+    "references": [],
+    "referenced_by": [
+      "core_7.6.5"
+    ]
+  },
+  "core_7.6.4": {
+    "references": [],
+    "referenced_by": [
+      "core_7.19.1.8"
+    ]
+  },
+  "core_7.6.5": {
+    "references": [
+      "core_7.5.3"
+    ],
+    "referenced_by": []
+  },
+  "core_7.7": {
+    "references": [],
+    "referenced_by": [
+      "core_7.11.1"
+    ]
+  },
+  "core_8.1.1": {
+    "references": [],
+    "referenced_by": [
+      "core_4.13.1"
+    ]
+  },
+  "core_8.10": {
+    "references": [],
+    "referenced_by": [
+      "core_8.9.5.4"
+    ]
+  },
+  "core_8.2.1.9": {
+    "references": [
+      "core_7.14"
+    ],
+    "referenced_by": []
+  },
+  "core_8.2.5": {
+    "references": [],
+    "referenced_by": [
+      "core_8.3.1",
+      "core_8.4.2",
+      "core_8.4.3",
+      "core_8.5.2",
+      "core_8.5.3",
+      "core_8.7.2",
+      "core_8.7.3",
+      "core_8.8.2",
+      "core_8.8.3"
+    ]
+  },
+  "core_8.2.5.1": {
+    "references": [],
+    "referenced_by": [
+      "core_10.2.2"
+    ]
+  },
+  "core_8.3.1": {
+    "references": [
+      "core_8.2.5"
+    ],
+    "referenced_by": []
+  },
+  "core_8.4": {
+    "references": [],
+    "referenced_by": [
+      "core_3.1"
+    ]
+  },
+  "core_8.4.1": {
+    "references": [],
+    "referenced_by": [
+      "core_4.23.1"
+    ]
+  },
+  "core_8.4.2": {
+    "references": [
+      "core_8.2.5"
+    ],
+    "referenced_by": [
+      "core_4.23.1"
+    ]
+  },
+  "core_8.4.3": {
+    "references": [
+      "core_8.2.5"
+    ],
+    "referenced_by": []
+  },
+  "core_8.5": {
+    "references": [],
+    "referenced_by": [
+      "core_8.5.2.2",
+      "core_8.5.3",
+      "core_8.6"
+    ]
+  },
+  "core_8.5.1": {
+    "references": [],
+    "referenced_by": [
+      "core_11.1.4.4"
+    ]
+  },
+  "core_8.5.2": {
+    "references": [
+      "core_8.2.5"
+    ],
+    "referenced_by": []
+  },
+  "core_8.5.2.2": {
+    "references": [
+      "core_8.5"
+    ],
+    "referenced_by": []
+  },
+  "core_8.5.3": {
+    "references": [
+      "core_8.2.5",
+      "core_8.5"
+    ],
+    "referenced_by": []
+  },
+  "core_8.6": {
+    "references": [
+      "core_8.5"
+    ],
+    "referenced_by": []
+  },
+  "core_8.7.2": {
+    "references": [
+      "core_8.2.5"
+    ],
+    "referenced_by": []
+  },
+  "core_8.7.3": {
+    "references": [
+      "core_8.2.5"
+    ],
+    "referenced_by": []
+  },
+  "core_8.8.2": {
+    "references": [
+      "core_8.2.5"
+    ],
+    "referenced_by": [
+      "core_11.1.5.23"
+    ]
+  },
+  "core_8.8.2.2": {
+    "references": [
+      "core_11.1.5.23"
+    ],
+    "referenced_by": []
+  },
+  "core_8.8.2.3": {
+    "references": [
+      "core_11.1.5.23"
+    ],
+    "referenced_by": []
+  },
+  "core_8.8.3": {
+    "references": [
+      "core_8.2.5"
+    ],
+    "referenced_by": []
+  },
+  "core_8.9.5.4": {
+    "references": [
+      "core_8.10"
+    ],
+    "referenced_by": []
+  },
+  "core_9.10": {
+    "references": [],
+    "referenced_by": [
+      "core_11.10.7.6",
+      "core_13.5",
+      "core_5.5",
+      "core_6.4.3",
+      "core_9.12.9"
+    ]
+  },
+  "core_9.10.4.2": {
+    "references": [
+      "core_6.6.2",
+      "core_9.10.8.1"
+    ],
+    "referenced_by": [
+      "core_5.5"
+    ]
+  },
+  "core_9.10.5.10": {
+    "references": [],
+    "referenced_by": [
+      "core_9.10.5.9"
+    ]
+  },
+  "core_9.10.5.2": {
+    "references": [],
+    "referenced_by": [
+      "core_6.6.2",
+      "core_6.6.6.2"
+    ]
+  },
+  "core_9.10.5.7": {
+    "references": [
+      "core_6.6.2.9"
+    ],
+    "referenced_by": []
+  },
+  "core_9.10.5.9": {
+    "references": [
+      "core_9.10.5.10"
+    ],
+    "referenced_by": []
+  },
+  "core_9.10.6.1": {
+    "references": [
+      "core_11.18.6.8"
+    ],
+    "referenced_by": []
+  },
+  "core_9.10.6.3": {
+    "references": [
+      "core_2.11.1.1"
+    ],
+    "referenced_by": []
+  },
+  "core_9.10.6.8": {
+    "references": [
+      "core_6.6.2"
+    ],
+    "referenced_by": []
+  },
+  "core_9.10.6.9": {
+    "references": [
+      "core_6.6.2"
+    ],
+    "referenced_by": []
+  },
+  "core_9.10.8.1": {
+    "references": [],
+    "referenced_by": [
+      "core_9.10.4.2"
+    ]
+  },
+  "core_9.10.9.3": {
+    "references": [
+      "core_3.4"
+    ],
+    "referenced_by": []
+  },
+  "core_9.12.10": {
+    "references": [
+      "core_11.20",
+      "core_11.23"
+    ],
+    "referenced_by": []
+  },
+  "core_9.12.11": {
+    "references": [],
+    "referenced_by": [
+      "core_9.12.6"
+    ]
+  },
+  "core_9.12.2": {
+    "references": [
+      "core_9.12.2.3"
+    ],
+    "referenced_by": []
+  },
+  "core_9.12.2.3": {
+    "references": [],
+    "referenced_by": [
+      "core_9.12.2"
+    ]
+  },
+  "core_9.12.5": {
+    "references": [
+      "core_11.1",
+      "core_11.1.5.24",
+      "core_9.13"
+    ],
+    "referenced_by": []
+  },
+  "core_9.12.6": {
+    "references": [
+      "core_11.1.5.24",
+      "core_9.12.11"
+    ],
+    "referenced_by": []
+  },
+  "core_9.12.9": {
+    "references": [
+      "core_9.10"
+    ],
+    "referenced_by": []
+  },
+  "core_9.13": {
+    "references": [],
+    "referenced_by": [
+      "core_9.12.5"
+    ]
+  },
+  "core_9.13.5.4": {
+    "references": [
+      "core_9.2.11"
+    ],
+    "referenced_by": []
+  },
+  "core_9.14.4.2": {
+    "references": [
+      "core_9.14.8.1",
+      "core_9.14.8.2",
+      "core_9.14.8.3",
+      "core_9.14.8.4"
+    ],
+    "referenced_by": []
+  },
+  "core_9.14.6.12": {
+    "references": [
+      "core_9.14.8.4",
+      "core_9.14.8.6"
+    ],
+    "referenced_by": []
+  },
+  "core_9.14.8.1": {
+    "references": [],
+    "referenced_by": [
+      "core_9.14.4.2"
+    ]
+  },
+  "core_9.14.8.2": {
+    "references": [],
+    "referenced_by": [
+      "core_9.14.4.2"
+    ]
+  },
+  "core_9.14.8.3": {
+    "references": [],
+    "referenced_by": [
+      "core_9.14.4.2"
+    ]
+  },
+  "core_9.14.8.4": {
+    "references": [],
+    "referenced_by": [
+      "core_9.14.4.2",
+      "core_9.14.6.12"
+    ]
+  },
+  "core_9.14.8.6": {
+    "references": [],
+    "referenced_by": [
+      "core_9.14.6.12"
+    ]
+  },
+  "core_9.15": {
+    "references": [],
+    "referenced_by": [
+      "core_2.9"
+    ]
+  },
+  "core_9.16.6.7": {
+    "references": [
+      "core_11.23.6.16"
+    ],
+    "referenced_by": []
+  },
+  "core_9.2": {
+    "references": [],
+    "referenced_by": [
+      "core_11.9.8.1",
+      "core_9.2.6"
+    ]
+  },
+  "core_9.2.1": {
+    "references": [
+      "core_9.2.12"
+    ],
+    "referenced_by": []
+  },
+  "core_9.2.10": {
+    "references": [
+      "core_10"
+    ],
+    "referenced_by": []
+  },
+  "core_9.2.11": {
+    "references": [],
+    "referenced_by": [
+      "core_9.13.5.4"
+    ]
+  },
+  "core_9.2.12": {
+    "references": [],
+    "referenced_by": [
+      "core_9.2.1"
+    ]
+  },
+  "core_9.2.6": {
+    "references": [
+      "core_7.3",
+      "core_9.2"
+    ],
+    "referenced_by": [
+      "core_7.16"
+    ]
+  },
+  "core_9.5.5.1": {
+    "references": [],
+    "referenced_by": [
+      "core_9.5.6.1"
+    ]
+  },
+  "core_9.5.6.1": {
+    "references": [
+      "core_9.5.5.1"
+    ],
+    "referenced_by": []
+  },
+  "core_9.5.6.5": {
+    "references": [],
+    "referenced_by": [
+      "core_7.19.2.46"
+    ]
+  },
+  "core_9.6.1": {
+    "references": [],
+    "referenced_by": [
+      "core_G"
+    ]
+  },
+  "core_G": {
+    "references": [
+      "core_11.18.5",
+      "core_14.3.3",
+      "core_2.11.1.2",
+      "core_2.11.2.1",
+      "core_2.11.2.2",
+      "core_4.14.2.8",
+      "core_4.18.2",
+      "core_4.2.2",
+      "core_9.6.1"
+    ],
+    "referenced_by": []
+  }
+}

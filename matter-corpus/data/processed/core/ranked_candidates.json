@@ -1,0 +1,821 @@
+[
+  {
+    "id": "core_11.10.7.2",
+    "title": "ArmFailSafe Command",
+    "word_count": 1238,
+    "raw_score": 338.5,
+    "density_score": 27.34,
+    "dependency_bonus": 7.5,
+    "final_score": 159.31
+  },
+  {
+    "id": "core_4.20.3.8",
+    "title": "Packet Acknowledgements",
+    "word_count": 754,
+    "raw_score": 262.0,
+    "density_score": 34.75,
+    "dependency_bonus": 1.5,
+    "final_score": 127.15
+  },
+  {
+    "id": "core_4.19.4.8",
+    "title": "Packet Acknowledgements",
+    "word_count": 604,
+    "raw_score": 221.5,
+    "density_score": 36.67,
+    "dependency_bonus": 1.5,
+    "final_score": 112.1
+  },
+  {
+    "id": "core_5.5",
+    "title": "Commissioning Flows",
+    "word_count": 3053,
+    "raw_score": 244.0,
+    "density_score": 7.99,
+    "dependency_bonus": 9.5,
+    "final_score": 111.9
+  },
+  {
+    "id": "core_4.14.2.3",
+    "title": "Protocol Details",
+    "word_count": 3769,
+    "raw_score": 195.0,
+    "density_score": 5.17,
+    "dependency_bonus": 0.0,
+    "final_score": 81.1
+  },
+  {
+    "id": "core_8.8.2.3",
+    "title": "Incoming Invoke Request Action",
+    "word_count": 1207,
+    "raw_score": 137.5,
+    "density_score": 11.39,
+    "dependency_bonus": 0.0,
+    "final_score": 61.84
+  },
+  {
+    "id": "core_11.20.6.5",
+    "title": "Commands",
+    "word_count": 2665,
+    "raw_score": 137.5,
+    "density_score": 5.16,
+    "dependency_bonus": 0.0,
+    "final_score": 58.1
+  },
+  {
+    "id": "core_7.11",
+    "title": "Command",
+    "word_count": 444,
+    "raw_score": 101.0,
+    "density_score": 22.75,
+    "dependency_bonus": 0.0,
+    "final_score": 54.05
+  },
+  {
+    "id": "core_4.12.2.1",
+    "title": "Retransmissions",
+    "word_count": 693,
+    "raw_score": 111.0,
+    "density_score": 16.02,
+    "dependency_bonus": 0.0,
+    "final_score": 54.01
+  },
+  {
+    "id": "core_4.12.5.1",
+    "title": "Reliable Message Processing of Outgoing Messages",
+    "word_count": 464,
+    "raw_score": 97.5,
+    "density_score": 21.01,
+    "dependency_bonus": 0.5,
+    "final_score": 52.11
+  },
+  {
+    "id": "core_9.15.1.3",
+    "title": "Check-In Protocol Support",
+    "word_count": 1041,
+    "raw_score": 112.5,
+    "density_score": 10.81,
+    "dependency_bonus": 0.0,
+    "final_score": 51.48
+  },
+  {
+    "id": "core_4.18.5",
+    "title": "Message Counter Synchronization Exchange",
+    "word_count": 871,
+    "raw_score": 101.0,
+    "density_score": 11.6,
+    "dependency_bonus": 1.0,
+    "final_score": 48.36
+  },
+  {
+    "id": "core_11.19.8.1",
+    "title": "OpenCommissioningWindow Command",
+    "word_count": 759,
+    "raw_score": 97.5,
+    "density_score": 12.85,
+    "dependency_bonus": 1.5,
+    "final_score": 48.21
+  },
+  {
+    "id": "core_4.12.5.2",
+    "title": "Reliable Message Processing of Incoming Messages",
+    "word_count": 422,
+    "raw_score": 86.0,
+    "density_score": 20.38,
+    "dependency_bonus": 1.0,
+    "final_score": 47.63
+  },
+  {
+    "id": "core_4.20.3.7",
+    "title": "Receive Windows",
+    "word_count": 528,
+    "raw_score": 92.5,
+    "density_score": 17.52,
+    "dependency_bonus": 0.0,
+    "final_score": 47.51
+  },
+  {
+    "id": "core_4.19.4.7",
+    "title": "Receive Windows",
+    "word_count": 556,
+    "raw_score": 90.5,
+    "density_score": 16.28,
+    "dependency_bonus": 0.0,
+    "final_score": 45.97
+  },
+  {
+    "id": "core_11.18.6.8",
+    "title": "AddNOC Command",
+    "word_count": 1343,
+    "raw_score": 98.5,
+    "density_score": 7.33,
+    "dependency_bonus": 1.5,
+    "final_score": 45.3
+  },
+  {
+    "id": "core_7.15.6.4",
+    "title": "Effect on Receipt",
+    "word_count": 1169,
+    "raw_score": 100.0,
+    "density_score": 8.55,
+    "dependency_bonus": 0.0,
+    "final_score": 45.13
+  },
+  {
+    "id": "core_4.3.1.11",
+    "title": "TXT key for pairing hint (PH)",
+    "word_count": 2455,
+    "raw_score": 104.5,
+    "density_score": 4.26,
+    "dependency_bonus": 0.5,
+    "final_score": 44.85
+  },
+  {
+    "id": "core_11.27.7.1",
+    "title": "JoinGroup Command",
+    "word_count": 1104,
+    "raw_score": 94.5,
+    "density_score": 8.56,
+    "dependency_bonus": 0.0,
+    "final_score": 42.94
+  },
+  {
+    "id": "core_11.10.7.6",
+    "title": "CommissioningComplete Command",
+    "word_count": 523,
+    "raw_score": 70.5,
+    "density_score": 13.48,
+    "dependency_bonus": 2.5,
+    "final_score": 38.79
+  },
+  {
+    "id": "core_4.6.7",
+    "title": "Counter Processing of Incoming Messages",
+    "word_count": 341,
+    "raw_score": 62.5,
+    "density_score": 18.33,
+    "dependency_bonus": 1.0,
+    "final_score": 37.0
+  },
+  {
+    "id": "core_8.4.3.2",
+    "title": "Incoming Read Request and Subscribe Request Action Processing",
+    "word_count": 1329,
+    "raw_score": 83.0,
+    "density_score": 6.25,
+    "dependency_bonus": 0.0,
+    "final_score": 36.95
+  },
+  {
+    "id": "core_4.12.2.2",
+    "title": "Acknowledgements",
+    "word_count": 230,
+    "raw_score": 55.5,
+    "density_score": 24.13,
+    "dependency_bonus": 0.0,
+    "final_score": 36.68
+  },
+  {
+    "id": "core_11.9.7.8",
+    "title": "ConnectNetwork Command",
+    "word_count": 830,
+    "raw_score": 75.5,
+    "density_score": 9.1,
+    "dependency_bonus": 0.5,
+    "final_score": 36.16
+  },
+  {
+    "id": "core_11.2.7.1",
+    "title": "KeySetWrite Command",
+    "word_count": 639,
+    "raw_score": 69.5,
+    "density_score": 10.88,
+    "dependency_bonus": 0.5,
+    "final_score": 34.83
+  },
+  {
+    "id": "core_4.14.1.2",
+    "title": "Protocol Details",
+    "word_count": 1572,
+    "raw_score": 79.0,
+    "density_score": 5.03,
+    "dependency_bonus": 0.0,
+    "final_score": 34.62
+  },
+  {
+    "id": "core_11.19.8.2",
+    "title": "OpenBasicCommissioningWindow Command",
+    "word_count": 309,
+    "raw_score": 56.5,
+    "density_score": 18.28,
+    "dependency_bonus": 1.0,
+    "final_score": 34.57
+  },
+  {
+    "id": "core_11.25.6.3",
+    "title": "AddICAC Command",
+    "word_count": 345,
+    "raw_score": 58.0,
+    "density_score": 16.81,
+    "dependency_bonus": 1.0,
+    "final_score": 34.29
+  },
+  {
+    "id": "core_9.14.6.2",
+    "title": "InstantActionWithTransition Command",
+    "word_count": 148,
+    "raw_score": 42.5,
+    "density_score": 28.72,
+    "dependency_bonus": 0.0,
+    "final_score": 34.23
+  },
+  {
+    "id": "core_12.2.5",
+    "title": "Joint Commissioning Method (JCM)",
+    "word_count": 1516,
+    "raw_score": 76.0,
+    "density_score": 5.01,
+    "dependency_bonus": 0.5,
+    "final_score": 33.91
+  },
+  {
+    "id": "core_4.19.4.3",
+    "title": "Session Establishment",
+    "word_count": 694,
+    "raw_score": 69.5,
+    "density_score": 10.01,
+    "dependency_bonus": 0.0,
+    "final_score": 33.81
+  },
+  {
+    "id": "core_11.20.7.7",
+    "title": "Events",
+    "word_count": 544,
+    "raw_score": 66.0,
+    "density_score": 12.13,
+    "dependency_bonus": 0.0,
+    "final_score": 33.68
+  },
+  {
+    "id": "core_11.18.6.9",
+    "title": "UpdateNOC Command",
+    "word_count": 508,
+    "raw_score": 64.0,
+    "density_score": 12.6,
+    "dependency_bonus": 0.5,
+    "final_score": 33.66
+  },
+  {
+    "id": "core_11.18.6.13",
+    "title": "AddTrustedRootCertificate Command",
+    "word_count": 270,
+    "raw_score": 50.5,
+    "density_score": 18.7,
+    "dependency_bonus": 1.5,
+    "final_score": 32.92
+  },
+  {
+    "id": "core_9.15.1.6",
+    "title": "Long Idle Time (LIT) ICD",
+    "word_count": 1140,
+    "raw_score": 72.5,
+    "density_score": 6.36,
+    "dependency_bonus": 0.0,
+    "final_score": 32.82
+  },
+  {
+    "id": "core_11.24.7.11",
+    "title": "RefreshNode Command",
+    "word_count": 900,
+    "raw_score": 69.0,
+    "density_score": 7.67,
+    "dependency_bonus": 0.5,
+    "final_score": 32.7
+  },
+  {
+    "id": "core_11.18.6.5",
+    "title": "CSRRequest Command",
+    "word_count": 302,
+    "raw_score": 52.0,
+    "density_score": 17.22,
+    "dependency_bonus": 1.0,
+    "final_score": 32.13
+  },
+  {
+    "id": "core_11.25.6.1",
+    "title": "ICACCSRRequest Command",
+    "word_count": 159,
+    "raw_score": 39.5,
+    "density_score": 24.84,
+    "dependency_bonus": 0.5,
+    "final_score": 31.21
+  },
+  {
+    "id": "core_9.16.5.1",
+    "title": "UserActiveModeTriggerBitmap Type",
+    "word_count": 287,
+    "raw_score": 51.0,
+    "density_score": 17.77,
+    "dependency_bonus": 0.0,
+    "final_score": 31.06
+  },
+  {
+    "id": "core_8.8.2",
+    "title": "Invoke Request Action",
+    "word_count": 205,
+    "raw_score": 43.0,
+    "density_score": 20.98,
+    "dependency_bonus": 0.5,
+    "final_score": 30.29
+  },
+  {
+    "id": "core_9.14.7.2",
+    "title": "ActionFailed Event",
+    "word_count": 287,
+    "raw_score": 49.5,
+    "density_score": 17.25,
+    "dependency_bonus": 0.0,
+    "final_score": 30.15
+  },
+  {
+    "id": "core_5.5.1",
+    "title": "Commissioning Flows Error Handling",
+    "word_count": 755,
+    "raw_score": 60.0,
+    "density_score": 7.95,
+    "dependency_bonus": 1.0,
+    "final_score": 29.77
+  },
+  {
+    "id": "core_9.16.7.1",
+    "title": "RegisterClient Command",
+    "word_count": 644,
+    "raw_score": 60.0,
+    "density_score": 9.32,
+    "dependency_bonus": 0.0,
+    "final_score": 29.59
+  },
+  {
+    "id": "core_11.19.8.3",
+    "title": "RevokeCommissioning Command",
+    "word_count": 238,
+    "raw_score": 45.0,
+    "density_score": 18.91,
+    "dependency_bonus": 0.0,
+    "final_score": 29.34
+  },
+  {
+    "id": "core_8.10.1",
+    "title": "Status Code Table",
+    "word_count": 804,
+    "raw_score": 61.5,
+    "density_score": 7.65,
+    "dependency_bonus": 0.0,
+    "final_score": 29.19
+  },
+  {
+    "id": "core_11.20.3.2",
+    "title": "Querying the OTA Provider",
+    "word_count": 1739,
+    "raw_score": 63.0,
+    "density_score": 3.62,
+    "dependency_bonus": 1.5,
+    "final_score": 28.87
+  },
+  {
+    "id": "core_4.20.3.11",
+    "title": "Protocol State Diagrams",
+    "word_count": 104,
+    "raw_score": 29.0,
+    "density_score": 27.88,
+    "dependency_bonus": 0.5,
+    "final_score": 28.83
+  },
+  {
+    "id": "core_11.20.7.4",
+    "title": "Data Types",
+    "word_count": 964,
+    "raw_score": 61.0,
+    "density_score": 6.33,
+    "dependency_bonus": 0.0,
+    "final_score": 28.2
+  },
+  {
+    "id": "core_9.13.6.1",
+    "title": "KeepActive Command",
+    "word_count": 456,
+    "raw_score": 52.5,
+    "density_score": 11.51,
+    "dependency_bonus": 0.0,
+    "final_score": 27.91
+  },
+  {
+    "id": "core_4.19.4.11",
+    "title": "Protocol State Diagrams",
+    "word_count": 164,
+    "raw_score": 35.5,
+    "density_score": 21.65,
+    "dependency_bonus": 0.5,
+    "final_score": 27.69
+  },
+  {
+    "id": "core_9.10.9.3",
+    "title": "FabricRestrictionReviewUpdate Event",
+    "word_count": 1561,
+    "raw_score": 63.0,
+    "density_score": 4.04,
+    "dependency_bonus": 0.0,
+    "final_score": 27.62
+  },
+  {
+    "id": "core_9.16.7.3",
+    "title": "UnregisterClient Command",
+    "word_count": 598,
+    "raw_score": 55.0,
+    "density_score": 9.2,
+    "dependency_bonus": 0.0,
+    "final_score": 27.52
+  },
+  {
+    "id": "core_5.9.3",
+    "title": "Network Recovery Flow",
+    "word_count": 1067,
+    "raw_score": 60.0,
+    "density_score": 5.62,
+    "dependency_bonus": 0.0,
+    "final_score": 27.37
+  },
+  {
+    "id": "core_4.6.5.1",
+    "title": "Message Reception State",
+    "word_count": 363,
+    "raw_score": 45.5,
+    "density_score": 12.53,
+    "dependency_bonus": 1.5,
+    "final_score": 27.22
+  },
+  {
+    "id": "core_11.9.8.3",
+    "title": "Connectivity management during commissioning or administration",
+    "word_count": 471,
+    "raw_score": 51.5,
+    "density_score": 10.93,
+    "dependency_bonus": 0.0,
+    "final_score": 27.16
+  },
+  {
+    "id": "core_4.19.4.6",
+    "title": "Sequence Numbers",
+    "word_count": 209,
+    "raw_score": 38.5,
+    "density_score": 18.42,
+    "dependency_bonus": 0.5,
+    "final_score": 26.95
+  },
+  {
+    "id": "core_4.20.3.6",
+    "title": "Sequence Numbers",
+    "word_count": 212,
+    "raw_score": 38.5,
+    "density_score": 18.16,
+    "dependency_bonus": 0.5,
+    "final_score": 26.8
+  },
+  {
+    "id": "core_11.12.7.1",
+    "title": "TestEventTrigger Command",
+    "word_count": 415,
+    "raw_score": 48.0,
+    "density_score": 11.57,
+    "dependency_bonus": 0.5,
+    "final_score": 26.64
+  },
+  {
+    "id": "core_4.12.6.1",
+    "title": "Retransmission Table",
+    "word_count": 114,
+    "raw_score": 28.5,
+    "density_score": 25.0,
+    "dependency_bonus": 0.0,
+    "final_score": 26.4
+  },
+  {
+    "id": "core_8.5",
+    "title": "Subscribe Interaction",
+    "word_count": 818,
+    "raw_score": 50.5,
+    "density_score": 6.17,
+    "dependency_bonus": 1.5,
+    "final_score": 25.4
+  },
+  {
+    "id": "core_4.17.3.5",
+    "title": "Epoch Key Rotation logic",
+    "word_count": 395,
+    "raw_score": 45.0,
+    "density_score": 11.39,
+    "dependency_bonus": 0.0,
+    "final_score": 24.84
+  },
+  {
+    "id": "core_11.11.5.1",
+    "title": "RetrieveLogsRequest Command",
+    "word_count": 499,
+    "raw_score": 47.5,
+    "density_score": 9.52,
+    "dependency_bonus": 0.0,
+    "final_score": 24.71
+  },
+  {
+    "id": "core_4.21.4.2",
+    "title": "TRANSPORT command",
+    "word_count": 404,
+    "raw_score": 45.0,
+    "density_score": 11.14,
+    "dependency_bonus": 0.0,
+    "final_score": 24.68
+  },
+  {
+    "id": "core_11.9.7.1",
+    "title": "ScanNetworks Command",
+    "word_count": 523,
+    "raw_score": 45.5,
+    "density_score": 8.7,
+    "dependency_bonus": 1.0,
+    "final_score": 24.42
+  },
+  {
+    "id": "core_11.20.3.6",
+    "title": "Applying a software update",
+    "word_count": 1031,
+    "raw_score": 49.0,
+    "density_score": 4.75,
+    "dependency_bonus": 1.5,
+    "final_score": 23.95
+  },
+  {
+    "id": "core_8.2.1.9",
+    "title": "Event Path",
+    "word_count": 85,
+    "raw_score": 21.5,
+    "density_score": 25.29,
+    "dependency_bonus": 0.0,
+    "final_score": 23.78
+  },
+  {
+    "id": "core_4.20.3.5",
+    "title": "Message Segmentation and Reassembly",
+    "word_count": 649,
+    "raw_score": 48.0,
+    "density_score": 7.4,
+    "dependency_bonus": 0.0,
+    "final_score": 23.64
+  },
+  {
+    "id": "core_11.18.6.14",
+    "title": "SetVIDVerificationStatement Command",
+    "word_count": 471,
+    "raw_score": 44.0,
+    "density_score": 9.34,
+    "dependency_bonus": 0.0,
+    "final_score": 23.21
+  },
+  {
+    "id": "core_4.18.2",
+    "title": "Group Peer State",
+    "word_count": 336,
+    "raw_score": 38.5,
+    "density_score": 11.46,
+    "dependency_bonus": 0.5,
+    "final_score": 22.77
+  },
+  {
+    "id": "core_4.23.3.1",
+    "title": "Advertisement from Commissionee",
+    "word_count": 236,
+    "raw_score": 34.0,
+    "density_score": 14.41,
+    "dependency_bonus": 0.5,
+    "final_score": 22.74
+  },
+  {
+    "id": "core_4.12.1",
+    "title": "Reliable Messaging Header Fields",
+    "word_count": 128,
+    "raw_score": 26.0,
+    "density_score": 20.31,
+    "dependency_bonus": 0.0,
+    "final_score": 22.59
+  },
+  {
+    "id": "core_11.18.6.7",
+    "title": "AddNOC and UpdateNOC Commands Overview",
+    "word_count": 561,
+    "raw_score": 44.5,
+    "density_score": 7.93,
+    "dependency_bonus": 0.0,
+    "final_score": 22.56
+  },
+  {
+    "id": "core_11.19.7.1",
+    "title": "WindowStatus Attribute",
+    "word_count": 68,
+    "raw_score": 17.5,
+    "density_score": 25.74,
+    "dependency_bonus": 0.0,
+    "final_score": 22.44
+  },
+  {
+    "id": "core_4.12.7.1",
+    "title": "MRP Standalone Acknowledgement",
+    "word_count": 77,
+    "raw_score": 19.0,
+    "density_score": 24.68,
+    "dependency_bonus": 0.0,
+    "final_score": 22.41
+  },
+  {
+    "id": "core_4.18.3.2",
+    "title": "MsgCounterSyncRsp - Message Counter Synchronization Response",
+    "word_count": 106,
+    "raw_score": 23.0,
+    "density_score": 21.7,
+    "dependency_bonus": 0.0,
+    "final_score": 22.22
+  },
+  {
+    "id": "core_4.20.3.3",
+    "title": "Session Establishment",
+    "word_count": 372,
+    "raw_score": 39.5,
+    "density_score": 10.62,
+    "dependency_bonus": 0.0,
+    "final_score": 22.17
+  },
+  {
+    "id": "core_11.27.7.4",
+    "title": "UpdateGroupKey Command",
+    "word_count": 413,
+    "raw_score": 40.5,
+    "density_score": 9.81,
+    "dependency_bonus": 0.0,
+    "final_score": 22.08
+  },
+  {
+    "id": "core_4.19.4.5",
+    "title": "Message Segmentation and Reassembly",
+    "word_count": 634,
+    "raw_score": 44.0,
+    "density_score": 6.94,
+    "dependency_bonus": 0.0,
+    "final_score": 21.76
+  },
+  {
+    "id": "core_4.8.2",
+    "title": "Security Processing of Outgoing Messages",
+    "word_count": 517,
+    "raw_score": 38.0,
+    "density_score": 7.35,
+    "dependency_bonus": 2.0,
+    "final_score": 21.61
+  },
+  {
+    "id": "core_11.23.9.6",
+    "title": "CRLSignerCertificate",
+    "word_count": 897,
+    "raw_score": 45.0,
+    "density_score": 5.02,
+    "dependency_bonus": 0.5,
+    "final_score": 21.51
+  },
+  {
+    "id": "core_4.12.6.2",
+    "title": "Acknowledgement Table",
+    "word_count": 141,
+    "raw_score": 26.0,
+    "density_score": 18.44,
+    "dependency_bonus": 0.0,
+    "final_score": 21.46
+  },
+  {
+    "id": "core_14.5.7.1",
+    "title": "ProvisionEndpoint Command",
+    "word_count": 667,
+    "raw_score": 43.5,
+    "density_score": 6.52,
+    "dependency_bonus": 0.0,
+    "final_score": 21.31
+  },
+  {
+    "id": "core_4.6.5",
+    "title": "Replay Prevention and Duplicate Message Detection",
+    "word_count": 148,
+    "raw_score": 25.5,
+    "density_score": 17.23,
+    "dependency_bonus": 0.5,
+    "final_score": 21.04
+  },
+  {
+    "id": "core_4.10.5.3",
+    "title": "Closing an Exchange",
+    "word_count": 137,
+    "raw_score": 24.5,
+    "density_score": 17.88,
+    "dependency_bonus": 0.5,
+    "final_score": 21.03
+  },
+  {
+    "id": "core_4.7.2",
+    "title": "Message Reception",
+    "word_count": 299,
+    "raw_score": 31.5,
+    "density_score": 10.54,
+    "dependency_bonus": 2.0,
+    "final_score": 20.92
+  },
+  {
+    "id": "core_7.6.3",
+    "title": "Invoke Access",
+    "word_count": 50,
+    "raw_score": 13.0,
+    "density_score": 26.0,
+    "dependency_bonus": 0.0,
+    "final_score": 20.8
+  },
+  {
+    "id": "core_4.8.3",
+    "title": "Security Processing of Incoming Messages",
+    "word_count": 318,
+    "raw_score": 32.5,
+    "density_score": 10.22,
+    "dependency_bonus": 1.5,
+    "final_score": 20.63
+  },
+  {
+    "id": "core_11.20.3.5",
+    "title": "Transfer of OTA Software Update images",
+    "word_count": 1598,
+    "raw_score": 44.0,
+    "density_score": 2.75,
+    "dependency_bonus": 1.0,
+    "final_score": 20.25
+  },
+  {
+    "id": "core_9.14.6",
+    "title": "Commands",
+    "word_count": 414,
+    "raw_score": 37.0,
+    "density_score": 8.94,
+    "dependency_bonus": 0.0,
+    "final_score": 20.16
+  },
+  {
+    "id": "core_4.21.4.3",
+    "title": "GET RESPONSE command",
+    "word_count": 182,
+    "raw_score": 27.5,
+    "density_score": 15.11,
+    "dependency_bonus": 0.0,
+    "final_score": 20.07
+  }
+]

@@ -1,0 +1,183 @@
+\documentclass{beamer}
+
+\usepackage{booktabs}
+\usepackage{array}
+
+\title{Formal Modeling of the Matter Spec:\\Compositional State-Space Decomposition}
+\subtitle{Progress Update}
+\author{}
+\date{\today}
+
+\begin{document}
+
+\frame{\titlepage}
+
+% ------------------------------------------------------------
+\begin{frame}{Context \& Goal}
+\begin{itemize}
+  \item Pipeline: Matter spec PDF $\rightarrow$ structured corpus $\rightarrow$
+        91 ranked candidate sections $\rightarrow$ TLA+ models $\rightarrow$ TLC checking
+  \item Existing reference artifact: \texttt{ArmFailSafe.tla}
+        (\texttt{core\_11.10.7.2}), hand-built, single section
+  \item \textbf{Today's goal:} model more sections without TLC running out
+        of memory as models get larger
+\end{itemize}
+\end{frame}
+
+% ------------------------------------------------------------
+\begin{frame}{The Proposed Method — and Why It Was Unsound}
+\begin{itemize}
+  \item A guide proposed adapting a real paper's decomposition method
+        (WCDCAnalyzer, NDSS 2026) to avoid state-space explosion
+  \item Citations checked out as real, but the \emph{technique} did not
+        match the paper:
+  \begin{itemize}
+    \item Guide: fix one ``representative value'' at a phase boundary
+          (e.g.\ one expiry value out of many possible ones)
+    \item Paper: treats handed-off values symbolically/exhaustively,
+          under a precondition (disjoint cryptographic primitives) that
+          does not even apply to our non-cryptographic models
+  \end{itemize}
+  \item \textbf{Conclusion:} the guide's shortcut is unsound sampling —
+        a bug at an untested value would simply never be found
+\end{itemize}
+\end{frame}
+
+% ------------------------------------------------------------
+\begin{frame}{Our Corrected Method}
+\begin{itemize}
+  \item Any handed-off variable must range over its \textbf{full domain}
+        at a phase boundary — never a fixed sample
+  \item Scope: model the 91 already-ranked candidate sections, not the
+        full 1335-page spec, not arbitrary hand-picked clusters
+  \item Use the corpus's existing cross-reference tool
+        (\texttt{DependencyGraph.closure()}) to compose genuinely related
+        sections together, instead of treating each in isolation
+\end{itemize}
+\end{frame}
+
+% ------------------------------------------------------------
+\begin{frame}{Pilot Section: Problems Faced \& Fixed}
+\texttt{core\_4.20.3.8} — Packet Acknowledgements
+\vspace{0.3cm}
+\begin{center}
+\small
+\begin{tabular}{p{4.6cm}p{5.6cm}}
+\toprule
+\textbf{Problem} & \textbf{Fix} \\
+\midrule
+Ack outcome split into 3 separate injectable events & Merged into one event; outcome derived from state \\
+\addlinespace
+Helper action reachable at an impossible time & Removed from the event queue entirely \\
+\addlinespace
+Automatic reaction modeled as an external event & Folded into the action that actually triggers it \\
+\bottomrule
+\end{tabular}
+\end{center}
+\vspace{0.3cm}
+Result: 9 reachable states; one genuine finding survived (stale timer
+notification) after all self-inflicted artifacts were removed.
+\end{frame}
+
+% ------------------------------------------------------------
+\begin{frame}{Confirming the Pattern \& Scaling Up}
+\begin{itemize}
+  \item \texttt{core\_4.19.4.8} (Bluetooth transport) turned out to share
+        the exact same design as \texttt{core\_4.20.3.8} (Wi-Fi transport)
+  \item Reused the validated model $\rightarrow$ same finding recurs
+        identically across two transport bindings
+  \item \textbf{Scaled up:} composed 8 real, cross-referenced subsections
+        of \texttt{core\_4.20.3} (handshake, ack/window, message
+        segmentation, shutdown) into one integrated session model
+\end{itemize}
+\end{frame}
+
+% ------------------------------------------------------------
+\begin{frame}{Results: Decomposition Works}
+\begin{center}
+\begin{tabular}{lr}
+\toprule
+\textbf{Model} & \textbf{Reachable states} \\
+\midrule
+Naive, combined & 4{,}217 \\
+\midrule
+Decomposed: Handshake & 56 \\
+Decomposed: Ack/Window & 348 \\
+Decomposed: Segmentation & 152 \\
+\bottomrule
+\end{tabular}
+\end{center}
+\vspace{0.3cm}
+\begin{itemize}
+  \item Peak state space: 4{,}217 $\rightarrow$ 348 (\textbf{$\sim$12x smaller})
+  \item Re-checked all three pieces independently: confirmed the same
+        genuine findings still surface — decomposition lost nothing
+\end{itemize}
+\end{frame}
+
+% ------------------------------------------------------------
+\begin{frame}{Findings So Far}
+\begin{center}
+\small
+\begin{tabular}{p{1.4cm}p{9.2cm}}
+\toprule
+\textbf{ID} & \textbf{Finding} \\
+\midrule
+A & Stale ``timer expired'' notification arriving after the timer was
+already stopped — recurs identically in two transport bindings \\
+\addlinespace
+B & Data/ack events arriving before the handshake completes \\
+\addlinespace
+C & Stale handshake response/timeout arriving after the session is
+already established \\
+\addlinespace
+D & Connection shutdown described in only 28 words — no procedure at all \\
+\bottomrule
+\end{tabular}
+\end{center}
+All are \textbf{candidates for human review}, not confirmed conclusions.
+\end{frame}
+
+% ------------------------------------------------------------
+\begin{frame}{What to Check Next}
+\begin{itemize}
+  \item Confirm the source spec's referenced diagrams don't already
+        resolve findings A--C (our pipeline can't read figures, only text)
+  \item Add the second required catch-all state (contradictory/overlapping
+        transitions), not just the ``undefined'' one built so far
+  \item Systematically confirm decomposition never silently drops a
+        finding, beyond spot-checking known cases
+  \item Check whether any finding depends on an invented bound
+        (e.g.\ window/queue size) rather than the spec itself
+\end{itemize}
+\end{frame}
+
+% ------------------------------------------------------------
+\begin{frame}{Next Steps, Per Methodology}
+\begin{itemize}
+  \item Continue through the remaining 88 ranked candidate sections
+  \item Cluster sections by real cross-references \emph{before} modeling —
+        never compose sections that don't actually interact
+  \item Apply sequential (phase-based) decomposition where a flow is
+        genuinely one-way (e.g.\ the commissioning flow)
+  \item Longer term: multiple independent models per section, treating
+        disagreement between them as an ambiguity signal
+\end{itemize}
+\end{frame}
+
+% ------------------------------------------------------------
+\begin{frame}{Summary}
+\begin{itemize}
+  \item Identified and corrected an unsound shortcut in the proposed
+        decomposition method
+  \item Validated a sound, lossless alternative on a real composed example
+        (8 cross-referenced spec subsections)
+  \item Demonstrated a $\sim$12x reduction in peak state space with no
+        findings lost
+  \item 4 candidate underspecification findings recorded, ready for review
+  \item Clear, methodology-aligned roadmap for scaling to the rest of the
+        corpus
+\end{itemize}
+\end{frame}
+
+\end{document}

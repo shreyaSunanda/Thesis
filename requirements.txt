@@ -4,3 +4,4 @@ pluggy==1.6.0
 Pygments==2.21.0
 pymupdf==1.28.2
 pytest==9.1.1
+openai==3.26.1

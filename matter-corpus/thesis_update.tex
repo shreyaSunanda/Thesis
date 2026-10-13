@@ -1,0 +1,253 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage{xcolor}
+
+\title{Detecting Underspecified Clauses in the Matter Specification\\
+       \large Progress Update}
+\author{}
+\date{9 October 2026}
+
+\begin{document}
+\maketitle
+
+\section{What the pipeline does}
+
+A Matter Core Specification section is turned into a TLA+ model by an LLM, and the
+model is checked with TLC. The question being asked of each model is whether the
+specification text left some situation undefined. Sections are chosen by the corpus
+ranker; this update covers chapters 4 and 5, which contain 40 ranked candidates.
+
+\section{The methodology problem we found}
+
+\subsection{The original signal was wrong}
+
+The first version used TLC's \textbf{deadlock check}: a reachable state with no
+enabled next action was reported as a candidate gap.
+
+This measures the wrong thing. Protocols are \emph{supposed} to stop. Clauses such
+as ``SHALL close the session and report an error'' describe defined endpoints, and a
+model that reaches one and halts is behaving correctly. Deadlock cannot distinguish
+
+\begin{quote}
+``the specification says stop here'' \quad from \quad ``the specification forgot to say
+what happens.''
+\end{quote}
+
+Run over all 40 sections, deadlock detection produced 14 hits. On manual reading,
+\textbf{none} were specification gaps: each was either a prescribed ending or a
+section whose content lives in figures the PDF text extractor cannot see.
+
+\subsection{The replacement signal}
+
+The detector now asks a different question, attached as an invariant:
+
+\begin{quote}
+\textbf{An event is waiting, and no action can consume it.}
+\end{quote}
+
+\[
+\texttt{NoUnhandledInput} \;\equiv\; (\textit{pendingInput} \neq \textit{NoInput})
+  \Rightarrow \mathrm{ENABLED}\,(\textit{Next} \wedge \textit{pendingInput}' \neq \textit{pendingInput})
+\]
+
+It is vacuously true when nothing is pending, so a protocol that simply ends never
+trips it. It fires only when an event arrives in a state the text never considered.
+Validated against the hand-written \texttt{ArmFailSafe.tla}, which has a known
+gap. Two qualifications, both established by test rather than assumed:
+
+\begin{itemize}
+  \item The detector cannot read \texttt{ArmFailSafe.tla} as written. That module
+    names its variables \texttt{pendingMsg}, \texttt{NullValue} and
+    \texttt{Messages}, not the shape the generation prompt mandates. On a copy
+    renamed to the mandated shape, the detector does independently reproduce the
+    known gap and names the event (\texttt{CommissioningComplete} arriving while
+    \texttt{Disarmed}), without using that module's own catch-all to do so.
+  \item \textbf{The ground-truth gap is reached at depth 2, with no action of the
+    model firing first.} This is the same trace shape as the findings described in
+    Section~5.3 below. It follows that this shape cannot be used to dismiss a
+    finding; it ranks confidence only.
+\end{itemize}
+
+Because the models must now carry an explicit input variable, \textbf{every model had
+to be regenerated}; the round-one models cannot answer the new question.
+
+\subsection{Three further defects found and fixed}
+
+\begin{enumerate}
+  \item \textbf{Placeholder input alphabet.} The harness filled the input set with
+    opaque TLC model values (\texttt{Inputs\_1}), which match none of the module's
+    guards (\texttt{"ReceiveAck"}, \texttt{[type |-> "SendPacket"]}). Every module
+    therefore reported a gap at depth 2. Fixed by recovering each module's real
+    input alphabet from its own guards, including record-shaped inputs whose field
+    domains are stated by the enclosing quantifier.
+
+  \item \textbf{Triage silently disabled.} The report cross-checks each finding
+    against the corpus (does this section, or one it references, already describe
+    recovery?). It keyed on the last action in the trace, which under the new signal
+    is always the harness's own input-delivery step. No corpus check ran at all.
+    Fixed to read the last \emph{model} action.
+
+  \item \textbf{Non-deterministic results.} TLC ran with parallel workers and
+    reported whichever violation a worker reached first, so the same module and
+    configuration classified differently between runs. Pinned to a single worker;
+    two consecutive full runs now produce byte-identical traces.
+\end{enumerate}
+
+\section{Numbers}
+
+\subsection{Round one --- old (deadlock) signal}
+
+All 40 sections were generated and compiled. Verdicts:
+
+\begin{center}
+\begin{tabular}{lr}
+\toprule
+outcome & units \\
+\midrule
+deadlock (reported as candidate gaps) & 14 \\
+checked, nothing found                & 11 \\
+timeout (no verdict)                  &  9 \\
+runtime error (no verdict)            &  2 \\
+configuration error (no verdict)      &  2 \\
+unbounded quantifier (no verdict)     &  2 \\
+\midrule
+total                                 & 40 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\noindent
+Genuine specification gaps among the 14: \textbf{zero}.
+
+\subsection{Round two --- new (unhandled-input) signal}
+
+Regeneration is partial. Of the 40 candidates, \textbf{12 have been regenerated} so
+far; 11 compiled and were checked.
+
+\begin{center}
+\begin{tabular}{lr}
+\toprule
+outcome & units \\
+\midrule
+unhandled input (reported as candidate gaps) &  6 \\
+checked, nothing found                       &  1 \\
+input alphabet unrecoverable (no verdict)    &  4 \\
+failed to compile                            &  1 \\
+\midrule
+regenerated                                  & 12 \\
+not yet regenerated                          & 28 \\
+\midrule
+total candidates                             & 40 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\noindent
+Of the 6 reported gaps, only \textbf{1} was reached after the model performed any
+action of its own. The other 5 are inputs arriving in the initial state.
+
+\section{After manual review}
+
+Each reported gap was read against the specification text. Page numbers are PDF
+pages of \emph{Matter 1.6 Core Specification}; printed page numbers are four lower.
+
+\subsection{One genuine candidate}
+
+\textbf{\texttt{core\_4.19.4.8} --- BTP Packet Acknowledgements} (PDF p.~238).
+The specification states:
+
+\begin{quote}
+``If a peer's acknowledgement-received timer expires, or if a peer receives an invalid
+acknowledgement, the peer SHALL close the BTP session and report an error to the
+application.'' \hfill (p.~238, lines 13--14)
+\end{quote}
+
+The model closes the session as instructed, and the application then attempts to send
+another packet. \textbf{The specification never states what happens on a send attempt
+after the session has been closed.}
+
+This is not merely an omission by the model. Section 4.19.4.7 (p.~237) shows the
+specification does write such prohibitions where it intends them:
+
+\begin{quote}
+``the local peer SHALL NOT send packets until the window reopens''
+\end{quote}
+
+No equivalent rule exists for a closed session anywhere in 4.19.4.x or 4.20.3.x.
+
+\textbf{\texttt{core\_4.20.3.8} --- PAFTP Packet Acknowledgements} (PDF p.~253,
+lines 21--22) contains the identical sentence with PAFTP substituted, and produced
+the same finding. It corroborates that the omission is systematic across both
+transports rather than being a second independent result.
+
+\subsection{One ruled out on review}
+
+\textbf{\texttt{core\_4.12.2.1} --- Retransmissions.} Reported: an acknowledgement
+arrives with nothing outstanding and no rule handles it. The specification does
+handle this, two sections away, in 4.12.5.2 (PDF p.~168):
+
+\begin{quote}
+``If there is no match, it indicates that this is either a duplicate acknowledgment or
+the Exchange context does not exist.''
+\end{quote}
+
+This is a \emph{scope artifact} of single-section modelling, not a gap. The automated
+triage did not catch it; it was found by reading the neighbouring sections by hand.
+
+\subsection{Three weak results}
+
+\texttt{core\_4.19.4.7}, \texttt{core\_4.20.3.7} and \texttt{core\_4.3.1.11} all
+report an input arriving in the model's \emph{initial} state --- data enqueued before
+initialization, a TXT record read immediately after factory reset.
+
+These read as artifacts of a permissive environment rather than specification gaps.
+That judgement is \emph{not} mechanical, however: the ground-truth
+\texttt{ArmFailSafe} gap has precisely this shape, arriving in the initial
+\texttt{Disarmed} state. The distinction is whether the initial state is a genuine
+resting state of the protocol (as \texttt{Disarmed} is) or modelling scaffolding
+(as \texttt{Uninitialized} is), and no automated rule currently makes it. These
+three therefore remain unreviewed rather than ruled out.
+
+\section{Known limitations}
+
+\begin{enumerate}
+  \item \textbf{Inputs arriving in the initial state are hard to judge.} The
+    environment delivers any input in any state, including before the protocol has
+    started. Most such reports are uninteresting, but the ground-truth gap is one
+    of them, so they cannot simply be filtered out. Distinguishing a genuine
+    resting state from modelling scaffolding is currently manual.
+
+  \item \textbf{Record-shaped input alphabets block checking.} Four of eleven
+    checked units read fields off the input record without ever constructing one, so
+    nothing in the module states what those fields range over. Inventing a domain
+    would change what is checked, so these are reported as \emph{no verdict} rather
+    than as clean.
+
+  \item \textbf{Single-section scope.} Handling may live in a neighbouring section,
+    as it did for \texttt{core\_4.12.2.1}. One-hop cross-reference context reduces
+    this but does not remove it.
+
+  \item \textbf{Findings are candidates, not proofs.} A reported gap can also mean
+    the generated model is simply wrong. Manual review against the section text
+    remains required.
+\end{enumerate}
+
+\section{Next steps}
+
+\begin{enumerate}
+  \item Constrain the environment so inputs are not delivered in the initial state.
+  \item Extend input-alphabet recovery, or require the generator to declare the
+    alphabet explicitly, to unblock the four units with no verdict.
+  \item Regenerate and check the remaining 28 candidates.
+  \item Confirm the BTP/PAFTP finding against the \texttt{connectedhomeip}
+    implementation.
+\end{enumerate}
+
+\vspace{1em}
+\noindent\textit{Test suite: 39 tests passing, including end-to-end TLC tests that
+fail if a cleanly terminating protocol is reported as a gap, or if placeholder inputs
+reach the model checker again.}
+
+\end{document}

@@ -47,7 +47,42 @@ Source PDFs (`data/raw_pdfs/`) and pipeline output (`data/processed/`) are gitig
 
 Outputs land in `data/processed/<doc-name>/`: `sections.json` (full corpus, cross_refs + tags + references/referenced_by all attached), `dependency_graph.json` (standalone graph), `ranked_candidates.json` (sections above threshold, sorted).
 
-The README's repository-structure diagram also lists `storage/corpus_store.py` (SQLite read/write) and `validate/sample_check.py` (manual-review sampling) — these are aspirational/not yet implemented; there is no `src/storage/` or `src/validate/` directory in this checkout.
+The README's repository-structure diagram also lists `storage/corpus_store.py` (SQLite read/write) and `validate/sample_check.py` (manual-review sampling) — these are aspirational/not yet implemented; there is no `src/storage/` directory in this checkout. (`src/validation/` exists but is the TLC harness described below, not the sampling tool the README means.)
+
+## Generation and checking stages
+
+The corpus pipeline above only *finds* candidates. Two further stages turn a candidate into a checked TLA+ model, and both are driven from `matter-corpus/`:
+
+```bash
+export ANTHROPIC_VERTEX_PROJECT_ID=<gcp-project>   # Vertex uses gcloud ADC
+
+# 1. Generate a model per ranked candidate in chapters 4 and 5, SANY-check each
+.venv/bin/python run_batch.py --chapters 4,5 --provider vertex-gemini \
+    --model gemini-3.1-pro-preview --tla-tools tla2tools.jar
+
+# 2. Regenerate only the units that failed (e.g. after tightening the prompt)
+.venv/bin/python retry_failures.py --out-dir models/generated/ch45 --sleep 20
+
+# 3. Model-check every SANY-passing module with TLC
+.venv/bin/python run_tlc_batch.py --models-dir models/generated/ch45 --timeout 120
+
+# 4. Render the reviewable candidate-gap report
+.venv/bin/python make_gap_report.py --models-dir models/generated/ch45
+```
+
+Use `.venv/`, not `venv/` — only `.venv/` has the Google auth libraries the Vertex providers need.
+
+**`src/generation/`** — `prompt_template.py` holds one fixed prompt so outputs stay structurally comparable across providers; `llm_providers.py` is the provider-agnostic `generate(prompt) -> str` interface; `generate_tla.py` assembles 1-hop cross-reference context, calls the provider, saves the module under the name the model actually declared, and runs SANY. `build_prompt` substitutes placeholders by `str.replace`, **not** `str.format` — the rules section contains literal TLA+ set syntax (`{x \in S : P(x)}`) and `format` would read those braces as fields.
+
+The prompt's numbered RULES are the main lever on output quality, and rules 10–12 are a log of parse failures actually observed in batch runs (keyword operators, `\setminus`, string record labels, filter/map set syntax, dependent quantifier bounds, conjunction-list indentation, unbounded `Nat` quantifiers). When a batch surfaces a new recurring syntax class, the fix belongs there rather than in post-processing.
+
+**`src/validation/`** — the TLC harness. `tlc_config.py` infers a runnable `.cfg` from a generated module: TLC needs a concrete value for every `CONSTANT`, and the generator deliberately emits none, so each constant is classified by *usage* (numeric / boolean / set / sentinel / opaque) and given a small value — opaque and sentinel constants become TLC model values, which compare cleanly against anything. Boolean capability flags are varied across configs, because pinning one hides whole branches of the model. `run_tlc.py` runs TLC and classifies the outcome.
+
+**The gap signal is TLC's deadlock check, not an injected catch-all.** `ArmFailSafe.tla` encodes the B.4.3 idea with an explicit `UndefinedTransition` action plus a `NeverUndefined` invariant, but the generation prompt forbids the model from writing such catch-alls (rule 4) precisely so they cannot be faked. A deadlock — a reachable state with no enabled `Next` action — is the same finding detected generically: the model got somewhere and the spec text supplied no way out. It is a *candidate* gap; the model may simply be wrong, or the state may be legitimately terminal.
+
+Outcomes are kept distinct on purpose: `deadlock` and `invariant_violated` are findings, `no_error` is a checked-clean verdict, and `unbounded_quantifier` / `timeout` / `runtime_error` / `tlc_error` mean **no verdict was reached at all**. Never fold the last group into "no gap found" — `make_gap_report.py` reports it as a separate "not checkable" section for exactly this reason.
+
+`tests/test_tlc_config.py` pins the constant-classifier's real misclassifications (`=>` read as a numeric comparison, `<<...>>` likewise, a record field value read as a function set, `/s$/` turning `STATUS_SUCCESS` into a set). Like the splitter tests, these are observed failures, not synthetic ones.
 
 ## Provenance note
 

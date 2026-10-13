@@ -1,0 +1,556 @@
+\documentclass[10pt,aspectratio=169,t]{beamer}
+
+\usepackage[T1]{fontenc}
+\usefonttheme{serif}
+\usepackage{mathpazo}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{listings}
+\usepackage{xcolor}
+
+% ---------- theme: clean, compact (same as findings_AB.tex) ----------
+\definecolor{accent}{HTML}{1F4E79}
+\usetheme{default}
+\setbeamertemplate{navigation symbols}{}
+\setbeamercolor{structure}{fg=accent}
+\setbeamercolor{frametitle}{fg=accent}
+\setbeamercolor{title}{fg=accent}
+\setbeamercolor{itemize item}{fg=accent}
+\setbeamercolor{itemize subitem}{fg=accent}
+\setbeamerfont{frametitle}{size=\large,series=\bfseries}
+\setbeamerfont{title}{size=\LARGE,series=\bfseries}
+\setbeamerfont{subtitle}{size=\normalsize}
+\setbeamersize{text margin left=1.4em,text margin right=1.4em}
+\setbeamertemplate{frametitle}{%
+  \vskip1.2ex
+  \usebeamerfont{frametitle}\usebeamercolor[fg]{frametitle}\insertframetitle\par
+  \vskip0.4ex
+  {\color{accent}\hrule height 0.6pt}
+  \vskip0.6ex}
+\setbeamertemplate{footline}{%
+  \hfill{\scriptsize\color{gray}\insertframenumber\,/\,\inserttotalframenumber}\hspace{1.4em}\vskip1.5ex}
+\setbeamertemplate{itemize items}[circle]
+\setlength{\leftmargini}{1.2em}
+
+\lstdefinestyle{code}{
+  basicstyle=\ttfamily\scriptsize,
+  columns=fullflexible,
+  keepspaces=true,
+  showstringspaces=false,
+  frame=single,
+  rulecolor=\color{gray!60},
+  backgroundcolor=\color{gray!6},
+  xleftmargin=2pt,
+  xrightmargin=2pt,
+  aboveskip=3pt,
+  belowskip=3pt,
+  breaklines=true,
+  breakatwhitespace=true,
+}
+\lstdefinestyle{cpp}{style=code, language=C++,
+  keywordstyle=\color{blue!60!black}, commentstyle=\color{green!40!black}}
+\lstdefinestyle{out}{style=code, backgroundcolor=\color{white}}
+\lstdefinestyle{cppsmall}{style=cpp, basicstyle=\ttfamily\tiny}
+
+\newcommand{\spec}[1]{\textcolor{blue!50!black}{\small\itshape #1}}
+
+\title{Weekly Update}
+\subtitle{Findings C and D}
+\author{}
+\date{\today}
+
+\begin{document}
+
+\frame{\titlepage}
+
+% ============================================================
+\section{Finding C}
+
+\begin{frame}{Finding C: Handshake on an Established Session}
+\begin{center}
+\Large Finding C\\[4pt]
+\normalsize a second handshake frame arrives while the session is already connected\\[4pt]
+\small 4.19.3.1, 4.19.4.3, 4.19.4.6, 4.19.4.11 (BTP) \quad and \quad 4.20.3.1, .3, .6, .11 (PAFTP)\\[2pt]
+\footnotesize Page numbers in this deck are printed spec pages (PDF page $-$ 4).
+\end{center}
+\end{frame}
+
+% ------------------------------------------------------------
+\begin{frame}{C --- What the Spec Says}
+\small
+\begin{itemize}
+  \item \textbf{4.19.3.1 (pp.~225--226):} the handshake frame has its own
+        layout: flags \texttt{0x65}, opcode \texttt{0x6C}, versions, MTU, window
+        size. It has \emph{no sequence-number field}.
+  \item \textbf{4.19.4.3 (pp.~228--230):} handshake rules only describe
+        establishing a session: \spec{``The handshake request packet SHALL
+        include, a list of BTP protocol versions supported by the client
+        \ldots''}
+  \item \textbf{4.19.4.6 (pp.~231--232):} \spec{``Peers SHALL check to ensure
+        that all received BTP packets properly increment the sender's previous
+        sequence number by 1. If this check fails, the peer SHALL close the BTP
+        session and report an error to the application.''}
+  \item \textbf{Figures 26/27 (4.19.4.11, pp.~235--238):} no transition for a
+        handshake received in the Connected state (checked by hand).
+\end{itemize}
+\footnotesize PAFTP: same structure and wording in 4.20.3.1, .3, .6 and
+Figures 33/34 (4.20.3.11).
+\end{frame}
+
+% ------------------------------------------------------------
+\begin{frame}{C --- Why It Is a Candidate Underspecification}
+\small
+Three spec facts, taken together:
+\begin{enumerate}
+  \item the handshake frame carries no sequence number (4.19.3.1)
+  \item every received packet must pass the sequence check, or the session is
+        closed (4.19.4.6)
+  \item handshake behaviour is only described for session establishment
+        (4.19.4.3)
+\end{enumerate}
+\vspace{2pt}
+Is a second handshake frame on an established session a ``packet'' subject to
+the check? The text does not say:
+\begin{center}
+\small
+\begin{tabular}{p{0.38\textwidth}p{0.45\textwidth}}
+\toprule
+\textbf{Reading 1} & \textbf{Reading 2} \\
+\midrule
+it is a packet; the check fails; \textbf{close the session}
+ & it is a handshake, not data; \textbf{ignore it} \\
+\bottomrule
+\end{tabular}
+\end{center}
+\vspace{2pt}
+\textbf{Origin:} the Week~12 TLC model flagged a handshake response arriving in
+\texttt{Established}. The manual review kept this half and dropped the ``stale
+timeout'' half, because the figures show no such transition.
+\end{frame}
+
+% ------------------------------------------------------------
+\begin{frame}[fragile]{C --- SDK, Bluetooth: No Handshake Flag}
+\begin{lstlisting}[style=cppsmall]
+// src/ble/BtpEngine.h:81-87  -- the only header flags BTP knows
+enum class HeaderFlags : uint8_t {
+    kStartMessage = 0x01, kContinueMessage = 0x02,
+    kEndMessage   = 0x04, kFragmentAck     = 0x08 };       // no handshake (H) bit
+
+// src/ble/BLEEndPoint.cpp:1143-1174  -- first packet only: a one-shot latch, not a state check
+if (!mConnStateFlags.Has(ConnectionStateFlag::kCapabilitiesMsgReceived))
+{   ...  ExitNow();  }                                      // handshake handled, not fed to reassembler
+
+// src/ble/BLEEndPoint.cpp:1181 and :1193  -- every later frame is treated as data
+if (!IsConnected(mState)) { ... }
+err = mBtpEngine.HandleCharacteristicReceived(std::move(data), receivedAck, didReceiveAck);
+\end{lstlisting}
+\begin{itemize}\small
+  \item The latch is set once and never cleared, so a second handshake cannot
+        reach the negotiation code
+  \item The frame is not recognised as a handshake: it goes down the data path
+\end{itemize}
+\end{frame}
+
+% ------------------------------------------------------------
+\begin{frame}[fragile]{C --- SDK, Bluetooth: the Frame Is Read as Data $\Rightarrow$ Close}
+Stray handshake bytes: \texttt{0x65} (flags), \texttt{0x6C} (opcode), versions \ldots
+\begin{lstlisting}[style=cppsmall]
+// src/ble/BtpEngine.cpp:243-266  (abridged)
+err = reader.Read8(rx_flags.RawStorage()).StatusCode();   // byte 0 = 0x65, ack bit (0x08) clear
+...
+err = reader.Read8(&mRxNewestUnackedSeqNum).StatusCode(); // byte 1 = 0x6C = 108, read as sequence number
+VerifyOrExit(mRxNewestUnackedSeqNum == mRxNextSeqNum,     // :263
+             err = BLE_ERROR_INVALID_BTP_SEQUENCE_NUMBER);
+\end{lstlisting}
+\begin{lstlisting}[style=cppsmall]
+// src/ble/BLEEndPoint.cpp:1296  -- exit path of Receive()
+if (err != CHIP_NO_ERROR) { DoClose(closeFlags, err); }
+\end{lstlisting}
+\begin{itemize}\small
+  \item Unless the expected sequence number happens to be 108, the check fails
+        and the session is closed, as 4.19.4.6 requires
+  \item If it is 108, the frame is accepted as a start+end data fragment and a
+        short message is handed up; lengths are bounds-checked
+        (\texttt{BtpEngine.cpp}) and the connected peer can send data anyway
+\end{itemize}
+\end{frame}
+
+% ------------------------------------------------------------
+\begin{frame}[fragile]{C --- SDK, Wi-Fi PAF: the Frame Is Recognised and Dropped}
+\begin{lstlisting}[style=cppsmall]
+// src/wifipaf/WiFiPAFTP.h:90-91
+kManagementOpcode = 0x20,
+kHankshake        = 0x40,                  // (sic) handshake bit
+
+// src/wifipaf/WiFiPAFEndPoint.cpp:1046-1050  -- after the first-packet gate
+if (rx_flags.Has(WiFiPAFTP::HeaderFlags::kHankshake))
+{
+    ChipLogDebugWiFiPAFEndPoint(WiFiPAF, "Unexpected handshake packet => drop");
+    ExitNow();                             // err == CHIP_NO_ERROR: no close
+}
+\end{lstlisting}
+\begin{itemize}\small
+  \item The session survives
+  \item The log string states a behaviour; it cites no spec section and does
+        not mention the spec being silent
+\end{itemize}
+\end{frame}
+
+% ------------------------------------------------------------
+\begin{frame}{C --- The Two Transports Resolve It Differently}
+\begin{center}
+\small
+\begin{tabular}{p{0.30\textwidth}p{0.28\textwidth}p{0.30\textwidth}}
+\toprule
+ & \textbf{BTP} (\texttt{src/ble}) & \textbf{PAFTP} (\texttt{src/wifipaf}) \\
+\midrule
+Handshake bit in header flags & no & yes (\texttt{0x40}) \\
+Stray handshake, session established & session closed & frame dropped, session kept \\
+Code origin & imported 2020, \texttt{362e2a3fae} & \texttt{f1de3aaaca}, 2025-04-01 (part of the original file) \\
+Comment or commit message giving a reason & none & none \\
+\bottomrule
+\end{tabular}
+\end{center}
+\begin{itemize}\small
+  \item Same spec sentence, same bytes on the wire, opposite behaviour
+  \item \texttt{git log -S} finds the PAFTP check only in \texttt{f1de3aaaca};
+        a handshake-flag test has never existed in \texttt{BLEEndPoint.cpp}
+\end{itemize}
+\end{frame}
+
+% ------------------------------------------------------------
+\begin{frame}{C --- Ideas We Tested and Dropped}
+\small
+\begin{itemize}
+  \item \textbf{``A second handshake renegotiates the window''} (parameter
+        downgrade): \texttt{kCapabilitiesMsgReceived} is set only in the
+        first-packet branch (\texttt{BLEEndPoint.cpp:1143--1158}) and never
+        cleared. A second handshake cannot reach the negotiation code in either
+        transport.
+  \item \textbf{``Re-handshake resets sequence numbers, so the honest peer's
+        next ack becomes invalid''}: depended on the previous idea.
+  \item \textbf{``Stale handshake timeout after connection''}: the figures have
+        no such transition (Week~13).
+\end{itemize}
+\end{frame}
+
+% ------------------------------------------------------------
+\begin{frame}{C --- Security Severity}
+\textbf{What an attacker needs}
+\begin{itemize}\small
+  \item A write on characteristic C1 of an \emph{already established}
+        connection: the connected peer itself, or injection into that link
+  \item Not reachable before a connection exists
+\end{itemize}
+\textbf{What it gives}
+\begin{itemize}\small
+  \item BTP: that one session is closed. PAFTP: nothing.
+  \item No new capability: the connected peer can already close the session
+        (4.19.4.10), and a wrong sequence number or an invalid ack already
+        forces a close by spec (4.19.4.6, 4.19.4.8)
+  \item No data exposure, no PASE bypass seen
+\end{itemize}
+\textbf{Assessment:} low severity.\\[2pt]
+\small Not verified: nothing was executed; over-the-air injection into an
+established connection was not assessed.
+\end{frame}
+
+% ============================================================
+\section{Related: Window Size}
+
+\begin{frame}{Related to C: the Window Size in the Handshake}
+\begin{center}
+\Large Window size\\[4pt]
+\normalsize how small may the window in the handshake be?\\[4pt]
+\small 4.19.4.3, 4.19.4.7 (BTP) \quad and \quad 4.20.3.3, .7 (PAFTP)
+\end{center}
+\end{frame}
+
+% ------------------------------------------------------------
+\begin{frame}{Window --- What the Spec Says, and What Developers Did}
+\small
+\begin{itemize}
+  \item \textbf{4.19.4.7 (pp.~232--233):} \spec{``the largest maximum window size
+        any peer may support is 255''}. \textbf{No minimum} is stated; the
+        constants in 4.19.5 and 4.20.4 define none.
+  \item \textbf{4.19.4.3:} \spec{``The server SHALL select a window size equal
+        to the minimum of its and the client's maximum window sizes.''} No rule
+        for a window of 0 or 1.
+  \item \textbf{4.19.4.7:} a server initialises its counter at
+        \spec{``(negotiated maximum window size - 1)''}, which is $-1$ for a
+        window of 0.
+\end{itemize}
+\vspace{2pt}
+\begin{center}
+\footnotesize
+\begin{tabular}{lll}
+\toprule
+\textbf{Date} & \textbf{Commit} & \textbf{Change} \\
+\midrule
+2026-02-16 & \texttt{c3480ff4d4} & PAFTP, both sides: reject window $<3$ (``underflow'') \\
+2026-06-10 & \texttt{28e77bdbc9} & BTP central side: reject 0 (``DoS'', ``underflow'') \\
+2026-07-17 & \texttt{5b4abe1fe1} & BTP peripheral side: reject 0 \\
+\bottomrule
+\end{tabular}
+\end{center}
+\small Residual difference: PAFTP minimum is 3, BTP only requires $>0$. The spec
+text is unchanged.
+\end{frame}
+
+% ------------------------------------------------------------
+\begin{frame}[fragile]{Window --- SDK and Consequence (by Reading)}
+\begin{lstlisting}[style=cppsmall]
+// src/ble/BLEEndPoint.cpp:1014-1016  (peripheral side; first line added by 5b4abe1fe1)
+VerifyOrReturnError(req.mWindowSize > 0, CHIP_ERROR_INVALID_ARGUMENT);
+mRemoteReceiveWindowSize = mLocalReceiveWindowSize = mReceiveWindowMaxSize =
+    std::min(req.mWindowSize, static_cast<uint8_t>(BLE_MAX_RECEIVE_WINDOW_SIZE));
+
+// src/ble/BLEEndPoint.cpp:224  (HandleSubscribeReceived): one-byte counter, window 0 -> 255
+mRemoteReceiveWindowSize = static_cast<SequenceNumber_t>(mRemoteReceiveWindowSize - 1);
+
+// src/wifipaf/WiFiPAFConfig.h:107
+#define PAF_MIN_RECEIVE_WINDOW_SIZE 3
+\end{lstlisting}
+\begin{itemize}\small
+  \item Before the fix, window 0: the counter wraps to 255; after the first ack
+        the sender believes the receiver's window is closed and stops sending
+  \item Window 1: data cannot be sent, only acks (\texttt{DriveSending}); still
+        accepted today
+  \item \textbf{Assessment:} window 0 closed upstream; the residual difference
+        is low. Not verified: nothing was executed.
+\end{itemize}
+\end{frame}
+
+% ============================================================
+\section{Finding D}
+
+\begin{frame}{Finding D: Closing a Session}
+\begin{center}
+\Large Finding D\\[4pt]
+\normalsize how a session is closed, and what ends an idle one\\[4pt]
+\small 4.19.4.10, 4.19.5 (BTP) \quad and \quad 4.20.3.10, 4.20.4 (PAFTP)
+\end{center}
+\end{frame}
+
+% ------------------------------------------------------------
+\begin{frame}{D --- What the Spec Says About Closing}
+\small
+\textbf{4.19.4.10 (p.~235), the complete BTP procedure:}
+\begin{itemize}
+  \item \spec{``To close a BTP session, a GATT client SHALL unsubscribe from
+        characteristic C2.''}
+  \item \spec{``The GATT server SHALL take this action to indicate closure of
+        any BTP session open to the client.''}
+  \item \spec{``If a BTP Server needs to close the BTP session, it SHALL
+        terminate its BLE connection to the client.''}
+\end{itemize}
+\textbf{4.20.3.10 (p.~251), PAFTP:} \spec{``A Commissioner MAY terminate the
+subscribe instance, to close a PAFTP session. A Commissionable Device MAY
+terminate the publish instance, to close a PAFTP session.''}
+\vspace{2pt}
+\begin{itemize}
+  \item Sentence 2 asks the \emph{server} to unsubscribe, but only a GATT
+        \emph{client} can subscribe or unsubscribe; sentence 3 gives the server
+        a different method
+  \item PAFTP: both sides MAY, so no close is required
+  \item ``subscribe instance'' / ``publish instance'' appear in 5.4.2.6.3
+        (p.~323) and 5.4.3.2 (p.~327) for \emph{creating} one; none defines
+        terminating one (defers to WFA-USD, tag M-4)
+\end{itemize}
+\end{frame}
+
+% ------------------------------------------------------------
+\begin{frame}{D2 --- There Is No Close Message}
+\small
+\textbf{Spec:} one management opcode in each transport, \texttt{0x6C} Handshake
+(Table 30, 4.19.3, p.~225; Table 39, 4.20.3, p.~242). No close or reset opcode.\\[4pt]
+\textbf{Code:} 13 call sites of \texttt{DoClose} in \texttt{BLEEndPoint.cpp}, 10 in
+\texttt{WiFiPAFEndPoint.cpp}. None is triggered by a peer-sent close frame:
+\begin{center}
+\footnotesize
+\begin{tabular}{p{0.20\textwidth}p{0.33\textwidth}p{0.33\textwidth}}
+\toprule
+\textbf{Trigger} & \textbf{BTP} & \textbf{PAFTP} \\
+\midrule
+Application & \texttt{Abort}, \texttt{Close} & shutdown paths in \texttt{WiFiPAFLayer.cpp} \\
+Link event & peer unsubscribed (\texttt{BleLayer.cpp:583}), connection error (\texttt{:615}) & not traced at the layer level \\
+Timer & connect, receive-connection, ack-received, send-ack & the same, plus wait-resource \\
+Error & \texttt{Receive()}, \texttt{Send()}, GATT confirmations & \texttt{RxPacketProcess()}, \texttt{Send()}, confirmations \\
+\bottomrule
+\end{tabular}
+\end{center}
+\textbf{Assessment:} a structural property. Closing is always a link-layer act
+(unsubscribe, disconnect, instance termination) that cannot be authenticated at
+this layer. Informational, not an exploit. No claim is made about the secure
+session above.
+\end{frame}
+
+% ------------------------------------------------------------
+\begin{frame}{D1 --- The Idle Timeout in the Spec}
+\small
+\textbf{4.19.5, Table 35 (pp.~238--239):}
+\begin{itemize}
+  \item \spec{``BTP\_CONN\_IDLE\_TIMEOUT: The maximum amount of time no unique
+        data has been sent over a BTP session before the Central Device must
+        close the BTP session. 30 seconds''}
+\end{itemize}
+\textbf{4.20.4, Table 42 (pp.~253--254):} same for PAFTP, \spec{``\ldots\ before
+the Commissioner must close the PAFTP session. 30 seconds''}
+\vspace{4pt}
+\begin{itemize}
+  \item The duty to enforce it is placed on the \emph{connecting} side (Central
+        / Commissioner)
+  \item The device being paired has no rule for dropping an idle connecting peer
+\end{itemize}
+\end{frame}
+
+% ------------------------------------------------------------
+\begin{frame}[fragile]{D1 --- SDK: the Idle Timeout Is Not Implemented}
+\begin{lstlisting}[style=cppsmall]
+$ grep -rn "BTP_CONN_IDLE_TIMEOUT" src/            ->  no matches
+
+// src/wifipaf/WiFiPAFConfig.h:144
+#define PAFTP_CONN_IDLE_TIMEOUT_MS 30000
+// its only use: src/wifipaf/WiFiPAFEndPoint.cpp:76  (a retry count, not a session deadline)
+#define WIFIPAF_MAX_RESOURCE_BLOCK_COUNT (PAFTP_CONN_IDLE_TIMEOUT_MS / WIFIPAF_WAIT_RES_TIMEOUT_MS)
+\end{lstlisting}
+\begin{itemize}\small
+  \item \texttt{BLE\_ERROR\_KEEP\_ALIVE\_TIMED\_OUT} and
+        \texttt{WIFIPAF\_ERROR\_KEEP\_ALIVE\_TIMED\_OUT} are defined but never
+        raised (\texttt{git grep}: only definitions, error-string tables, tests)
+  \item By reading: acknowledgements keep re-arming the ack timers
+        (\texttt{BTP\_ACK\_TIMEOUT\_MS} = 15\,s, \texttt{BleConfig.h:226}), so a peer
+        that \emph{stops} answering is closed
+  \item A peer that stays responsive but never does anything is not closed by
+        the transport
+\end{itemize}
+\end{frame}
+
+% ------------------------------------------------------------
+\begin{frame}[fragile]{D1 --- BTP and PAFTP Differ at Connection Complete}
+\begin{lstlisting}[style=cppsmall]
+// src/wifipaf/WiFiPAFEndPoint.cpp:161-163  (HandleConnectComplete)
+// Arm ongoing idle session supervision to ensure upper-layer commissioning
+// (Phase 2 PASE handshake) initiates within a reasonable deadline.
+LogErrorOnFailure(StartAckReceivedTimer());
+\end{lstlisting}
+\begin{itemize}\small
+  \item BTP: \texttt{HandleConnectComplete} (\texttt{BLEEndPoint.cpp:154--176}) and
+        \texttt{HandleReceiveConnectionComplete} (\texttt{:178--200}) only cancel
+        timers; none is armed. \texttt{git log -S StartAckReceivedTimer} finds
+        one BTP commit: the 2020 import.
+  \item PAFTP: added by \texttt{650c569666} (2026-06-16, \#72424): \spec{``Resolve
+        endpoint pool exhaustion DoS via missing timer \ldots''}
+  \item By reading, the first acknowledgement cancels that timer, so it bounds
+        only a peer that never acknowledges
+\end{itemize}
+\begin{center}
+\footnotesize
+\begin{tabular}{lll}
+\toprule
+ & \textbf{BTP} & \textbf{PAFTP} \\
+\midrule
+Endpoint pool (default) & 1 (\texttt{BleConfig.h:78}) & 2 (\texttt{WiFiPAFConfig.h:39}) \\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{frame}
+
+% ------------------------------------------------------------
+\begin{frame}[fragile]{D1 --- What Does Bound It: the Commissioning Window}
+\begin{lstlisting}[style=cppsmall]
+// src/app/server/CommissioningWindowManager.cpp:427-438  (abridged)
+void CommissioningWindowManager::CloseCommissioningWindow()
+{   if (IsCommissioningWindowOpen()) {
+        if (mListeningForPASE) {
+            // We never established PASE, so never armed a fail-safe and hence
+            // can't rely on it expiring to close our BLE connection.  Do that
+            // manually here.
+            mServer->GetBleLayerObject()->CloseAllBleConnections();
+\end{lstlisting}
+\begin{itemize}\small
+  \item Window length (\texttt{MaxCommissioningTimeout}, \texttt{:318--330}):
+        \textbf{15 minutes}, or \textbf{48 hours} on an uncommissioned device
+        built with \texttt{CHIP\_DEVICE\_CONFIG\_EXT\_ADVERTISING}
+  \item Added in 2022 by \texttt{c916c11c59}: ``Close BLE connections if
+        commissioning window closes before PASE establishment''
+  \item The comment acknowledges that the transport and the fail-safe do not
+        reap the connection; it is in a different layer from the spec section
+  \item The PASE and fail-safe timers close the connection too, but are never
+        armed if the peer never starts PASE
+\end{itemize}
+\end{frame}
+
+% ------------------------------------------------------------
+\begin{frame}{D1 --- Security Severity}
+\textbf{What an attacker needs}
+\begin{itemize}\small
+  \item Connect to a device in pairing mode, complete the handshake, keep
+        acknowledging. No pairing code is needed (before PASE).
+\end{itemize}
+\textbf{What it gives}
+\begin{itemize}\small
+  \item By reading: with a pool of 1, one such peer occupies the only BTP
+        endpoint until the window closes (15 minutes, up to 48 hours on an
+        uncommissioned device with extended advertising); other commissioners
+        are refused (endpoint pool full)
+  \item No authentication bypass, no data exposure
+\end{itemize}
+\textbf{Assessment:} low severity (denial of service, owner-opened and
+time-bounded window).\\[2pt]
+\small Not verified: nothing was executed; platform Bluetooth code was checked by
+grep, not read line by line; pool size can differ per platform build.
+\end{frame}
+
+% ------------------------------------------------------------
+\begin{frame}{D --- Smaller Observation: the Management Bit}
+\small
+\begin{itemize}
+  \item The frame format has an M bit that announces a Management Opcode field
+        (4.19.2.1, 4.20.2.1), but only \texttt{0x6C} is defined and nothing says
+        what to do with another value
+  \item \textbf{BTP:} no M or H bit in \texttt{HeaderFlags}; an M-bit frame
+        would have its opcode byte read as an ack or sequence number
+  \item \textbf{PAFTP:} \texttt{GetPktSn} skips the opcode byte
+        (\texttt{WiFiPAFEndPoint.cpp:859}) but
+        \texttt{WiFiPAFTP::HandleCharacteristicReceived}
+        (\texttt{WiFiPAFTP.cpp:246--273}) does not, so the two parsers disagree
+        on where the sequence number is
+\end{itemize}
+\textbf{Assessment:} candidate, low severity, medium confidence. Reachable only
+by the connected peer; consequence not traced.
+\end{frame}
+
+% ============================================================
+\section{Summary}
+
+\begin{frame}{Summary}
+\footnotesize
+\begin{center}
+\begin{tabular}{p{0.15\textwidth}p{0.27\textwidth}p{0.22\textwidth}p{0.14\textwidth}}
+\toprule
+\textbf{Finding} & \textbf{Spec gap} & \textbf{BTP vs PAFTP} & \textbf{Severity} \\
+\midrule
+C & no rule for a handshake on an established session & closes vs drops; no reason recorded & low \\
+Window & no minimum window size & $>0$ vs $\geq 3$; three fixes in 2026 & fixed for 0; residual low \\
+D text & server cannot unsubscribe; PAFTP close is optional & --- & low (text) \\
+D2 & no close message exists & same in both & informational \\
+D1 & idle timeout assigned to the connecting side, not implemented & PAFTP arms a partial timer, BTP none & low \\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{frame}
+
+% ------------------------------------------------------------
+\begin{frame}{What We Did Not Verify}
+\begin{itemize}
+  \item Nothing was executed; all code claims are from reading the SDK at
+        \texttt{8b3bd4fcc4} (2026-10-08)
+  \item The pipeline cannot read figures; the CSA test plans are private
+  \item Spec versions after R1.6 and errata were not checked
+  \item Platform-specific Bluetooth code was checked by grep, not exhaustively
+  \item Over-the-air feasibility of any scenario was not assessed
+\end{itemize}
+\end{frame}
+
+\end{document}

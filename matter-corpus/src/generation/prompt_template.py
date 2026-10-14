@@ -162,6 +162,21 @@ RULES:
    b. SET DIFFERENCE is a single backslash: S \\ T. There is no "\\setminus"
       operator in TLA+ (that is LaTeX, not TLA+). Likewise use \\cup, \\cap,
       \\subseteq, \\in, \\notin - no other LaTeX-style word operators exist.
+   b1. THE ONLY STANDARD MODULES YOU MAY EXTEND are Naturals, Integers,
+      Sequences and FiniteSets. There is no "Booleans" module - BOOLEAN,
+      TRUE and FALSE are built into TLA+ and need no EXTENDS. Writing
+      "EXTENDS Naturals, Booleans" fails with "Cannot find source file for
+      module Booleans". Do not EXTEND anything not on that list.
+   b2. NEGATIVE NUMBERS DO NOT EXIST under "EXTENDS Naturals". Writing -1 fails
+      with "Couldn't resolve prefix operator `-.'", because unary minus is
+      defined in Integers, not Naturals. Never use -1 (or any negative number)
+      as a "no value" / "not set" sentinel. Declare a CONSTANT instead:
+         CONSTANTS NoSeqNum        \\* sentinel: no sequence number recorded
+         /\\ lastAcked = NoSeqNum
+      A sentinel constant is also better than -1 because TLC gives it a model
+      value, which compares cleanly against anything and costs no state space.
+      Only write "EXTENDS Integers" if the spec text genuinely requires
+      negative quantities, which for protocol state it almost never does.
    c. RECORD FIELD LABELS must be bare identifiers, never strings:
          [state |-> "Idle", counter |-> 0]        \\* correct
          ["Client" |-> 5, "Server" |-> 4]         \\* WRONG - will not parse

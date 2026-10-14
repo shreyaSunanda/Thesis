@@ -1,0 +1,739 @@
+[batch] chapters=['4', '5'] candidates=40 already_done=0 to_run=40
+
+[batch] (1/40) core_4.20.3.8  score=127.15
+[generate] provider=vertex-gemini model=gemini-3.1-pro-preview unit=core_4.20.3.8
+[generate] wrote models/generated/ch45_v3/core_4.20.3.8/vertex-gemini/core_4_20_3_8.tla
+[precheck] 11 possibly-undeclared identifier(s) (heuristic, not a substitute for SANY): ackRecvTimer, errorReported, freeSlots, highestRecvSeqNum, inAckNum, lastSentSeqNum, pendingAckVal, sendAckTimer, sessionState, unackedRecv, unackedSent
+[validate] running SANY on core_4_20_3_8.tla ...
+[validate] SANY: FAIL
+
+****** SANY2 Version 2.1 created 24 February 2014
+
+Parsing file /home/sunanda/Thesis_codes/matter-corpus/models/generated/ch45_v3/core_4.20.3.8/vertex-gemini/core_4_20_3_8.tla
+Parsing file /tmp/Naturals.tla
+Semantic processing of module Naturals
+Semantic processing of module core_4_20_3_8
+Semantic errors:
+
+*** Errors: 30
+
+line 35, col 19 to line 35, col 19 of module core_4_20_3_8
+
+Could not find declaration or definition of symbol '-.'.
+
+
+line 35, col 19 to line 35, col 20 of module core_4_20_3_8
+
+Couldn't resolve prefix operator symbol `-.'.
+
+
+line 40, col 25 to line 40, col 25 of module core_4_20_3_8
+
+Could not find declaration or definition of symbol '-.'.
+
+
+line 40, col 25 to line 40, col 26 of module core_4_20_3_8
+
+Couldn't resolve prefix operator symbol `-.'.
+
+
+line 42, col 28 to line 42, col 28 of module core_4_20_3_8
+
+Could not find declaration or definition of symbol '-.'.
+
+
+line 42, col 28 to line 42, col 29 of module core_4_20_3_8
+
+Couldn't resolve prefix operator symbol `-.'.
+
+
+line 43, col 24 to line 43, col 24 of module core_4_20_3_8
+
+Could not find declaration or definition of symbol '-.'.
+
+
+line 43, col 24 to line 43, col 25 of module core_4_20_3_8
+
+Couldn't resolve prefix operator symbol `-.'.
+
+
+line 51, col 19 to line 51, col 19 of module core_4_20_3_8
+
+Could not find declaration or definition of symbol '-.'.
+
+
+line 51, col 19 to line 51, col 20 of module core_4_20_3_8
+
+Couldn't resolve prefix operator symbol `-.'.
+
+
+line 87, col 28 to line 87, col 28 of module core_4_20_3_8
+
+Could not find declaration or definition of symbol '-.'.
+
+
+line 87, col 28 to line 87, col 29 of module core_4_20_3_8
+
+Couldn't resolve prefix operator symbol `-.'.
+
+
+line 90, col 30 to line 90, col 30 of module core_4_20_3_8
+
+Could not find declaration or definition of symbol '-.'.
+
+
+line 90, col 30 to line 90, col 31 of module core_4_20_3_8
+
+Couldn't resolve prefix operator symbol `-.'.
+
+
+line 100, col 23 to line 100, col 23 of module core_4_20_3_8
+
+Could not find declaration or definition of symbol '-.'.
+
+
+line 100, col 23 to line 100, col 24 of module core_4_20_3_8
+
+Couldn't resolve prefix operator symbol `-.'.
+
+
+line 117, col 28 to line 117, col 28 of module core_4_20_3_8
+
+Could not find declaration or definition of symbol '-.'.
+
+
+line 117, col 28 to line 117, col 29 of module core_4_20_3_8
+
+Couldn't resolve prefix operator symbol `-.'.
+
+
+line 142, col 25 to line 142, col 25 of module core_4_20_3_8
+
+Could not find declaration or definition of symbol '-.'.
+
+
+line 142, col 25 to line 142, col 26 of module core_4_20_3_8
+
+Couldn't resolve prefix operator symbol `-.'.
+
+
+line 149, col 25 to line 149, col 25 of module core_4_20_3_8
+
+Could not find declaration or definition of symbol '-.'.
+
+
+line 149, col 25 to line 149, col 26 of module core_4_20_3_8
+
+Couldn't resolve prefix operator symbol `-.'.
+
+
+line 158, col 25 to line 158, col 25 of module core_4_20_3_8
+
+Could not find declaration or definition of symbol '-.'.
+
+
+line 158, col 25 to line 158, col 26 of module core_4_20_3_8
+
+Couldn't resolve prefix operator symbol `-.'.
+
+
+line 165, col 25 to line 165, col 25 of module core_4_20_3_8
+
+Could not find declaration or definition of symbol '-.'.
+
+
+line 165, col 25 to line 165, col 26 of module core_4_20_3_8
+
+Couldn't resolve prefix operator symbol `-.'.
+
+
+line 174, col 25 to line 174, col 25 of module core_4_20_3_8
+
+Could not find declaration or definition of symbol '-.'.
+
+
+line 174, col 25 to line 174, col 26 of module core_4_20_3_8
+
+Couldn't resolve prefix operator symbol `-.'.
+
+
+line 181, col 25 to line 181, col 25 of module core_4_20_3_8
+
+Could not find declaration or definition of symbol '-.'.
+
+
+line 181, col 25 to line 181, col 26 of module core_4_20_3_8
+
+Couldn't resolve prefix operator symbol `-.'.
+
+
+
+
+
+[batch] (2/40) core_4.19.4.8  score=112.1
+[generate] provider=vertex-gemini model=gemini-3.1-pro-preview unit=core_4.19.4.8
+[generate] wrote models/generated/ch45_v3/core_4.19.4.8/vertex-gemini/core_4_19_4_8.tla
+[precheck] no obviously undeclared identifiers found
+[validate] running SANY on core_4_19_4_8.tla ...
+[validate] SANY: FAIL
+
+****** SANY2 Version 2.1 created 24 February 2014
+
+Parsing file /home/sunanda/Thesis_codes/matter-corpus/models/generated/ch45_v3/core_4.19.4.8/vertex-gemini/core_4_19_4_8.tla
+Parsing file /tmp/Naturals.tla
+Semantic processing of module Naturals
+Semantic processing of module core_4_19_4_8
+Semantic errors:
+
+*** Errors: 30
+
+line 36, col 19 to line 36, col 19 of module core_4_19_4_8
+
+Could not find declaration or definition of symbol '-.'.
+
+
+line 36, col 19 to line 36, col 20 of module core_4_19_4_8
+
+Couldn't resolve prefix operator symbol `-.'.
+
+
+line 37, col 19 to line 37, col 19 of module core_4_19_4_8
+
+Could not find declaration or definition of symbol '-.'.
+
+
+line 37, col 19 to line 37, col 20 of module core_4_19_4_8
+
+Couldn't resolve prefix operator symbol `-.'.
+
+
+line 41, col 21 to line 41, col 21 of module core_4_19_4_8
+
+Could not find declaration or definition of symbol '-.'.
+
+
+line 41, col 21 to line 41, col 22 of module core_4_19_4_8
+
+Couldn't resolve prefix operator symbol `-.'.
+
+
+line 43, col 19 to line 43, col 19 of module core_4_19_4_8
+
+Could not find declaration or definition of symbol '-.'.
+
+
+line 43, col 19 to line 43, col 20 of module core_4_19_4_8
+
+Couldn't resolve prefix operator symbol `-.'.
+
+
+line 54, col 41 to line 54, col 41 of module core_4_19_4_8
+
+Could not find declaration or definition of symbol '-.'.
+
+
+line 54, col 41 to line 54, col 42 of module core_4_19_4_8
+
+Couldn't resolve prefix operator symbol `-.'.
+
+
+line 58, col 27 to line 58, col 27 of module core_4_19_4_8
+
+Could not find declaration or definition of symbol '-.'.
+
+
+line 58, col 27 to line 58, col 28 of module core_4_19_4_8
+
+Couldn't resolve prefix operator symbol `-.'.
+
+
+line 59, col 27 to line 59, col 27 of module core_4_19_4_8
+
+Could not find declaration or definition of symbol '-.'.
+
+
+line 59, col 27 to line 59, col 28 of module core_4_19_4_8
+
+Couldn't resolve prefix operator symbol `-.'.
+
+
+line 72, col 22 to line 72, col 22 of module core_4_19_4_8
+
+Could not find declaration or definition of symbol '-.'.
+
+
+line 72, col 22 to line 72, col 23 of module core_4_19_4_8
+
+Couldn't resolve prefix operator symbol `-.'.
+
+
+line 80, col 23 to line 80, col 23 of module core_4_19_4_8
+
+Could not find declaration or definition of symbol '-.'.
+
+
+line 80, col 23 to line 80, col 24 of module core_4_19_4_8
+
+Couldn't resolve prefix operator symbol `-.'.
+
+
+line 86, col 29 to line 86, col 29 of module core_4_19_4_8
+
+Could not find declaration or definition of symbol '-.'.
+
+
+line 86, col 29 to line 86, col 30 of module core_4_19_4_8
+
+Couldn't resolve prefix operator symbol `-.'.
+
+
+line 90, col 50 to line 90, col 50 of module core_4_19_4_8
+
+Could not find declaration or definition of symbol '-.'.
+
+
+line 90, col 50 to line 90, col 51 of module core_4_19_4_8
+
+Couldn't resolve prefix operator symbol `-.'.
+
+
+line 112, col 22 to line 112, col 22 of module core_4_19_4_8
+
+Could not find declaration or definition of symbol '-.'.
+
+
+line 112, col 22 to line 112, col 23 of module core_4_19_4_8
+
+Couldn't resolve prefix operator symbol `-.'.
+
+
+line 119, col 22 to line 119, col 22 of module core_4_19_4_8
+
+Could not find declaration or definition of symbol '-.'.
+
+
+line 119, col 22 to line 119, col 23 of module core_4_19_4_8
+
+Couldn't resolve prefix operator symbol `-.'.
+
+
+line 147, col 22 to line 147, col 22 of module core_4_19_4_8
+
+Could not find declaration or definition of symbol '-.'.
+
+
+line 147, col 22 to line 147, col 23 of module core_4_19_4_8
+
+Couldn't resolve prefix operator symbol `-.'.
+
+
+line 153, col 22 to line 153, col 22 of module core_4_19_4_8
+
+Could not find declaration or definition of symbol '-.'.
+
+
+line 153, col 22 to line 153, col 23 of module core_4_19_4_8
+
+Couldn't resolve prefix operator symbol `-.'.
+
+
+
+
+
+[batch] (3/40) core_5.5  score=111.9
+[generate] provider=vertex-gemini model=gemini-3.1-pro-preview unit=core_5.5
+[generate] wrote models/generated/ch45_v3/core_5.5/vertex-gemini/core_5_5.tla
+[precheck] 7 possibly-undeclared identifier(s) (heuristic, not a substitute for SANY): caseState, commissioningPhase, commissioningWindowOpen, isCommissioningWithoutPower, networkConnected, nocInstalled, paseState
+[validate] running SANY on core_5_5.tla ...
+[validate] SANY: PASS
+
+[batch] (4/40) core_4.14.2.3  score=81.1
+[generate] provider=vertex-gemini model=gemini-3.1-pro-preview unit=core_4.14.2.3
+[generate] wrote models/generated/ch45_v3/core_4.14.2.3/vertex-gemini/core_4_14_2_3.tla
+[precheck] 17 possibly-undeclared identifier(s) (heuristic, not a substitute for SANY): code, initiator, initiatorResumeMIC, initiatorSessionId, isResumption, localSessionId, networkMsgs, peerSessionId, responder, responderSessionID, responderSessionId, responderSessions, resumptionID, resumptionId, sharedSecret, signatureValid, type
+[validate] running SANY on core_4_14_2_3.tla ...
+[validate] SANY: FAIL
+
+****** SANY2 Version 2.1 created 24 February 2014
+
+Parsing file /home/sunanda/Thesis_codes/matter-corpus/models/generated/ch45_v3/core_4.14.2.3/vertex-gemini/core_4_14_2_3.tla
+***Parse Error***
+Item at line 38, col 5 to line 38, col 5 of module core_4_14_2_3 is not properly indented inside conjunction or  disjunction list item at line 31, col 5 to line 38, col 5 of module core_4_14_2_3
+
+Residual stack trace follows:
+AND-OR Junction starting at line 29, column 5.
+ExtendableExpr starting at line 29, column 5.
+Expression starting at line 29, column 5.
+Definition starting at line 28, column 1.
+Module body starting at line 5, column 1.
+
+
+Fatal errors while parsing TLA+ spec in file core_4_14_2_3.tla
+
+tla2sany.semantic.AbortException
+*** Abort messages: 1
+
+In module core_4_14_2_3
+
+Could not parse module core_4_14_2_3 from file core_4_14_2_3.tla
+
+
+
+
+[batch] (5/40) core_4.12.2.1  score=54.01
+[generate] provider=vertex-gemini model=gemini-3.1-pro-preview unit=core_4.12.2.1
+[generate] wrote models/generated/ch45_v3/core_4.12.2.1/vertex-gemini/core_4_12_2_1.tla
+[precheck] 8 possibly-undeclared identifier(s) (heuristic, not a substitute for SANY): RECURSIVE, TransMessage, _, exchanges, isFirstMessage, opDiscoveryTriggered, pendingInput, timerValue
+[validate] running SANY on core_4_12_2_1.tla ...
+[validate] SANY: FAIL
+
+****** SANY2 Version 2.1 created 24 February 2014
+
+Parsing file /home/sunanda/Thesis_codes/matter-corpus/models/generated/ch45_v3/core_4.12.2.1/vertex-gemini/core_4_12_2_1.tla
+Parsing file /tmp/Naturals.tla
+Semantic processing of module Naturals
+Semantic processing of module core_4_12_2_1
+Semantic errors:
+
+*** Errors: 1
+
+line 166, col 8 to line 166, col 19 of module core_4_12_2_1
+
+Unknown operator: `TransMessage'.
+
+
+
+
+
+[batch] (6/40) core_4.12.5.1  score=52.11
+[generate] provider=vertex-gemini model=gemini-3.1-pro-preview unit=core_4.12.5.1
+[generate] wrote models/generated/ch45_v3/core_4.12.5.1/vertex-gemini/core_4_12_5_1.tla
+[precheck] 8 possibly-undeclared identifier(s) (heuristic, not a substitute for SANY): CHOOSE, aFlag, ackMsgCounter, rFlag, retries, sendCount, sessionCredentials, type
+[validate] running SANY on core_4_12_5_1.tla ...
+[validate] SANY: PASS
+
+[batch] (7/40) core_4.18.5  score=48.36
+[generate] provider=vertex-gemini model=gemini-3.1-pro-preview unit=core_4.18.5
+[generate] wrote models/generated/ch45_v3/core_4.18.5/vertex-gemini/core_4_18_5.tla
+[precheck] 7 possibly-undeclared identifier(s) (heuristic, not a substitute for SANY): challenge, exchangeId, groupId, matchingEx, response, syncCounter, type
+[validate] running SANY on core_4_18_5.tla ...
+[validate] SANY: FAIL
+
+****** SANY2 Version 2.1 created 24 February 2014
+
+Parsing file /home/sunanda/Thesis_codes/matter-corpus/models/generated/ch45_v3/core_4.18.5/vertex-gemini/core_4_18_5.tla
+Parsing file /tmp/Naturals.tla
+Semantic processing of module Naturals
+Semantic processing of module core_4_18_5
+Semantic errors:
+
+*** Errors: 1
+
+line 204, col 43 to line 204, col 46 of module core_4_18_5
+
+Unknown operator: `node'.
+
+
+
+
+
+[batch] (8/40) core_4.12.5.2  score=47.63
+[generate] provider=vertex-gemini model=gemini-3.1-pro-preview unit=core_4.12.5.2
+[generate] wrote models/generated/ch45_v3/core_4.12.5.2/vertex-gemini/core_4_12_5_2.tla
+[precheck] 5 possibly-undeclared identifier(s) (heuristic, not a substitute for SANY): dropFromFlags, hasEntry, msgCounter, standaloneAckSent, type
+[validate] running SANY on core_4_12_5_2.tla ...
+[validate] SANY: PASS
+
+[batch] (9/40) core_4.20.3.7  score=47.51
+[generate] provider=vertex-gemini model=gemini-3.1-pro-preview unit=core_4.20.3.7
+[generate] wrote models/generated/ch45_v3/core_4.20.3.7/vertex-gemini/core_4_20_3_7.tla
+[precheck] no obviously undeclared identifiers found
+[validate] running SANY on core_4_20_3_7.tla ...
+[validate] SANY: PASS
+
+[batch] (10/40) core_4.19.4.7  score=45.97
+[generate] provider=vertex-gemini model=gemini-3.1-pro-preview unit=core_4.19.4.7
+[generate] wrote models/generated/ch45_v3/core_4.19.4.7/vertex-gemini/core_4_19_4_7.tla
+[precheck] no obviously undeclared identifiers found
+[validate] running SANY on core_4_19_4_7.tla ...
+[validate] SANY: PASS
+
+[batch] (11/40) core_4.3.1.11  score=44.85
+[generate] provider=vertex-gemini model=gemini-3.1-pro-preview unit=core_4.3.1.11
+[generate] wrote models/generated/ch45_v3/core_4.3.1.11/vertex-gemini/core_4_3_1_11.tla
+[precheck] 9 possibly-undeclared identifier(s) (heuristic, not a substitute for SANY): CustomCommissioningFlow, PHPresent, StandardCommissioningFlow, advertisedTXT, cm, currentPHBits, currentPIPresent, deviceState, extendedDiscoveryEnabled
+[validate] running SANY on core_4_3_1_11.tla ...
+[validate] SANY: PASS
+
+[batch] (12/40) core_4.6.7  score=37.0
+[generate] provider=vertex-gemini model=gemini-3.1-pro-preview unit=core_4.6.7
+[generate] wrote models/generated/ch45_v3/core_4.6.7/vertex-gemini/core_4_6_7.tla
+[precheck] 2 possibly-undeclared identifier(s) (heuristic, not a substitute for SANY): peer, type
+[validate] running SANY on core_4_6_7.tla ...
+[validate] SANY: PASS
+
+[batch] (13/40) core_4.12.2.2  score=36.68
+[generate] provider=vertex-gemini model=gemini-3.1-pro-preview unit=core_4.12.2.2
+[generate] wrote models/generated/ch45_v3/core_4.12.2.2/vertex-gemini/core_4_12_2_2.tla
+[precheck] no obviously undeclared identifiers found
+[validate] running SANY on core_4_12_2_2.tla ...
+[validate] SANY: FAIL
+
+****** SANY2 Version 2.1 created 24 February 2014
+
+Parsing file /home/sunanda/Thesis_codes/matter-corpus/models/generated/ch45_v3/core_4.12.2.2/vertex-gemini/core_4_12_2_2.tla
+***Parse Error***
+Encountered "acked" at line 75, column 64 and token "setminus" 
+
+Residual stack trace follows:
+IF THEN ELSE starting at line 69, column 8.
+Expression starting at line 69, column 8.
+Junction Item starting at line 69, column 5.
+AND-OR Junction starting at line 68, column 5.
+ExtendableExpr starting at line 68, column 5.
+
+
+Fatal errors while parsing TLA+ spec in file core_4_12_2_2.tla
+
+tla2sany.semantic.AbortException
+*** Abort messages: 1
+
+In module core_4_12_2_2
+
+Could not parse module core_4_12_2_2 from file core_4_12_2_2.tla
+
+
+
+
+[batch] (14/40) core_4.14.1.2  score=34.62
+[generate] provider=vertex-gemini model=gemini-3.1-pro-preview unit=core_4.14.1.2
+[generate] wrote models/generated/ch45_v3/core_4.14.1.2/vertex-gemini/core_4_14_1_2.tla
+[precheck] no obviously undeclared identifiers found
+[validate] running SANY on core_4_14_1_2.tla ...
+[validate] SANY: PASS
+
+[batch] (15/40) core_4.19.4.3  score=33.81
+[generate] provider=vertex-gemini model=gemini-3.1-pro-preview unit=core_4.19.4.3
+[generate] wrote models/generated/ch45_v3/core_4.19.4.3/vertex-gemini/core_4_19_4_3.tla
+[precheck] 1 possibly-undeclared identifier(s) (heuristic, not a substitute for SANY): CHOOSE
+[validate] running SANY on core_4_19_4_3.tla ...
+[validate] SANY: PASS
+
+[batch] (16/40) core_5.5.1  score=29.77
+[generate] provider=vertex-gemini model=gemini-3.1-pro-preview unit=core_5.5.1
+[generate] wrote models/generated/ch45_v3/core_5.5.1/vertex-gemini/core_5_5_1.tla
+[precheck] 10 possibly-undeclared identifier(s) (heuristic, not a substitute for SANY): acceptingPASE, breadcrumb, commissioningMode, currentStep, failSafeArmed, failedAttempts, inputBreadcrumb, inputExpiryLength, inputWaitTime, networkNeedsRevert
+[validate] running SANY on core_5_5_1.tla ...
+[validate] SANY: PASS
+
+[batch] (17/40) core_4.20.3.11  score=28.83
+[generate] provider=vertex-gemini model=gemini-3.1-pro-preview unit=core_4.20.3.11
+[generate] wrote models/generated/ch45_v3/core_4.20.3.11/vertex-gemini/core_4_20_3_11.tla
+[precheck] no obviously undeclared identifiers found
+[validate] running SANY on core_4_20_3_11.tla ...
+[validate] SANY: PASS
+
+[batch] (18/40) core_4.19.4.11  score=27.69
+[generate] provider=vertex-gemini model=gemini-3.1-pro-preview unit=core_4.19.4.11
+[generate] wrote models/generated/ch45_v3/core_4.19.4.11/vertex-gemini/core_4_19_4_11.tla
+[precheck] no obviously undeclared identifiers found
+[validate] running SANY on core_4_19_4_11.tla ...
+[validate] SANY: PASS
+
+[batch] (19/40) core_5.9.3  score=27.37
+[generate] provider=vertex-gemini model=gemini-3.1-pro-preview unit=core_5.9.3
+[generate] wrote models/generated/ch45_v3/core_5.9.3/vertex-gemini/core_5_9_3.tla
+[precheck] no obviously undeclared identifiers found
+[validate] running SANY on core_5_9_3.tla ...
+[validate] SANY: PASS
+
+[batch] (20/40) core_4.6.5.1  score=27.22
+[generate] provider=vertex-gemini model=gemini-3.1-pro-preview unit=core_4.6.5.1
+[generate] wrote models/generated/ch45_v3/core_4.6.5.1/vertex-gemini/core_4_6_5_1.tla
+[precheck] 1 possibly-undeclared identifier(s) (heuristic, not a substitute for SANY): peer
+[validate] running SANY on core_4_6_5_1.tla ...
+[validate] SANY: PASS
+
+[batch] (21/40) core_4.19.4.6  score=26.95
+[generate] provider=vertex-gemini model=gemini-3.1-pro-preview unit=core_4.19.4.6
+[generate] wrote models/generated/ch45_v3/core_4.19.4.6/vertex-gemini/core_4_19_4_6.tla
+[precheck] 6 possibly-undeclared identifier(s) (heuristic, not a substitute for SANY): errorReported, inputPeer, inputSeq, pendingInput, rxExpectedSeq, txSeq
+[validate] running SANY on core_4_19_4_6.tla ...
+[validate] SANY: PASS
+
+[batch] (22/40) core_4.20.3.6  score=26.8
+[generate] provider=vertex-gemini model=gemini-3.1-pro-preview unit=core_4.20.3.6
+[generate] wrote models/generated/ch45_v3/core_4.20.3.6/vertex-gemini/core_4_20_3_6.tla
+[precheck] no obviously undeclared identifiers found
+[validate] running SANY on core_4_20_3_6.tla ...
+[validate] SANY: PASS
+
+[batch] (23/40) core_4.12.6.1  score=26.4
+[generate] provider=vertex-gemini model=gemini-3.1-pro-preview unit=core_4.12.6.1
+[generate] wrote models/generated/ch45_v3/core_4.12.6.1/vertex-gemini/core_4_12_6_1.tla
+[precheck] 11 possibly-undeclared identifier(s) (heuristic, not a substitute for SANY): applicationNotifications, exchangeContext, inputExchangeContext, inputMessageBuffer, inputMessageCounter, inputMessageId, messageBuffer, messageCounter, retransmissionTable, retransmissionTimeoutCounter, sendCount
+[validate] running SANY on core_4_12_6_1.tla ...
+[validate] SANY: PASS
+
+[batch] (24/40) core_4.17.3.5  score=24.84
+[generate] provider=vertex-gemini model=gemini-3.1-pro-preview unit=core_4.17.3.5
+[generate] wrote models/generated/ch45_v3/core_4.17.3.5/vertex-gemini/core_4_17_3_5.tla
+[precheck] no obviously undeclared identifiers found
+[validate] running SANY on core_4_17_3_5.tla ...
+[validate] SANY: FAIL
+
+****** SANY2 Version 2.1 created 24 February 2014
+
+Parsing file /home/sunanda/Thesis_codes/matter-corpus/models/generated/ch45_v3/core_4.17.3.5/vertex-gemini/core_4_17_3_5.tla
+Parsing file /tmp/Naturals.tla
+Parsing file /tmp/FiniteSets.tla
+Parsing file /tmp/Sequences.tla
+Semantic processing of module Naturals
+Semantic processing of module Sequences
+Semantic processing of module FiniteSets
+Semantic processing of module core_4_17_3_5
+Semantic errors:
+
+*** Errors: 2
+
+line 102, col 58 to line 102, col 58 of module core_4_17_3_5
+
+Unknown operator: `f'.
+
+
+line 102, col 61 to line 102, col 62 of module core_4_17_3_5
+
+Unknown operator: `id'.
+
+
+
+
+
+[batch] (25/40) core_4.21.4.2  score=24.68
+[generate] provider=vertex-gemini model=gemini-3.1-pro-preview unit=core_4.21.4.2
+[generate] wrote models/generated/ch45_v3/core_4.21.4.2/vertex-gemini/core_4_21_4_2.tla
+[precheck] no obviously undeclared identifiers found
+[validate] running SANY on core_4_21_4_2.tla ...
+[validate] SANY: PASS
+
+[batch] (26/40) core_4.20.3.5  score=23.64
+[generate] provider=vertex-gemini model=gemini-3.1-pro-preview unit=core_4.20.3.5
+[generate] wrote models/generated/ch45_v3/core_4.20.3.5/vertex-gemini/core_4_20_3_5.tla
+[precheck] 6 possibly-undeclared identifier(s) (heuristic, not a substitute for SANY): begin, end, maxPayload, msgLen, payload, seq
+[validate] running SANY on core_4_20_3_5.tla ...
+[validate] SANY: PASS
+
+[batch] (27/40) core_4.18.2  score=22.77
+[generate] provider=vertex-gemini model=gemini-3.1-pro-preview unit=core_4.18.2
+[generate] wrote models/generated/ch45_v3/core_4.18.2/vertex-gemini/core_4_18_2.tla
+[precheck] 10 possibly-undeclared identifier(s) (heuristic, not a substitute for SANY): bitmap, controlStatus, controlTable, counter, dataStatus, dataTable, msgCounter, msgFabric, msgPeer, valid
+[validate] running SANY on core_4_18_2.tla ...
+[validate] SANY: FAIL
+
+****** SANY2 Version 2.1 created 24 February 2014
+
+Parsing file /home/sunanda/Thesis_codes/matter-corpus/models/generated/ch45_v3/core_4.18.2/vertex-gemini/core_4_18_2.tla
+***Parse Error***
+Was expecting "==== or more Module body"
+Encountered "{" at line 73, column 46 and token "setminus" 
+
+Residual stack trace follows:
+Module definition starting at line 1, column 1.
+
+
+Fatal errors while parsing TLA+ spec in file core_4_18_2.tla
+
+tla2sany.semantic.AbortException
+*** Abort messages: 1
+
+In module core_4_18_2
+
+Could not parse module core_4_18_2 from file core_4_18_2.tla
+
+
+
+
+[batch] (28/40) core_4.23.3.1  score=22.74
+[generate] provider=vertex-gemini model=gemini-3.1-pro-preview unit=core_4.23.3.1
+[generate] wrote models/generated/ch45_v3/core_4.23.3.1/vertex-gemini/core_4_23_3_1.tla
+[precheck] no obviously undeclared identifiers found
+[validate] running SANY on core_4_23_3_1.tla ...
+[validate] SANY: PASS
+
+[batch] (29/40) core_4.12.1  score=22.59
+[generate] provider=vertex-gemini model=gemini-3.1-pro-preview unit=core_4.12.1
+[generate] wrote models/generated/ch45_v3/core_4.12.1/vertex-gemini/core_4_12_1.tla
+[precheck] 5 possibly-undeclared identifier(s) (heuristic, not a substitute for SANY): aFlag, ackMsgCounter, isStandaloneAck, messageOut, rFlag
+[validate] running SANY on core_4_12_1.tla ...
+[validate] SANY: PASS
+
+[batch] (30/40) core_4.12.7.1  score=22.41
+[generate] provider=vertex-gemini model=gemini-3.1-pro-preview unit=core_4.12.7.1
+[generate] wrote models/generated/ch45_v3/core_4.12.7.1/vertex-gemini/core_4_12_7_1.tla
+[precheck] 7 possibly-undeclared identifier(s) (heuristic, not a substitute for SANY): NoInput, OPCODE_MRP_STANDALONE_ACKNOWLEDGEMENT, aFlag, acknowledgedMessageCounter, applicationPayload, protocolId, protocolOpcode
+[validate] running SANY on core_4_12_7_1.tla ...
+[validate] SANY: PASS
+
+[batch] (31/40) core_4.18.3.2  score=22.22
+[generate] provider=vertex-gemini model=gemini-3.1-pro-preview unit=core_4.18.3.2
+[generate] wrote models/generated/ch45_v3/core_4.18.3.2/vertex-gemini/core_4_18_3_2.tla
+[precheck] 5 possibly-undeclared identifier(s) (heuristic, not a substitute for SANY): cFlag, messageProtection, response, synchronizedCounter, type
+[validate] running SANY on core_4_18_3_2.tla ...
+[validate] SANY: PASS
+
+[batch] (32/40) core_4.20.3.3  score=22.17
+[generate] provider=vertex-gemini model=gemini-3.1-pro-preview unit=core_4.20.3.3
+[generate] wrote models/generated/ch45_v3/core_4.20.3.3/vertex-gemini/core_4_20_3_3.tla
+[precheck] 1 possibly-undeclared identifier(s) (heuristic, not a substitute for SANY): CHOOSE
+[validate] running SANY on core_4_20_3_3.tla ...
+[validate] SANY: PASS
+
+[batch] (33/40) core_4.19.4.5  score=21.76
+[generate] provider=vertex-gemini model=gemini-3.1-pro-preview unit=core_4.19.4.5
+[generate] wrote models/generated/ch45_v3/core_4.19.4.5/vertex-gemini/core_4_19_4_5.tla
+[precheck] no obviously undeclared identifiers found
+[validate] running SANY on core_4_19_4_5.tla ...
+[validate] SANY: PASS
+
+[batch] (34/40) core_4.8.2  score=21.61
+[generate] provider=vertex-gemini model=gemini-3.1-pro-preview unit=core_4.8.2
+[generate] wrote models/generated/ch45_v3/core_4.8.2/vertex-gemini/core_4_8_2.tla
+[precheck] 34 possibly-undeclared identifier(s) (heuristic, not a substitute for SANY): C_Flag, CiphertextAndTag, Const_MaxMessageCounter, DSIZ, DestNodeIDs, DestinationNodeID, GroupSession, Header, MessageCounter, MessageExtensions, MessageFlags, NullValue, S, SecureUnicastSession, SecurityFlags, SessionID, SessionIDs, SessionType, SourceNodeID, UnsecuredSession, globalGroupEncryptedControlMessageCounter, globalGroupEncryptedDataMessageCounter, globalUnencryptedMessageCounter, myOperationalNodeId, out_message, out_status, req_aeadFails, req_messageExtensions, req_messageFlags, req_messagePayload, req_securityFlags_C_Flag, secureSessionMessageCounters, sessionKeys, sessionTypes
+[validate] running SANY on core_4_8_2.tla ...
+[validate] SANY: PASS
+
+[batch] (35/40) core_4.12.6.2  score=21.46
+[generate] provider=vertex-gemini model=gemini-3.1-pro-preview unit=core_4.12.6.2
+[generate] wrote models/generated/ch45_v3/core_4.12.6.2/vertex-gemini/core_4_12_6_2.tla
+[precheck] 5 possibly-undeclared identifier(s) (heuristic, not a substitute for SANY): exchangeId, msgCounter, standaloneAckSent, targetEntries, type
+[validate] running SANY on core_4_12_6_2.tla ...
+[validate] SANY: PASS
+
+[batch] (36/40) core_4.6.5  score=21.04
+[generate] provider=vertex-gemini model=gemini-3.1-pro-preview unit=core_4.6.5
+[generate] wrote models/generated/ch45_v3/core_4.6.5/vertex-gemini/core_4_6_5.tla
+[precheck] 4 possibly-undeclared identifier(s) (heuristic, not a substitute for SANY): applicationLayerMessages, counter, history, sender
+[validate] running SANY on core_4_6_5.tla ...
+[validate] SANY: PASS
+
+[batch] (37/40) core_4.10.5.3  score=21.03
+[generate] provider=vertex-gemini model=gemini-3.1-pro-preview unit=core_4.10.5.3
+[generate] wrote models/generated/ch45_v3/core_4.10.5.3/vertex-gemini/core_4_10_5_3.tla
+[precheck] 3 possibly-undeclared identifier(s) (heuristic, not a substitute for SANY): exchangeId, sentMessages, type
+[validate] running SANY on core_4_10_5_3.tla ...
+[validate] SANY: PASS
+
+[batch] (38/40) core_4.7.2  score=20.92
+[generate] provider=vertex-gemini model=gemini-3.1-pro-preview unit=core_4.7.2
+[generate] FAILED: No usable Google credentials (HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NameResolutionError("HTTPSConnection(host='oauth2.googleapis.com', port=443): Failed to resolve 'oauth2.googleapis.com' ([Errno -2] Name or service not known)"))). Run: gcloud auth application-default login
+
+[batch] (39/40) core_4.8.3  score=20.63
+[generate] provider=vertex-gemini model=gemini-3.1-pro-preview unit=core_4.8.3
+[generate] FAILED: No usable Google credentials (HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NameResolutionError("HTTPSConnection(host='oauth2.googleapis.com', port=443): Failed to resolve 'oauth2.googleapis.com' ([Errno -2] Name or service not known)"))). Run: gcloud auth application-default login
+
+[batch] (40/40) core_4.21.4.3  score=20.07
+[generate] provider=vertex-gemini model=gemini-3.1-pro-preview unit=core_4.21.4.3
+[generate] FAILED: No usable Google credentials (HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NameResolutionError("HTTPSConnection(host='oauth2.googleapis.com', port=443): Failed to resolve 'oauth2.googleapis.com' ([Errno -2] Name or service not known)"))). Run: gcloud auth application-default login
+
+[batch] DONE  total=40  generated=37  sany_pass=29  sany_fail=8  failed_to_generate=3
+[batch] log: models/generated/ch45_v3/results.jsonl

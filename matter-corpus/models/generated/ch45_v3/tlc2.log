@@ -1,0 +1,40 @@
+[tlc] sany_passing=40  already_checked=39  to_run=1
+
+[tlc] (1/1) core_4.7.2  core_4_7_2.tla
+[tlc] core_4.7.2: UNHANDLED_INPUT  configs=1 max_distinct_states=14383
+
+[tlc] ===== SUMMARY =====
+[tlc]   unhandled_input     27
+[tlc]   input_alphabet_unknown 1
+[tlc]   no_error            12
+
+[tlc] CANDIDATE SPEC GAPS (27) - an event arrived that nothing handles:
+[tlc]   core_4.20.3.8      score=127.15  Packet Acknowledgements
+[tlc]   core_4.14.2.3      score=81.1  Protocol Details
+[tlc]   core_4.12.2.1      score=54.01  Retransmissions
+[tlc]   core_4.12.5.1      score=52.11  Reliable Message Processing of Outgoing Messages
+[tlc]   core_4.18.5        score=48.36  Message Counter Synchronization Exchange
+[tlc]   core_4.12.5.2      score=47.63  Reliable Message Processing of Incoming Messages
+[tlc]   core_4.20.3.7      score=47.51  Receive Windows
+[tlc]   core_4.19.4.7      score=45.97  Receive Windows
+[tlc]   core_4.3.1.11      score=44.85  TXT key for pairing hint (PH)
+[tlc]   core_4.6.7         score=37.0  Counter Processing of Incoming Messages
+[tlc]   core_4.12.2.2      score=36.68  Acknowledgements
+[tlc]   core_4.14.1.2      score=34.62  Protocol Details
+[tlc]   core_4.19.4.3      score=33.81  Session Establishment
+[tlc]   core_5.5.1         score=29.77  Commissioning Flows Error Handling
+[tlc]   core_4.20.3.11     score=28.83  Protocol State Diagrams
+[tlc]   core_5.9.3         score=27.37  Network Recovery Flow
+[tlc]   core_4.19.4.6      score=26.95  Sequence Numbers
+[tlc]   core_4.20.3.6      score=26.8  Sequence Numbers
+[tlc]   core_4.17.3.5      score=24.84  Epoch Key Rotation logic
+[tlc]   core_4.21.4.2      score=24.68  TRANSPORT command
+[tlc]   core_4.20.3.5      score=23.64  Message Segmentation and Reassembly
+[tlc]   core_4.23.3.1      score=22.74  Advertisement from Commissionee
+[tlc]   core_4.12.1        score=22.59  Reliable Messaging Header Fields
+[tlc]   core_4.20.3.3      score=22.17  Session Establishment
+[tlc]   core_4.19.4.5      score=21.76  Message Segmentation and Reassembly
+[tlc]   core_4.10.5.3      score=21.03  Closing an Exchange
+[tlc]   core_4.7.2         score=20.92  Message Reception
+
+[tlc] log: models/generated/ch45_v3/tlc_results.jsonl

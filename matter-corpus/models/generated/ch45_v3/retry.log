@@ -1,0 +1,135 @@
+[retry] 11 unit(s) to retry: core_4.20.3.8, core_4.19.4.8, core_4.14.2.3, core_4.12.2.1, core_4.18.5, core_4.12.2.2, core_4.17.3.5, core_4.18.2, core_4.7.2, core_4.8.3, core_4.21.4.3
+[retry] previous log backed up to models/generated/ch45_v3/results.jsonl.bak
+
+[retry] (1/11) core_4.20.3.8
+[generate] provider=vertex-gemini model=gemini-3.1-pro-preview unit=core_4.20.3.8
+[generate] wrote models/generated/ch45_v3/core_4.20.3.8/vertex-gemini/core_4_20_3_8.tla
+[precheck] 1 possibly-undeclared identifier(s) (heuristic, not a substitute for SANY): isAckPresent
+[validate] running SANY on core_4_20_3_8.tla ...
+[validate] SANY: PASS
+[retry] core_4.20.3.8: SANY PASS
+
+[retry] (2/11) core_4.19.4.8
+[generate] provider=vertex-gemini model=gemini-3.1-pro-preview unit=core_4.19.4.8
+[generate] wrote models/generated/ch45_v3/core_4.19.4.8/vertex-gemini/core_4_19_4_8.tla
+[precheck] 17 possibly-undeclared identifier(s) (heuristic, not a substitute for SANY): BTP_ACK_TIMEOUT, CHOOSE, MaxWindowSize, NoInput, NoSeqNum, ackRecvTimerRunning, freeSlots, idx, inPacketAckNum, inPacketHasAck, inPacketIsStandAlone, inPacketSeqNum, nextSeqNum, pendingAckVal, pendingInput, sendAckTimerRunning, unackedList
+[validate] running SANY on core_4_19_4_8.tla ...
+[validate] SANY: PASS
+[retry] core_4.19.4.8: SANY PASS
+
+[retry] (3/11) core_4.14.2.3
+[generate] provider=vertex-gemini model=gemini-3.1-pro-preview unit=core_4.14.2.3
+[generate] wrote models/generated/ch45_v3/core_4.14.2.3/vertex-gemini/core_4_14_2_3.tla
+[precheck] 13 possibly-undeclared identifier(s) (heuristic, not a substitute for SANY): code, initiatorResumeMIC, initiatorSessionId, localSessionId, peerSessionId, responderSessionId, resumptionID, resumptionId, type, validCert, validDecrypt, validResumeMIC, validSignature
+[validate] running SANY on core_4_14_2_3.tla ...
+[validate] SANY: PASS
+[retry] core_4.14.2.3: SANY PASS
+
+[retry] (4/11) core_4.12.2.1
+[generate] provider=vertex-gemini model=gemini-3.1-pro-preview unit=core_4.12.2.1
+[generate] wrote models/generated/ch45_v3/core_4.12.2.1/vertex-gemini/core_4_12_2_1.tla
+[precheck] 10 possibly-undeclared identifier(s) (heuristic, not a substitute for SANY): PeerActiveMode, SESSION_ACTIVE_INTERVAL, SESSION_IDLE_INTERVAL, activeInt, activeMode, ex, fastPoll, idleInt, isFirstMsg, state
+[validate] running SANY on core_4_12_2_1.tla ...
+[validate] SANY: PASS
+[retry] core_4.12.2.1: SANY PASS
+
+[retry] (5/11) core_4.18.5
+[generate] provider=vertex-gemini model=gemini-3.1-pro-preview unit=core_4.18.5
+[generate] wrote models/generated/ch45_v3/core_4.18.5/vertex-gemini/core_4_18_5.tla
+[precheck] 33 possibly-undeclared identifier(s) (heuristic, not a substitute for SANY): AFlag, CFlag, DSIZ, IFlag, PFlag, RFlag, SFlag, activeExchanges, challenge, dstNodeId, exchangeId, in_msg, in_timerId, in_triggerMsg, isMulticast, jitterTimers, matchingExchanges, myGroupDataCounter, network, nextExchangeId, nextTimerId, peerCounterSynchronized, peerMessageCounters, peerReceptionStateCleared, queuedMsgs, response, sessionId, sessionType, srcNodeId, syncCounter, syncTimers, timerId, type
+[validate] running SANY on core_4_18_5.tla ...
+[validate] SANY: PASS
+[retry] core_4.18.5: SANY PASS
+
+[retry] (6/11) core_4.12.2.2
+[generate] provider=vertex-gemini model=gemini-3.1-pro-preview unit=core_4.12.2.2
+[generate] wrote models/generated/ch45_v3/core_4.12.2.2/vertex-gemini/core_4_12_2_2.tla
+[precheck] 3 possibly-undeclared identifier(s) (heuristic, not a substitute for SANY): ackedCounter, isDuplicate, type
+[validate] running SANY on core_4_12_2_2.tla ...
+[validate] SANY: FAIL
+
+****** SANY2 Version 2.1 created 24 February 2014
+
+Parsing file /home/sunanda/Thesis_codes/matter-corpus/models/generated/ch45_v3/core_4.12.2.2/vertex-gemini/core_4_12_2_2.tla
+***Parse Error***
+Was expecting "==== or more Module body"
+Encountered "{" at line 82, column 66 and token "setminus" 
+
+Residual stack trace follows:
+Module definition starting at line 1, column 1.
+
+
+Fatal errors while parsing TLA+ spec in file core_4_12_2_2.tla
+
+tla2sany.semantic.AbortException
+*** Abort messages: 1
+
+In module core_4_12_2_2
+
+Could not parse module core_4_12_2_2 from file core_4_12_2_2.tla
+
+
+
+[retry] core_4.12.2.2: SANY FAIL
+
+[retry] (7/11) core_4.17.3.5
+[generate] provider=vertex-gemini model=gemini-3.1-pro-preview unit=core_4.17.3.5
+[generate] wrote models/generated/ch45_v3/core_4.17.3.5/vertex-gemini/core_4_17_3_5.tla
+[precheck] no obviously undeclared identifiers found
+[validate] running SANY on core_4_17_3_5.tla ...
+[validate] SANY: PASS
+[retry] core_4.17.3.5: SANY PASS
+
+[retry] (8/11) core_4.18.2
+[generate] provider=vertex-gemini model=gemini-3.1-pro-preview unit=core_4.18.2
+[generate] wrote models/generated/ch45_v3/core_4.18.2/vertex-gemini/core_4_18_2.tla
+[precheck] 12 possibly-undeclared identifier(s) (heuristic, not a substitute for SANY): ControlCapacity, DataCapacity, Fabrics, NoBitmap, NoCounter, NoEntry, Peers, bitmap, controlState, dataState, isValid, syncCounter
+[validate] running SANY on core_4_18_2.tla ...
+[validate] SANY: PASS
+[retry] core_4.18.2: SANY PASS
+
+[retry] (9/11) core_4.7.2
+[generate] provider=vertex-gemini model=gemini-3.1-pro-preview unit=core_4.7.2
+[generate] wrote models/generated/ch45_v3/core_4.7.2/vertex-gemini/core_4_7_2.tla
+[precheck] 16 possibly-undeclared identifier(s) (heuristic, not a substitute for SANY): Booleans, activeTimestamps, clock, deliveredMsg, dsizGroupIdPresent, dsizZero, inMsg, isUnicastSession, lastError, pFlagSet, sFlagSet, sessionId, sessionTimestamps, sessionType, transport, version
+[validate] running SANY on core_4_7_2.tla ...
+[validate] SANY: FAIL
+
+****** SANY2 Version 2.1 created 24 February 2014
+
+Parsing file /home/sunanda/Thesis_codes/matter-corpus/models/generated/ch45_v3/core_4.7.2/vertex-gemini/core_4_7_2.tla
+Parsing file /tmp/Naturals.tla
+
+Fatal errors while parsing TLA+ spec in file core_4_7_2.tla
+
+tla2sany.semantic.AbortException
+*** Abort messages: 1
+
+Unknown location
+
+Cannot find source file for module Booleans imported in module core_4_7_2.
+
+
+File does not exist: /home/sunanda/Thesis_codes/matter-corpus/models/generated/ch45_v3/core_4.7.2/vertex-gemini/Booleans.tla while looking in these directories: jar:file:/home/sunanda/Thesis_codes/matter-corpus/tla2tools.jar!/tla2sany/StandardModules/
+
+[retry] core_4.7.2: SANY FAIL
+
+[retry] (10/11) core_4.8.3
+[generate] provider=vertex-gemini model=gemini-3.1-pro-preview unit=core_4.8.3
+[generate] wrote models/generated/ch45_v3/core_4.8.3/vertex-gemini/core_4_8_3.tla
+[precheck] 3 possibly-undeclared identifier(s) (heuristic, not a substitute for SANY): key, payload, success
+[validate] running SANY on core_4_8_3.tla ...
+[validate] SANY: PASS
+[retry] core_4.8.3: SANY PASS
+
+[retry] (11/11) core_4.21.4.3
+[generate] provider=vertex-gemini model=gemini-3.1-pro-preview unit=core_4.21.4.3
+[generate] wrote models/generated/ch45_v3/core_4.21.4.3/vertex-gemini/core_4_21_4_3.tla
+[precheck] no obviously undeclared identifiers found
+[validate] running SANY on core_4_21_4_3.tla ...
+[validate] SANY: PASS
+[retry] core_4.21.4.3: SANY PASS
+
+[retry] DONE  total=40  generated=40  sany_pass=38  sany_fail=2
+[retry] still failing: core_4.12.2.2
+[retry] still failing: core_4.7.2

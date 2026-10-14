@@ -1,0 +1,153 @@
+[tlc] sany_passing=39  already_checked=0  to_run=39
+
+[tlc] (1/39) core_4.20.3.8  core_4_20_3_8.tla
+[tlc] core_4.20.3.8: UNHANDLED_INPUT  configs=1 max_distinct_states=24
+
+[tlc] (2/39) core_4.19.4.8  core_4_19_4_8.tla
+[tlc] core_4.19.4.8: NO_ERROR  configs=1 max_distinct_states=69025
+
+[tlc] (3/39) core_5.5  core_5_5.tla
+[tlc] core_5.5: NO_ERROR  configs=2 max_distinct_states=11200
+
+[tlc] (4/39) core_4.14.2.3  core_4_14_2_3.tla
+[tlc] core_4.14.2.3: UNHANDLED_INPUT  configs=1 max_distinct_states=80
+
+[tlc] (5/39) core_4.12.2.1  core_4_12_2_1.tla
+[tlc] core_4.12.2.1: UNHANDLED_INPUT  configs=1 max_distinct_states=1026
+
+[tlc] (6/39) core_4.12.5.1  core_4_12_5_1.tla
+[tlc] core_4.12.5.1: UNHANDLED_INPUT  configs=1 max_distinct_states=3
+
+[tlc] (7/39) core_4.18.5  core_4_18_5.tla
+[tlc] core_4.18.5: UNHANDLED_INPUT  configs=1 max_distinct_states=2
+
+[tlc] (8/39) core_4.12.5.2  core_4_12_5_2.tla
+[tlc] core_4.12.5.2: UNHANDLED_INPUT  configs=1 max_distinct_states=131074
+
+[tlc] (9/39) core_4.20.3.7  core_4_20_3_7.tla
+[tlc] core_4.20.3.7: UNHANDLED_INPUT  configs=1 max_distinct_states=3
+
+[tlc] (10/39) core_4.19.4.7  core_4_19_4_7.tla
+[tlc] core_4.19.4.7: UNHANDLED_INPUT  configs=1 max_distinct_states=4
+
+[tlc] (11/39) core_4.3.1.11  core_4_3_1_11.tla
+[tlc] core_4.3.1.11: UNHANDLED_INPUT  configs=4 max_distinct_states=9
+
+[tlc] (12/39) core_4.6.7  core_4_6_7.tla
+[tlc] core_4.6.7: UNHANDLED_INPUT  configs=1 max_distinct_states=25
+
+[tlc] (13/39) core_4.12.2.2  core_4_12_2_2.tla
+[tlc] core_4.12.2.2: UNHANDLED_INPUT  configs=1 max_distinct_states=22
+
+[tlc] (14/39) core_4.14.1.2  core_4_14_1_2.tla
+[tlc] core_4.14.1.2: UNHANDLED_INPUT  configs=1 max_distinct_states=98
+
+[tlc] (15/39) core_4.19.4.3  core_4_19_4_3.tla
+[tlc] core_4.19.4.3: UNHANDLED_INPUT  configs=2 max_distinct_states=4
+
+[tlc] (16/39) core_5.5.1  core_5_5_1.tla
+[tlc] core_5.5.1: UNHANDLED_INPUT  configs=1 max_distinct_states=209
+
+[tlc] (17/39) core_4.20.3.11  core_4_20_3_11.tla
+[tlc] core_4.20.3.11: UNHANDLED_INPUT  configs=1 max_distinct_states=6
+
+[tlc] (18/39) core_4.19.4.11  core_4_19_4_11.tla
+[tlc] core_4.19.4.11: NO_ERROR  configs=1 max_distinct_states=12
+
+[tlc] (19/39) core_5.9.3  core_5_9_3.tla
+[tlc] core_5.9.3: UNHANDLED_INPUT  configs=1 max_distinct_states=4
+
+[tlc] (20/39) core_4.6.5.1  core_4_6_5_1.tla
+[tlc] core_4.6.5.1: NO_ERROR  configs=1 max_distinct_states=164
+
+[tlc] (21/39) core_4.19.4.6  core_4_19_4_6.tla
+[tlc] core_4.19.4.6: UNHANDLED_INPUT  configs=1 max_distinct_states=2
+
+[tlc] (22/39) core_4.20.3.6  core_4_20_3_6.tla
+[tlc] core_4.20.3.6: UNHANDLED_INPUT  configs=1 max_distinct_states=4
+
+[tlc] (23/39) core_4.12.6.1  core_4_12_6_1.tla
+[tlc] core_4.12.6.1: NO_ERROR  configs=1 max_distinct_states=68065
+
+[tlc] (24/39) core_4.17.3.5  core_4_17_3_5.tla
+[tlc] core_4.17.3.5: UNHANDLED_INPUT  configs=1 max_distinct_states=513
+
+[tlc] (25/39) core_4.21.4.2  core_4_21_4_2.tla
+[tlc] core_4.21.4.2: UNHANDLED_INPUT  configs=1 max_distinct_states=10
+
+[tlc] (26/39) core_4.20.3.5  core_4_20_3_5.tla
+[tlc] core_4.20.3.5: UNHANDLED_INPUT  configs=1 max_distinct_states=3
+
+[tlc] (27/39) core_4.18.2  core_4_18_2.tla
+[tlc] core_4.18.2: NO_ERROR  configs=1 max_distinct_states=4112
+
+[tlc] (28/39) core_4.23.3.1  core_4_23_3_1.tla
+[tlc] core_4.23.3.1: UNHANDLED_INPUT  configs=1 max_distinct_states=3
+
+[tlc] (29/39) core_4.12.1  core_4_12_1.tla
+[tlc] core_4.12.1: UNHANDLED_INPUT  configs=1 max_distinct_states=6
+
+[tlc] (30/39) core_4.12.7.1  core_4_12_7_1.tla
+[tlc] core_4.12.7.1: INPUT_ALPHABET_UNKNOWN  configs=0 max_distinct_states=0
+
+[tlc] (31/39) core_4.18.3.2  core_4_18_3_2.tla
+[tlc] core_4.18.3.2: NO_ERROR  configs=1 max_distinct_states=4
+
+[tlc] (32/39) core_4.20.3.3  core_4_20_3_3.tla
+[tlc] core_4.20.3.3: UNHANDLED_INPUT  configs=1 max_distinct_states=3
+
+[tlc] (33/39) core_4.19.4.5  core_4_19_4_5.tla
+[tlc] core_4.19.4.5: UNHANDLED_INPUT  configs=1 max_distinct_states=674
+
+[tlc] (34/39) core_4.8.2  core_4_8_2.tla
+[tlc] core_4.8.2: NO_ERROR  configs=1 max_distinct_states=4
+
+[tlc] (35/39) core_4.12.6.2  core_4_12_6_2.tla
+[tlc] core_4.12.6.2: NO_ERROR  configs=1 max_distinct_states=115516
+
+[tlc] (36/39) core_4.6.5  core_4_6_5.tla
+[tlc] core_4.6.5: NO_ERROR  configs=1 max_distinct_states=4096
+
+[tlc] (37/39) core_4.10.5.3  core_4_10_5_3.tla
+[tlc] core_4.10.5.3: UNHANDLED_INPUT  configs=1 max_distinct_states=2597
+
+[tlc] (38/39) core_4.8.3  core_4_8_3.tla
+[tlc] core_4.8.3: NO_ERROR  configs=1 max_distinct_states=4
+
+[tlc] (39/39) core_4.21.4.3  core_4_21_4_3.tla
+[tlc] core_4.21.4.3: NO_ERROR  configs=1 max_distinct_states=48
+
+[tlc] ===== SUMMARY =====
+[tlc]   unhandled_input     26
+[tlc]   input_alphabet_unknown 1
+[tlc]   no_error            12
+
+[tlc] CANDIDATE SPEC GAPS (26) - an event arrived that nothing handles:
+[tlc]   core_4.20.3.8      score=127.15  Packet Acknowledgements
+[tlc]   core_4.14.2.3      score=81.1  Protocol Details
+[tlc]   core_4.12.2.1      score=54.01  Retransmissions
+[tlc]   core_4.12.5.1      score=52.11  Reliable Message Processing of Outgoing Messages
+[tlc]   core_4.18.5        score=48.36  Message Counter Synchronization Exchange
+[tlc]   core_4.12.5.2      score=47.63  Reliable Message Processing of Incoming Messages
+[tlc]   core_4.20.3.7      score=47.51  Receive Windows
+[tlc]   core_4.19.4.7      score=45.97  Receive Windows
+[tlc]   core_4.3.1.11      score=44.85  TXT key for pairing hint (PH)
+[tlc]   core_4.6.7         score=37.0  Counter Processing of Incoming Messages
+[tlc]   core_4.12.2.2      score=36.68  Acknowledgements
+[tlc]   core_4.14.1.2      score=34.62  Protocol Details
+[tlc]   core_4.19.4.3      score=33.81  Session Establishment
+[tlc]   core_5.5.1         score=29.77  Commissioning Flows Error Handling
+[tlc]   core_4.20.3.11     score=28.83  Protocol State Diagrams
+[tlc]   core_5.9.3         score=27.37  Network Recovery Flow
+[tlc]   core_4.19.4.6      score=26.95  Sequence Numbers
+[tlc]   core_4.20.3.6      score=26.8  Sequence Numbers
+[tlc]   core_4.17.3.5      score=24.84  Epoch Key Rotation logic
+[tlc]   core_4.21.4.2      score=24.68  TRANSPORT command
+[tlc]   core_4.20.3.5      score=23.64  Message Segmentation and Reassembly
+[tlc]   core_4.23.3.1      score=22.74  Advertisement from Commissionee
+[tlc]   core_4.12.1        score=22.59  Reliable Messaging Header Fields
+[tlc]   core_4.20.3.3      score=22.17  Session Establishment
+[tlc]   core_4.19.4.5      score=21.76  Message Segmentation and Reassembly
+[tlc]   core_4.10.5.3      score=21.03  Closing an Exchange
+
+[tlc] log: models/generated/ch45_v3/tlc_results.jsonl

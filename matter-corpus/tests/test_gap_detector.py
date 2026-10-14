@@ -275,3 +275,91 @@ def test_event_handled_nowhere_is_actually_reported(tmp_path):
     result = check_module(path, TLA_TOOLS, timeout=60)
     assert result["outcome"] == "unhandled_input"
     assert "NeverHandled" in result["runs"][0].get("trace", "")
+
+
+# Rule 4b ranking. The same model twice, differing ONLY in whether its initial
+# state counts as operational - so the test isolates the ranking signal from
+# everything else.
+_OP_MODULE = """
+    ---- MODULE Op%s ----
+    CONSTANTS NoInput
+    VARIABLES state, pendingInput
+
+    Inputs == {"Arm", "Complete"}
+    Operational == %s
+
+    Init == /\\ state = "Disarmed"
+            /\\ pendingInput = NoInput
+
+    ReceiveInput(e) == /\\ pendingInput = NoInput
+                       /\\ e \\in Inputs
+                       /\\ pendingInput' = e
+                       /\\ UNCHANGED state
+
+    Arm == /\\ pendingInput = "Arm"
+           /\\ state' = "Armed"
+           /\\ pendingInput' = NoInput
+
+    Complete == /\\ pendingInput = "Complete"
+                /\\ state = "Armed"
+                /\\ state' = "Disarmed"
+                /\\ pendingInput' = NoInput
+
+    Next == \\/ \\E e \\in Inputs : ReceiveInput(e)
+            \\/ Arm \\/ Complete
+    ====
+"""
+
+
+def test_event_in_an_operational_state_ranks_strong(tmp_path):
+    """Disarmed is a real resting state, so a gap there is a strong finding."""
+    path = write(tmp_path, "OpStrong",
+                 _OP_MODULE % ("Strong", 'state \\in {"Disarmed", "Armed"}'))
+    r = check_module(path, TLA_TOOLS, timeout=60)
+    assert r["outcome"] == "unhandled_input"
+    assert r["gap_strength"] == "operational"
+
+
+def test_event_in_scaffolding_ranks_weak(tmp_path):
+    """Same model; only the Operational predicate changed."""
+    path = write(tmp_path, "OpWeak",
+                 _OP_MODULE % ("Weak", 'state # "Disarmed"'))
+    r = check_module(path, TLA_TOOLS, timeout=60)
+    assert r["outcome"] == "unhandled_input"
+    assert r["gap_strength"] == "setup_only"
+
+
+def test_weak_findings_are_still_reported(tmp_path):
+    """
+    Ranking, never filtering. The ground-truth ArmFailSafe gap arrives in that
+    module's INITIAL state, so a rule that dropped initial-state findings would
+    discard the one gap known to be real.
+    """
+    path = write(tmp_path, "OpWeak2",
+                 _OP_MODULE % ("Weak2", 'state # "Disarmed"'))
+    r = check_module(path, TLA_TOOLS, timeout=60)
+    assert r["gap_candidate"] is True
+
+
+def test_module_without_rule_4b_is_unranked_not_demoted(tmp_path):
+    """Modules predating rule 4b must not be silently sorted to the bottom."""
+    path = write(tmp_path, "Declared", DECLARES_UNHANDLED_EVENT)
+    r = check_module(path, TLA_TOOLS, timeout=60)
+    assert r["declares_operational"] is False
+    assert r["gap_strength"] == "unranked"
+
+
+def test_ground_truth_gap_ranks_operational(tmp_path):
+    """
+    ArmFailSafe's known gap: CommissioningComplete while Disarmed. Disarmed is
+    where the device actually sits, so rule 4b must rank this STRONG even
+    though it is reached at depth 2 with no model action - the shape that
+    looked like noise before this ranking existed.
+    """
+    body = ARM_FAIL_SAFE_SHAPED.replace(
+        "    Init == ", '    Operational == state \\in {"Disarmed", "Armed"}\n\n    Init == ')
+    path = write(tmp_path, "ArmFailSafeShaped", body)
+    r = check_module(path, TLA_TOOLS, timeout=60)
+    assert r["outcome"] == "unhandled_input", r
+    assert r["gap_strength"] == "operational"
+    assert "CommissioningComplete" in r["runs"][0].get("unhandled_value", "")

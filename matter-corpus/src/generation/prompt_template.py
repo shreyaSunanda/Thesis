@@ -96,6 +96,24 @@ RULES:
    Do NOT add an action that silently discards an unhandled event. If the spec text
    does not say what happens when some event arrives in some state, leave that case
    unhandled - that silence is exactly what is being measured.
+4b. DECLARE WHEN THE COMPONENT IS OPERATIONAL. Add exactly one definition:
+       Operational == <a predicate over this module's own variables>
+   It is TRUE when the component is past setup and actually running the
+   behaviour this section describes, and FALSE in scaffolding states that
+   exist only so the model has somewhere to start - before initialization,
+   before a session exists, before a handshake completes, immediately after
+   a factory reset.
+   Examples:
+       Operational == sessionState \\in {"OPEN", "ESTABLISHED"}
+       Operational == phase # "Uninitialized"
+       Operational == TRUE        \\* if EVERY state of this module is operational
+   This does not change what you model. It is read only to rank findings:
+   an event arriving in a state the device is genuinely in matters more than
+   one arriving before the device has started. Do NOT use it to exclude
+   behaviour, and do NOT reference it from any action.
+   A resting state the device really sits in IS operational, even if it is
+   also the initial state - "Disarmed" before any command arrives is
+   operational; "Uninitialized" before setup is not.
 5. HARD REQUIREMENT - no undeclared identifiers: every name you use anywhere in the
    module (in Init, in any action, in Next) must be one of: (a) listed in CONSTANTS,
    (b) listed in VARIABLES, or (c) defined earlier in this same module with

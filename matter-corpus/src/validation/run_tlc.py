@@ -52,7 +52,8 @@ from pathlib import Path
 from src.validation.tlc_config import (plan_configs, constant_value,
                                          extract_input_alphabet, input_alphabet_tla,
                                          extract_record_alphabet, record_alphabet_tla,
-                                         extract_declared_alphabet, unhandled_everywhere)
+                                         extract_declared_alphabet, unhandled_everywhere,
+                                         declares_operational)
 from src.validation import gap_detector as gd
 
 _STATS_RE = re.compile(
@@ -72,7 +73,8 @@ def classify_output(returncode: int, output: str, timed_out: bool) -> dict:
         outcome = "timeout"
     elif "Deadlock reached" in output:
         outcome = "deadlock"
-    elif re.search(rf"Invariant {gd.INVARIANT_NAME} is violated", output):
+    elif re.search(rf"Invariant (?:{gd.INVARIANT_NAME}|{gd.OPERATIONAL_INVARIANT})"
+                   r" is violated", output):
         # The gap signal, kept separate from any other invariant the model
         # happened to define: this one the harness attached, and only it means
         # "an event arrived that nothing handles".
@@ -356,26 +358,38 @@ def check_module(tla_path, tla_tools_jar, timeout: int = 120,
 
     module = plan["module_name"]
     detector_path = tla_path.with_name(f"{module}_MC.tla")
+    has_operational = declares_operational(code)
+    summary["declares_operational"] = has_operational
     detector_path.write_text(
-        gd.build_detector_module(module, alphabet_tla), encoding="utf-8")
+        gd.build_detector_module(module, alphabet_tla, has_operational),
+        encoding="utf-8")
 
     for i, cfg in enumerate(plan["configs"]):
         # Re-render the constants for the wrapper, which EXTENDS the module and
         # so must supply the same values.
         const_lines = [f"    {c} = {constant_value(c, plan['constant_kinds'][c], cfg['bool_assignment'].get(c, True))}"
                        for c in plan["constants"]]
-        cfg_path = detector_path.with_name(f"{module}_MC__mc{i}.cfg")
-        cfg_path.write_text(
-            gd.build_detector_config(plan, const_lines, bind_alphabet=True),
+        # Each invariant gets its own run: TLC stops at the first violation,
+        # so checking both together would let the weak one mask the strong.
+        invariants = [None]
+        if has_operational:
+            invariants.append(gd.OPERATIONAL_INVARIANT)
+        for inv in invariants:
+          suffix = "" if inv is None else "_op"
+          cfg_path = detector_path.with_name(f"{module}_MC__mc{i}{suffix}.cfg")
+          cfg_path.write_text(
+            gd.build_detector_config(plan, const_lines, bind_alphabet=True,
+                                     invariant=inv),
             encoding="utf-8")
         # -deadlock DISABLES deadlock checking: a stopped protocol is not a
         # finding, and leaving it on reproduces exactly the noise this replaced.
-        run = run_tlc_once(detector_path, cfg_path, tla_tools_jar,
-                           timeout=timeout, extra_args=["-deadlock"])
-        run["bool_assignment"] = cfg["bool_assignment"]
-        summary["runs"].append(run)
-        if not keep_cfg:
-            cfg_path.unlink(missing_ok=True)
+          run = run_tlc_once(detector_path, cfg_path, tla_tools_jar,
+                             timeout=timeout, extra_args=["-deadlock"])
+          run["bool_assignment"] = cfg["bool_assignment"]
+          run["operational_only"] = inv is not None
+          summary["runs"].append(run)
+          if not keep_cfg:
+              cfg_path.unlink(missing_ok=True)
 
     outcomes = [r["outcome"] for r in summary["runs"]]
     # Worst-news-first: a gap found under any flag setting is the headline.
@@ -389,6 +403,19 @@ def check_module(tla_path, tla_tools_jar, timeout: int = 120,
             summary["outcome"] = priority
             break
     summary["gap_candidate"] = summary["outcome"] == "unhandled_input"
+    # Rule 4b ranking. A violation of the operational invariant means the event
+    # arrived in a state the module says the device genuinely sits in, not in
+    # setup scaffolding. This RANKS findings; it never discards one. The
+    # ground-truth ArmFailSafe gap arrives in its initial state, so "weak" is
+    # not the same as "wrong" - see tests/test_gap_detector.py.
+    if summary["gap_candidate"]:
+        if not has_operational:
+            summary["gap_strength"] = "unranked"
+        elif any(r["outcome"] == "unhandled_input" and r.get("operational_only")
+                 for r in summary["runs"]):
+            summary["gap_strength"] = "operational"
+        else:
+            summary["gap_strength"] = "setup_only"
     return summary
 
 

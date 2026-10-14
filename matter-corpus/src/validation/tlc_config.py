@@ -552,3 +552,12 @@ def unhandled_everywhere(declared: list, handled: list) -> list:
     handled in some states but not the state it arrived in.
     """
     return [e for e in declared if e not in set(handled)]
+
+
+# Rule 4b: the module says when it is past setup. Read only for ranking - a
+# finding in a state the device genuinely sits in outranks one in scaffolding.
+_OPERATIONAL_DEF = re.compile(r"^[ \t]*Operational\s*==", re.MULTILINE)
+
+
+def declares_operational(tla_code: str) -> bool:
+    return bool(_OPERATIONAL_DEF.search(strip_comments(tla_code)))

@@ -11,6 +11,9 @@ An **unhandled input** is a reachable state in which an event is waiting and no 
 | outcome | units |
 |---|---|
 | candidate gaps (unhandled input) | 27 → **26** after triage (6 of those reached after real progress) |
+| &nbsp;&nbsp;of which in an operational state | **0** |
+| &nbsp;&nbsp;of which setup-only (lower priority) | 0 |
+| &nbsp;&nbsp;of which unranked (no rule 4b) | 26 |
 | invariant violated | 0 |
 | checked, nothing found | 12 (of which 4 explored too little to mean anything) |
 | **not checkable** (see below) | **1** |

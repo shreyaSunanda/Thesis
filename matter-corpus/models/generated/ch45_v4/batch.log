@@ -1,0 +1,311 @@
+[batch] chapters=['4', '5'] candidates=40 already_done=0 to_run=40
+
+[batch] (1/40) core_4.20.3.8  score=127.15
+[generate] provider=vertex-gemini model=gemini-3.1-pro-preview unit=core_4.20.3.8
+[generate] wrote models/generated/ch45_v4/core_4.20.3.8/vertex-gemini/core_4_20_3_8.tla
+[precheck] 9 possibly-undeclared identifier(s) (heuristic, not a substitute for SANY): CHOOSE, isValidAck, largestUnackedReceived, mostRecentUnackedSent, outSeqNum, pendingAck, receivedSeqNums, sessionState, unackedSent
+[validate] running SANY on core_4_20_3_8.tla ...
+[validate] SANY: PASS
+
+[batch] (2/40) core_4.19.4.8  score=112.1
+[generate] provider=vertex-gemini model=gemini-3.1-pro-preview unit=core_4.19.4.8
+[generate] wrote models/generated/ch45_v4/core_4.19.4.8/vertex-gemini/core_4_19_4_8.tla
+[precheck] no obviously undeclared identifiers found
+[validate] running SANY on core_4_19_4_8.tla ...
+[validate] SANY: PASS
+
+[batch] (3/40) core_5.5  score=111.9
+[generate] provider=vertex-gemini model=gemini-3.1-pro-preview unit=core_5.5
+[generate] wrote models/generated/ch45_v4/core_5.5/vertex-gemini/core_5_5.tla
+[precheck] no obviously undeclared identifiers found
+[validate] running SANY on core_5_5.tla ...
+[validate] SANY: PASS
+
+[batch] (4/40) core_4.14.2.3  score=81.1
+[generate] provider=vertex-gemini model=gemini-3.1-pro-preview unit=core_4.14.2.3
+[generate] wrote models/generated/ch45_v4/core_4.14.2.3/vertex-gemini/core_4_14_2_3.tla
+[precheck] 16 possibly-undeclared identifier(s) (heuristic, not a substitute for SANY): code, destinationId, initiatorResumeMIC, initiatorSessionId, localMessageCounter, localSessionId, peerMessageCounter, peerSessionId, responderSessionID, responderSessionId, resumptionID, resumptionId, sessionTimestamp, state, status, type
+[validate] running SANY on core_4_14_2_3.tla ...
+[validate] SANY: PASS
+
+[batch] (5/40) core_4.12.2.1  score=54.01
+[generate] provider=vertex-gemini model=gemini-3.1-pro-preview unit=core_4.12.2.1
+[generate] wrote models/generated/ch45_v4/core_4.12.2.1/vertex-gemini/core_4_12_2_1.tla
+[precheck] 6 possibly-undeclared identifier(s) (heuristic, not a substitute for SANY): isFirstMessage, isICD, operationalDiscoveryInitiated, peerActiveMode, sendAttempts, timerRunning
+[validate] running SANY on core_4_12_2_1.tla ...
+[validate] SANY: PASS
+
+[batch] (6/40) core_4.12.5.1  score=52.11
+[generate] provider=vertex-gemini model=gemini-3.1-pro-preview unit=core_4.12.5.1
+[generate] wrote models/generated/ch45_v4/core_4.12.5.1/vertex-gemini/core_4_12_5_1.tla
+[precheck] 18 possibly-undeclared identifier(s) (heuristic, not a substitute for SANY): CHOOSE, aFlag, ackMsgCounter, destNodeId, exchangeId, isStandaloneAck, msgCounterToAck, msgId, rFlag, reliable, securityFlags, sendCount, sessionCredentials, sessionId, sessionType, standaloneAckSent, timerActive, transport
+[validate] running SANY on core_4_12_5_1.tla ...
+[validate] SANY: PASS
+
+[batch] (7/40) core_4.18.5  score=48.36
+[generate] provider=vertex-gemini model=gemini-3.1-pro-preview unit=core_4.18.5
+[generate] wrote models/generated/ch45_v4/core_4.18.5/vertex-gemini/core_4_18_5.tla
+[precheck] 22 possibly-undeclared identifier(s) (heuristic, not a substitute for SANY): aFlag, active, bitmapCleared, cFlag, challenge, counter, destId, dsiz, dst, exchangeId, iFlag, isValid, pFlag, peerId, rFlag, response, sFlag, sessionType, src, syncCounter, synchronized, type
+[validate] running SANY on core_4_18_5.tla ...
+[validate] SANY: PASS
+
+[batch] (8/40) core_4.12.5.2  score=47.63
+[generate] provider=vertex-gemini model=gemini-3.1-pro-preview unit=core_4.12.5.2
+[generate] wrote models/generated/ch45_v4/core_4.12.5.2/vertex-gemini/core_4_12_5_2.tla
+[precheck] 9 possibly-undeclared identifier(s) (heuristic, not a substitute for SANY): aFlag, ackMsgCounter, cFlag, groupSession, hasPending, isEphemeral, rFlag, standaloneAckSent, timerActive
+[validate] running SANY on core_4_12_5_2.tla ...
+[validate] SANY: PASS
+
+[batch] (9/40) core_4.20.3.7  score=47.51
+[generate] provider=vertex-gemini model=gemini-3.1-pro-preview unit=core_4.20.3.7
+[generate] wrote models/generated/ch45_v4/core_4.20.3.7/vertex-gemini/core_4_20_3_7.tla
+[precheck] no obviously undeclared identifiers found
+[validate] running SANY on core_4_20_3_7.tla ...
+[validate] SANY: PASS
+
+[batch] (10/40) core_4.19.4.7  score=45.97
+[generate] provider=vertex-gemini model=gemini-3.1-pro-preview unit=core_4.19.4.7
+[generate] wrote models/generated/ch45_v4/core_4.19.4.7/vertex-gemini/core_4_19_4_7.tla
+[precheck] 9 possibly-undeclared identifier(s) (heuristic, not a substitute for SANY): ackedCount, inputData, maxWindowSize, negotiatedMaxWindow, pendingTxQueue, remoteWindowCount, role, state, unackedReceivedPackets
+[validate] running SANY on core_4_19_4_7.tla ...
+[validate] SANY: PASS
+
+[batch] (11/40) core_4.3.1.11  score=44.85
+[generate] provider=vertex-gemini model=gemini-3.1-pro-preview unit=core_4.3.1.11
+[generate] wrote models/generated/ch45_v4/core_4.3.1.11/vertex-gemini/core_4_3_1_11.tla
+[precheck] 32 possibly-undeclared identifier(s) (heuristic, not a substitute for SANY): Bit_Administrator, Bit_CustomInstruction, Bit_DeviceManual, Bit_PowerCycleNTimes, Bit_PowerCycleUntilIndication, Bit_PressButtonForNSecWithIndication, Bit_PressResetButton, Bit_PressResetButtonForNSecWithPower, Bit_PressResetButtonForNSeconds, Bit_PressResetButtonNTimes, Bit_PressResetButtonUntilLightBlinks, Bit_PressResetButtonUntilLightBlinksWithPower, Bit_PressResetButtonWithPower, Bit_PressSetupButton, Bit_PressSetupButtonForNSecWithPower, Bit_PressSetupButtonForNSeconds, Bit_PressSetupButtonNTimes, Bit_PressSetupButtonUntilLightBlinks, Bit_PressSetupButtonUntilLightBlinksWithPower, Bit_PressSetupButtonWithPower, Bit_SettingsMenu, advertisedPH, b1, commissionerUnderstood, commissioningFlow, deviceState, extDiscovery, inCmdMode, inputBits, inputBool, phBits, piKeyPresent
+[validate] running SANY on core_4_3_1_11.tla ...
+[validate] SANY: PASS
+
+[batch] (12/40) core_4.6.7  score=37.0
+[generate] provider=vertex-gemini model=gemini-3.1-pro-preview unit=core_4.6.7
+[generate] wrote models/generated/ch45_v4/core_4.6.7/vertex-gemini/core_4_6_7.tla
+[precheck] 15 possibly-undeclared identifier(s) (heuristic, not a substitute for SANY): MaxMessageCounter, NullNodeId, NullState, Peers, WindowSize, cFlag, counter, ctx, encrypted, lastProcessedMsg, max_counter, msgOutcome, received, rxStates, sourceId
+[validate] running SANY on core_4_6_7.tla ...
+[validate] SANY: PASS
+
+[batch] (13/40) core_4.12.2.2  score=36.68
+[generate] provider=vertex-gemini model=gemini-3.1-pro-preview unit=core_4.12.2.2
+[generate] wrote models/generated/ch45_v4/core_4.12.2.2/vertex-gemini/core_4_12_2_2.tla
+[precheck] 7 possibly-undeclared identifier(s) (heuristic, not a substitute for SANY): ackedCounter, historyWindow, inputSender, isDup, pendingAcks, propagatedMessages, sentAcks
+[validate] running SANY on core_4_12_2_2.tla ...
+[validate] SANY: PASS
+
+[batch] (14/40) core_4.14.1.2  score=34.62
+[generate] provider=vertex-gemini model=gemini-3.1-pro-preview unit=core_4.14.1.2
+[generate] wrote models/generated/ch45_v4/core_4.14.1.2/vertex-gemini/core_4_14_1_2.tla
+[precheck] 13 possibly-undeclared identifier(s) (heuristic, not a substitute for SANY): code, hasPBKDFParameters, initiatorSessionId, keysInstalled, localMessageCounter, localSessionId, passcodeId, peerMaxMessageCounter, peerSessionId, responderSessionId, state, type, valid
+[validate] running SANY on core_4_14_1_2.tla ...
+[validate] SANY: PASS
+
+[batch] (15/40) core_4.19.4.3  score=33.81
+[generate] provider=vertex-gemini model=gemini-3.1-pro-preview unit=core_4.19.4.3
+[generate] wrote models/generated/ch45_v4/core_4.19.4.3/vertex-gemini/core_4_19_4_3.tla
+[precheck] 13 possibly-undeclared identifier(s) (heuristic, not a substitute for SANY): CHOOSE, bleConnectionActive, c2Subscribed, clientErrorReported, clientTimerActive, reqMtu, reqVersions, reqWindow, rspMaxSegmentSize, rspVersion, rspWindow, serverErrorReported, serverTimerActive
+[validate] running SANY on core_4_19_4_3.tla ...
+[validate] SANY: PASS
+
+[batch] (16/40) core_5.5.1  score=29.77
+[generate] provider=vertex-gemini model=gemini-3.1-pro-preview unit=core_5.5.1
+[generate] wrote models/generated/ch45_v4/core_5.5.1/vertex-gemini/core_5_5_1.tla
+[precheck] 11 possibly-undeclared identifier(s) (heuristic, not a substitute for SANY): breadcrumbAttr, commandStatus, currentPhase, currentStep, failSafeArmed, failedAttempts, inputBreadcrumb, inputExpiry, inputIsAlternative, newFailCount, uncommittedNetworkConfig
+[validate] running SANY on core_5_5_1.tla ...
+[validate] SANY: PASS
+
+[batch] (17/40) core_4.20.3.11  score=28.83
+[generate] provider=vertex-gemini model=gemini-3.1-pro-preview unit=core_4.20.3.11
+[generate] wrote models/generated/ch45_v4/core_4.20.3.11/vertex-gemini/core_4_20_3_11.tla
+[precheck] no obviously undeclared identifiers found
+[validate] running SANY on core_4_20_3_11.tla ...
+[validate] SANY: PASS
+
+[batch] (18/40) core_4.19.4.11  score=27.69
+[generate] provider=vertex-gemini model=gemini-3.1-pro-preview unit=core_4.19.4.11
+[generate] wrote models/generated/ch45_v4/core_4.19.4.11/vertex-gemini/core_4_19_4_11.tla
+[precheck] 2 possibly-undeclared identifier(s) (heuristic, not a substitute for SANY): lastSendMethod, pendingInput
+[validate] running SANY on core_4_19_4_11.tla ...
+[validate] SANY: PASS
+
+[batch] (19/40) core_5.9.3  score=27.37
+[generate] provider=vertex-gemini model=gemini-3.1-pro-preview unit=core_5.9.3
+[generate] wrote models/generated/ch45_v4/core_5.9.3/vertex-gemini/core_5_9_3.tla
+[precheck] no obviously undeclared identifiers found
+[validate] running SANY on core_5_9_3.tla ...
+[validate] SANY: PASS
+
+[batch] (20/40) core_4.6.5.1  score=27.22
+[generate] provider=vertex-gemini model=gemini-3.1-pro-preview unit=core_4.6.5.1
+[generate] wrote models/generated/ch45_v4/core_4.6.5.1/vertex-gemini/core_4_6_5_1.tla
+[precheck] 2 possibly-undeclared identifier(s) (heuristic, not a substitute for SANY): bitmap, maxMessageCounter
+[validate] running SANY on core_4_6_5_1.tla ...
+[validate] SANY: PASS
+
+[batch] (21/40) core_4.19.4.6  score=26.95
+[generate] provider=vertex-gemini model=gemini-3.1-pro-preview unit=core_4.19.4.6
+[generate] wrote models/generated/ch45_v4/core_4.19.4.6/vertex-gemini/core_4_19_4_6.tla
+[precheck] 4 possibly-undeclared identifier(s) (heuristic, not a substitute for SANY): appError, expectedRxSeq, sessionState, txSeq
+[validate] running SANY on core_4_19_4_6.tla ...
+[validate] SANY: PASS
+
+[batch] (22/40) core_4.20.3.6  score=26.8
+[generate] provider=vertex-gemini model=gemini-3.1-pro-preview unit=core_4.20.3.6
+[generate] wrote models/generated/ch45_v4/core_4.20.3.6/vertex-gemini/core_4_20_3_6.tla
+[precheck] no obviously undeclared identifiers found
+[validate] running SANY on core_4_20_3_6.tla ...
+[validate] SANY: PASS
+
+[batch] (23/40) core_4.12.6.1  score=26.4
+[generate] provider=vertex-gemini model=gemini-3.1-pro-preview unit=core_4.12.6.1
+[generate] wrote models/generated/ch45_v4/core_4.12.6.1/vertex-gemini/core_4_12_6_1.tla
+[precheck] 6 possibly-undeclared identifier(s) (heuristic, not a substitute for SANY): exchangeContext, existingSet, messageBuffer, messageCounter, sendCount, timeoutCounter
+[validate] running SANY on core_4_12_6_1.tla ...
+[validate] SANY: PASS
+
+[batch] (24/40) core_4.17.3.5  score=24.84
+[generate] provider=vertex-gemini model=gemini-3.1-pro-preview unit=core_4.17.3.5
+[generate] wrote models/generated/ch45_v4/core_4.17.3.5/vertex-gemini/core_4_17_3_5.tla
+[precheck] 4 possibly-undeclared identifier(s) (heuristic, not a substitute for SANY): current, new, old, previous
+[validate] running SANY on core_4_17_3_5.tla ...
+[validate] SANY: FAIL
+
+****** SANY2 Version 2.1 created 24 February 2014
+
+Parsing file /home/sunanda/Thesis_codes/matter-corpus/models/generated/ch45_v4/core_4.17.3.5/vertex-gemini/core_4_17_3_5.tla
+***Parse Error***
+Was expecting "==== or more Module body"
+Encountered "{" at line 92, column 49 and token "setminus" 
+
+Residual stack trace follows:
+Module definition starting at line 1, column 1.
+
+
+Fatal errors while parsing TLA+ spec in file core_4_17_3_5.tla
+
+tla2sany.semantic.AbortException
+*** Abort messages: 1
+
+In module core_4_17_3_5
+
+Could not parse module core_4_17_3_5 from file core_4_17_3_5.tla
+
+
+
+
+[batch] (25/40) core_4.21.4.2  score=24.68
+[generate] provider=vertex-gemini model=gemini-3.1-pro-preview unit=core_4.21.4.2
+[generate] wrote models/generated/ch45_v4/core_4.21.4.2/vertex-gemini/core_4_21_4_2.tla
+[precheck] 2 possibly-undeclared identifier(s) (heuristic, not a substitute for SANY): SW1, SW2
+[validate] running SANY on core_4_21_4_2.tla ...
+[validate] SANY: PASS
+
+[batch] (26/40) core_4.20.3.5  score=23.64
+[generate] provider=vertex-gemini model=gemini-3.1-pro-preview unit=core_4.20.3.5
+[generate] wrote models/generated/ch45_v4/core_4.20.3.5/vertex-gemini/core_4_20_3_5.tla
+[precheck] 1 possibly-undeclared identifier(s) (heuristic, not a substitute for SANY): remaining
+[validate] running SANY on core_4_20_3_5.tla ...
+[validate] SANY: PASS
+
+[batch] (27/40) core_4.18.2  score=22.77
+[generate] provider=vertex-gemini model=gemini-3.1-pro-preview unit=core_4.18.2
+[generate] FAILED: HTTP 429 from https://aiplatform.googleapis.com/v1/projects/gen-lang-client-0500261051/locations/global/publishers/google/models/gemini-3.1-pro-preview:generateContent: {
+  "error": {
+    "code": 429,
+    "message": "Resource exhausted. Please try again later. Please refer to https://cloud.google.com/vertex-ai/generative-ai/docs/error-code-429 for more details.",
+    "status": "RESOURCE_EXHAUSTED"
+  }
+}
+
+
+[batch] (28/40) core_4.23.3.1  score=22.74
+[generate] provider=vertex-gemini model=gemini-3.1-pro-preview unit=core_4.23.3.1
+[generate] wrote models/generated/ch45_v4/core_4.23.3.1/vertex-gemini/core_4_23_3_1.tla
+[precheck] no obviously undeclared identifiers found
+[validate] running SANY on core_4_23_3_1.tla ...
+[validate] SANY: PASS
+
+[batch] (29/40) core_4.12.1  score=22.59
+[generate] provider=vertex-gemini model=gemini-3.1-pro-preview unit=core_4.12.1
+[generate] wrote models/generated/ch45_v4/core_4.12.1/vertex-gemini/core_4_12_1.tla
+[precheck] 3 possibly-undeclared identifier(s) (heuristic, not a substitute for SANY): outMsgAFlag, outMsgAckCounter, outMsgRFlag
+[validate] running SANY on core_4_12_1.tla ...
+[validate] SANY: PASS
+
+[batch] (30/40) core_4.12.7.1  score=22.41
+[generate] provider=vertex-gemini model=gemini-3.1-pro-preview unit=core_4.12.7.1
+[generate] wrote models/generated/ch45_v4/core_4.12.7.1/vertex-gemini/core_4_12_7_1.tla
+[precheck] 6 possibly-undeclared identifier(s) (heuristic, not a substitute for SANY): aFlag, acknowledgedMessageCounter, applicationPayload, protocolId, protocolOpcode, type
+[validate] running SANY on core_4_12_7_1.tla ...
+[validate] SANY: PASS
+
+[batch] (31/40) core_4.18.3.2  score=22.22
+[generate] provider=vertex-gemini model=gemini-3.1-pro-preview unit=core_4.18.3.2
+[generate] wrote models/generated/ch45_v4/core_4.18.3.2/vertex-gemini/core_4_18_3_2.tla
+[precheck] 9 possibly-undeclared identifier(s) (heuristic, not a substitute for SANY): cFlag, controlMessageCounter, dataMessageCounter, messageProtectionCounter, outbox, reqChallenge, response, synchronizedCounter, type
+[validate] running SANY on core_4_18_3_2.tla ...
+[validate] SANY: PASS
+
+[batch] (32/40) core_4.20.3.3  score=22.17
+[generate] provider=vertex-gemini model=gemini-3.1-pro-preview unit=core_4.20.3.3
+[generate] wrote models/generated/ch45_v4/core_4.20.3.3/vertex-gemini/core_4_20_3_3.tla
+[precheck] 1 possibly-undeclared identifier(s) (heuristic, not a substitute for SANY): CHOOSE
+[validate] running SANY on core_4_20_3_3.tla ...
+[validate] SANY: PASS
+
+[batch] (33/40) core_4.19.4.5  score=21.76
+[generate] provider=vertex-gemini model=gemini-3.1-pro-preview unit=core_4.19.4.5
+[generate] wrote models/generated/ch45_v4/core_4.19.4.5/vertex-gemini/core_4_19_4_5.tla
+[precheck] 14 possibly-undeclared identifier(s) (heuristic, not a substitute for SANY): inAppSduLength, inSegBeginning, inSegEnding, inSegMsgLength, inSegPayloadLength, pendingInput, rxAccumulatedLength, rxExpectedLength, rxInProgress, rxSessionState, txCurrentSduLen, txInFlight, txQueue, txSentLen
+[validate] running SANY on core_4_19_4_5.tla ...
+[validate] SANY: PASS
+
+[batch] (34/40) core_4.8.2  score=21.61
+[generate] provider=vertex-gemini model=gemini-3.1-pro-preview unit=core_4.8.2
+[generate] wrote models/generated/ch45_v4/core_4.8.2/vertex-gemini/core_4_8_2.tla
+[precheck] 27 possibly-undeclared identifier(s) (heuristic, not a substitute for SANY): DSIZ, MaxCounter, MyNodeId, NoSession, NodeIDs, S, SessionIDs, cFlag, ciphertext, destNodeID, dstNodeId, extensions, globalGroupControlCounter, globalGroupDataCounter, globalUnencryptedCounter, inputData, mac, msgCounter, outputBuffer, payload, processingStatus, securityFlags, session, sessionCounters, sessionID, sessionType, srcNodeId
+[validate] running SANY on core_4_8_2.tla ...
+[validate] SANY: PASS
+
+[batch] (35/40) core_4.12.6.2  score=21.46
+[generate] provider=vertex-gemini model=gemini-3.1-pro-preview unit=core_4.12.6.2
+[generate] wrote models/generated/ch45_v4/core_4.12.6.2/vertex-gemini/core_4_12_6_2.tla
+[precheck] 3 possibly-undeclared identifier(s) (heuristic, not a substitute for SANY): exchangeId, msgCounter, standaloneAckSent
+[validate] running SANY on core_4_12_6_2.tla ...
+[validate] SANY: PASS
+
+[batch] (36/40) core_4.6.5  score=21.04
+[generate] provider=vertex-gemini model=gemini-3.1-pro-preview unit=core_4.6.5
+[generate] wrote models/generated/ch45_v4/core_4.6.5/vertex-gemini/core_4_6_5.tla
+[precheck] 2 possibly-undeclared identifier(s) (heuristic, not a substitute for SANY): counter, peer
+[validate] running SANY on core_4_6_5.tla ...
+[validate] SANY: PASS
+
+[batch] (37/40) core_4.10.5.3  score=21.03
+[generate] provider=vertex-gemini model=gemini-3.1-pro-preview unit=core_4.10.5.3
+[generate] wrote models/generated/ch45_v4/core_4.10.5.3/vertex-gemini/core_4_10_5_3.tla
+[precheck] 1 possibly-undeclared identifier(s) (heuristic, not a substitute for SANY): standaloneAcksSent
+[validate] running SANY on core_4_10_5_3.tla ...
+[validate] SANY: PASS
+
+[batch] (38/40) core_4.7.2  score=20.92
+[generate] provider=vertex-gemini model=gemini-3.1-pro-preview unit=core_4.7.2
+[generate] wrote models/generated/ch45_v4/core_4.7.2/vertex-gemini/core_4_7_2.tla
+[precheck] 17 possibly-undeclared identifier(s) (heuristic, not a substitute for SANY): activeTimestamp, currentMessage, deliveredToExchange, dsizIndicatesGroup, dsizZero, errorState, isUnicastSession, keysFound, keysRemaining, keysToProcess, pFlagSet, pendingInput, sFlagZero, sessionTimestamp, sessionType, transport, version
+[validate] running SANY on core_4_7_2.tla ...
+[validate] SANY: PASS
+
+[batch] (39/40) core_4.8.3  score=20.63
+[generate] provider=vertex-gemini model=gemini-3.1-pro-preview unit=core_4.8.3
+[generate] wrote models/generated/ch45_v4/core_4.8.3/vertex-gemini/core_4_8_3.tla
+[precheck] 9 possibly-undeclared identifier(s) (heuristic, not a substitute for SANY): P, ciphertext, counter, header, plaintext, sessionId, sessionType, success, validKey
+[validate] running SANY on core_4_8_3.tla ...
+[validate] SANY: PASS
+
+[batch] (40/40) core_4.21.4.3  score=20.07
+[generate] provider=vertex-gemini model=gemini-3.1-pro-preview unit=core_4.21.4.3
+[generate] wrote models/generated/ch45_v4/core_4.21.4.3/vertex-gemini/core_4_21_4_3.tla
+[precheck] 2 possibly-undeclared identifier(s) (heuristic, not a substitute for SANY): SW1, SW2
+[validate] running SANY on core_4_21_4_3.tla ...
+[validate] SANY: PASS
+
+[batch] DONE  total=40  generated=39  sany_pass=38  sany_fail=1  failed_to_generate=1
+[batch] log: models/generated/ch45_v4/results.jsonl

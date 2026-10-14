@@ -17,6 +17,7 @@ be conflated in the thesis numbers.
         --out models/generated/ch45/gap_report.md
 """
 import argparse
+import collections
 import json
 import re
 from pathlib import Path
@@ -498,7 +499,14 @@ def main():
         r["triage"] = triage_gap(r, sections, graph)
     ruled_out = [r for r in gaps if r["triage"]["class"] != "candidate"]
     gaps = [r for r in gaps if r["triage"]["class"] == "candidate"]
-    gaps.sort(key=lambda r: (-steps_to_deadlock(r), -(r.get("final_score") or 0)))
+    # Rule 4b first: an event arriving where the device genuinely sits
+    # outranks one arriving in setup scaffolding. Unranked (pre-4b) modules
+    # sit between the two rather than at the bottom - we do not know which
+    # they are, and demoting them would hide findings for lack of a label.
+    _STRENGTH_ORDER = {"operational": 0, "unranked": 1, "setup_only": 2}
+    gaps.sort(key=lambda r: (_STRENGTH_ORDER.get(r.get("gap_strength"), 1),
+                             -steps_to_deadlock(r),
+                             -(r.get("final_score") or 0)))
 
     self_reported = collect_self_reported(models_dir, rows)
     n_notes = sum(len(f["notes"]) for f in self_reported)
@@ -527,9 +535,16 @@ def main():
     # harness's ReceiveInput - zero model actions - so counting it by state
     # depth (> 1) overstated confidence on exactly the weakest findings.
     substantive = len([r for r in gaps if made_progress(r)])
+    by_strength = collections.Counter(r.get("gap_strength") or "unranked" for r in gaps)
     out.append(f"| candidate gaps (unhandled input) | {len(gaps) + len(ruled_out)} "
                f"→ **{len(gaps)}** after triage ({substantive} of those reached after "
                f"real progress) |")
+    out.append(f"| &nbsp;&nbsp;of which in an operational state | "
+               f"**{by_strength.get('operational', 0)}** |")
+    out.append(f"| &nbsp;&nbsp;of which setup-only (lower priority) | "
+               f"{by_strength.get('setup_only', 0)} |")
+    out.append(f"| &nbsp;&nbsp;of which unranked (no rule 4b) | "
+               f"{by_strength.get('unranked', 0)} |")
     out.append(f"| invariant violated | {len(violated)} |")
     trivial = [r for r in clean if is_trivially_clean(r)]
     out.append(f"| checked, nothing found | {len(clean)} "
@@ -572,6 +587,19 @@ def main():
         out.append(f"- steps to the unhandled input: {steps}")
         out.append(f"- ranker score: {r.get('final_score')}")
         out.append(f"- module: `{Path(r['tla_path']).name}`")
+        strength = r.get("gap_strength")
+        if strength == "operational":
+            out.append("- 🔴 **operational state** — the module says the device "
+                       "genuinely sits in this state; the event did not arrive "
+                       "during setup")
+        elif strength == "setup_only":
+            out.append("- ⬇️ setup-only — the event arrived in a state the module "
+                       "marks as scaffolding (pre-initialisation). Lower priority, "
+                       "but **not** dismissed: the ground-truth ArmFailSafe gap "
+                       "also arrives in its initial state")
+        elif strength == "unranked":
+            out.append("- ❔ unranked — module predates rule 4b and declares no "
+                       "`Operational`, so setup and real states cannot be told apart")
         nowhere = r.get("unhandled_everywhere") or []
         if nowhere:
             # Stronger than an ordinary finding: the module declares the spec

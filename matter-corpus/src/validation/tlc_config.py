@@ -197,6 +197,34 @@ def _strip_maps_to(code: str) -> str:
     return code.replace("|->", "   ")
 
 
+
+_STRING_CMP_CACHE = {}
+
+
+def _compared_with_string(name: str, code: str) -> list:
+    """String literals this constant is directly compared against, in order.
+
+    Only DIRECT comparisons count (Name = "x", "x" = Name, Name # "x",
+    Name \\in {"x", ...}). An indirect one - a variable that holds the constant
+    being compared elsewhere - is not detectable this way; sentinels cover that
+    case by being strings themselves.
+    """
+    n = re.escape(name)
+    lits = []
+    for pat in (rf"\b{n}\s*(?:=|#)\s*\"([^\"]*)\"",
+                rf"\"([^\"]*)\"\s*(?:=|#)\s*\b{n}\b"):
+        lits += re.findall(pat, code)
+    m = re.search(rf"\b{n}\s*\\in\s*\{{([^}}]*)\}}", code)
+    if m:
+        lits += _STRING_LIT.findall(m.group(1))
+    seen, out = set(), []
+    for l in lits:
+        if l not in seen:
+            seen.add(l)
+            out.append(l)
+    return out
+
+
 def classify_constant(name: str, code: str) -> str:
     """Guesses how a CONSTANT is meant to be used, from its occurrences in `code`."""
     n = re.escape(name)
@@ -212,6 +240,14 @@ def classify_constant(name: str, code: str) -> str:
     ]
     if any(re.search(p, arith) for p in numeric_patterns):
         return "numeric"
+
+    # A constant the module COMPARES AGAINST A STRING must be a string. Observed
+    # in core_4.19.4.11, where "Role" was read as boolean from its name and
+    # given TRUE, then compared with "GATTClient": TLC aborts with "Attempted to
+    # compare equality of boolean TRUE with non-boolean". Checked before the
+    # name hints for exactly that reason - usage beats naming.
+    if _compared_with_string(name, code):
+        return "string"
 
     if _SENTINEL_NAME_HINT.search(name):
         return "sentinel"
@@ -243,7 +279,15 @@ def classify_constant(name: str, code: str) -> str:
         return "numeric"
     if _BOOLEAN_NAME_HINT.search(name):
         return "boolean"
-    if _SET_NAME_HINT.search(name) or _CAMEL_PLURAL_HINT.search(name):
+    if _SET_NAME_HINT.search(name):
+        return "set"
+    # The camelCase-plural hint does NOT apply to a name carrying an
+    # underscore-separated prefix. Bit_PressResetButtonUntilLightBlinks became
+    # a set of model values in core_4.3.1.11 and TLC then compared it with a
+    # scalar. Such a prefix (Bit_, STATUS_, MRP_) names ONE value in a family,
+    # the same reasoning that already keeps STATUS_SUCCESS out of this branch,
+    # whereas CommissionerSupportedVersions really is a collection.
+    if "_" not in name and _CAMEL_PLURAL_HINT.search(name):
         return "set"
     return "opaque"
 
@@ -263,7 +307,8 @@ def applied_as_function(name: str, code: str) -> bool:
     return re.search(rf"\b{re.escape(name)}\s*\[", code) is not None
 
 
-def constant_value(name: str, kind: str, bool_choice: bool = True) -> str:
+def constant_value(name: str, kind: str, bool_choice: bool = True,
+                   literal: str = None) -> str:
     """Renders the cfg right-hand side for one constant."""
     if kind == "numeric":
         return str(NUMERIC_VALUE)
@@ -271,7 +316,26 @@ def constant_value(name: str, kind: str, bool_choice: bool = True) -> str:
         return "TRUE" if bool_choice else "FALSE"
     if kind == "set":
         return "{" + ", ".join(f"{name}_{i}" for i in range(1, SET_SIZE + 1)) + "}"
+    if kind == "string":
+        # One of the literals the module compares it against, so a real branch
+        # is exercised. This PINS that branch, the same way a boolean would -
+        # not varied across configs today, which is a known gap.
+        return f'"{literal or name}"'
     # sentinel / opaque: a model value named after the constant itself.
+    #
+    # MEASURED, not assumed. Rendering these as strings instead was tried, to
+    # fix core_4.6.7 where a model value met the string "Unsecured". Re-running
+    # the whole ch45_v4 corpus recovered that one unit and broke three others
+    # in the mirror-image way - "check equality of string \"NoSession\" with
+    # non-string" (core_4.8.2), "compare integer 3 with non-integer"
+    # (core_4.12.1), "check equality of record" (core_4.14.2.3). Model values
+    # win 3 to 1, so they stay.
+    #
+    # KNOWN LIMITATION: a sentinel reached indirectly still breaks. In
+    # core_4.6.7 NullState is never compared with a string itself - it is
+    # stored in rxStates and rxStates[c] is compared with "Unsecured". Only
+    # dataflow would catch that; the "string" kind above only sees direct
+    # comparisons.
     return name
 
 
@@ -291,6 +355,8 @@ def plan_configs(tla_code: str, max_configs: int = 4) -> dict:
     code = info["code_no_comments"]
 
     kinds = {c: classify_constant(c, code) for c in info["constants"]}
+    literals = {c: (_compared_with_string(c, code) or [None])[0]
+                for c in info["constants"] if kinds[c] == "string"}
     indexed = [c for c in info["constants"] if applied_as_function(c, code)]
     bools = [c for c, k in kinds.items() if k == "boolean"]
 
@@ -320,7 +386,8 @@ def plan_configs(tla_code: str, max_configs: int = 4) -> dict:
             lines.append("")
             lines.append("CONSTANTS")
             for c in info["constants"]:
-                lines.append(f"    {c} = {constant_value(c, kinds[c], combo.get(c, True))}")
+                lines.append(f"    {c} = "
+                             f"{constant_value(c, kinds[c], combo.get(c, True), literals.get(c))}")
         configs.append({
             "bool_assignment": {k: bool(v) for k, v in combo.items()},
             "text": "\n".join(lines) + "\n",
@@ -331,6 +398,7 @@ def plan_configs(tla_code: str, max_configs: int = 4) -> dict:
         "constants": info["constants"],
         "variables": info["variables"],
         "constant_kinds": kinds,
+        "string_literals": literals,
         "operator_constants": info["operator_constants"],
         "indexed_constants": indexed,
         "invariants": info["invariants"],

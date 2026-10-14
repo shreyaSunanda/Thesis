@@ -296,3 +296,49 @@ def test_declaration_in_a_comment_is_ignored():
 
 def test_everything_handled_reports_nothing_unhandled():
     assert unhandled_everywhere(["A", "B"], ["A", "B"]) == []
+
+
+# --- the four misclassifications that cost ch45_v4 its verdicts -------------
+
+def test_constant_compared_with_a_string_is_a_string():
+    """core_4.19.4.11: "Role" read as boolean from its name, given TRUE, then
+    compared with "GATTClient". TLC: "Attempted to compare equality of boolean
+    TRUE with non-boolean"."""
+    code = 'A == m = IF Role = "GATTClient" THEN "x" ELSE "y"'
+    assert classify_constant("Role", code) == "string"
+
+
+def test_string_constant_gets_a_literal_the_module_compares_against():
+    """Giving it its own name would silently take the ELSE branch everywhere."""
+    from src.validation.tlc_config import _compared_with_string, constant_value
+    code = 'A == m = IF Role = "GATTClient" THEN "x" ELSE "y"'
+    lit = _compared_with_string("Role", code)[0]
+    assert lit == "GATTClient"
+    assert constant_value("Role", "string", literal=lit) == '"GATTClient"'
+
+
+def test_set_membership_against_strings_is_a_string():
+    code = 'A == Mode \\in {"Fast", "Slow"}'
+    assert classify_constant("Mode", code) == "string"
+
+
+def test_underscore_prefixed_plural_is_not_a_set():
+    """core_4.3.1.11: every Bit_* constant is one bit, not a collection."""
+    code = "A == x = Bit_PressResetButtonUntilLightBlinks"
+    assert classify_constant("Bit_PressResetButtonUntilLightBlinks", code) == "opaque"
+    assert classify_constant("Bit_PressSetupButtonNTimes", code) == "opaque"
+
+
+def test_sentinels_stay_model_values():
+    """Measured, not assumed.
+
+    Rendering sentinels as strings fixed core_4.6.7, where a model value met
+    the string "Unsecured" - and broke three other units in the mirror-image
+    way when the whole corpus was re-run: "check equality of string
+    \"NoSession\" with non-string" (core_4.8.2), "compare integer 3 with
+    non-integer" (core_4.12.1), "check equality of record" (core_4.14.2.3).
+    Model values win 3 to 1, so they stay.
+    """
+    from src.validation.tlc_config import constant_value
+    assert constant_value("NullState", "sentinel") == "NullState"
+    assert constant_value("DummyId", "opaque") == "DummyId"

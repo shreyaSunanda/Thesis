@@ -340,6 +340,98 @@ def collect_self_reported(models_dir: Path, rows: list) -> list:
     return found
 
 
+# ---------------------------------------------------------------------------
+# Where else the spec might handle this event
+#
+# A finding means THIS section defines no handling. The Matter spec routinely
+# defines it next door: core_4.12.2.1 looked like a gap for an acknowledgement
+# arriving with nothing outstanding, and core_4.12.5.2 says what that means.
+#
+# Cross-references alone do NOT find that. core_4.12.2.1 references only
+# core_4.3.2 - the two sections are never linked in the text. What relates them
+# is position: both live under core_4.12. So the neighbourhood searched here is
+# cross-referenced sections UNION siblings sharing the parent number.
+#
+# The result is reported as evidence with the sentence quoted, never as an
+# automatic dismissal. The last keyword rule that dismissed findings silently
+# matched "restart" in core_4.19.4.8, where it referred to restarting a timer,
+# not recovering a session.
+# ---------------------------------------------------------------------------
+
+_GENERIC_EVENT_WORDS = {"receive", "send", "handle", "process", "on", "do",
+                        "trigger", "input", "event", "msg", "message", "action"}
+
+
+def event_terms(event: str) -> list:
+    """Searchable words from an event name: ReceiveAck -> ['ack']."""
+    event = event.strip().strip('"')
+    words = re.findall(r"[A-Z]+(?![a-z])|[A-Z][a-z]+|[a-z]+|\d+", event)
+    return [w.lower() for w in words
+            if w.lower() not in _GENERIC_EVENT_WORDS and len(w) > 2]
+
+
+def _sibling_ids(uid: str, sections: dict) -> list:
+    """Sections sharing this one's parent number (core_4.12.2.1 -> core_4.12.*)."""
+    body = uid.split("_", 1)[1] if "_" in uid else uid
+    parts = body.split(".")
+    if len(parts) < 2:
+        return []
+    prefix = uid.split("_", 1)[0] + "_" + ".".join(parts[:2]) + "."
+    return [k for k in sections if k.startswith(prefix) and k != uid]
+
+
+def neighbour_handling(uid: str, event: str, sections: dict, graph: dict,
+                       max_hits: int = 3) -> list:
+    """Sentences in nearby sections that may define handling for this event.
+
+    Each hit is {"ref", "quote"}. A hit means "read this before calling it a
+    gap", not "this is not a gap".
+    """
+    terms = event_terms(event)
+    if not terms:
+        return []
+    neighbourhood = list(dict.fromkeys(
+        list(graph.get(uid, {}).get("references", [])) + _sibling_ids(uid, sections)))
+
+    # Sentences are SCORED, not taken in section order. Ordering by section
+    # number returned three sentences merely mentioning acknowledgements and
+    # stopped before core_4.12.5.2, the one that actually says what an
+    # unmatched acknowledgement means.
+    scored = []
+    for ref in neighbourhood:
+        text = sections.get(ref, {}).get("full_text", "")
+        if not text:
+            continue
+        best = None
+        for sentence in re.split(r"(?<=\.)\s+", " ".join(text.split())):
+            low = sentence.lower()
+            if not any(t in low for t in terms):
+                continue
+            # The section must say what HAPPENS, not merely mention the event.
+            if not re.search(r"\b(SHALL|SHOULD|MAY|MUST|indicates|is ignored|"
+                             r"drop(?:ped|s)?|discard(?:ed|s)?)\b", sentence):
+                continue
+            score = 1
+            # What we are really looking for is the absent-case clause: the
+            # sentence that says what to do when the event matches nothing.
+            # "no longer" is deliberately absent: it matched "wait for a time
+            # no longer than", which says nothing about an unmatched event.
+            if re.search(r"\b(no match|not match|no corresponding|does not exist|"
+                         r"not found|unknown|unexpected|unsolicited|duplicate)\b",
+                         low):
+                score += 5
+            # Frequency is a weak signal and is capped: a section that merely
+            # discusses the event a lot must not outrank the one sentence that
+            # says what happens when it matches nothing.
+            score += min(sum(low.count(t) for t in terms) - 1, 2)
+            if best is None or score > best[0]:
+                best = (score, {"ref": ref, "quote": sentence[:300], "score": score})
+        if best:
+            scored.append(best[1])
+    scored.sort(key=lambda h: -h["score"])
+    return scored[:max_hits]
+
+
 def last_action(trace: str) -> dict:
     """The action that produced the final state of a trace.
 
@@ -600,6 +692,20 @@ def main():
         elif strength == "unranked":
             out.append("- ❔ unranked — module predates rule 4b and declares no "
                        "`Operational`, so setup and real states cannot be told apart")
+        # Where else the spec might already answer this. Evidence for the
+        # reviewer, never an automatic dismissal.
+        unhandled_val = ""
+        for run in r.get("runs", []):
+            if run["outcome"] == "unhandled_input" and run.get("unhandled_value"):
+                unhandled_val = run["unhandled_value"]
+                break
+        nearby = neighbour_handling(r["unit_id"], unhandled_val, sections, graph) \
+            if unhandled_val else []
+        if nearby:
+            out.append(f"- 📎 **possibly handled nearby** — read these before "
+                       f"calling it a gap:")
+            for h in nearby:
+                out.append(f"    - `{h['ref']}`: *\"{h['quote']}\"*")
         nowhere = r.get("unhandled_everywhere") or []
         if nowhere:
             # Stronger than an ordinary finding: the module declares the spec

@@ -10,17 +10,17 @@ An **unhandled input** is a reachable state in which an event is waiting and no 
 
 | outcome | units |
 |---|---|
-| candidate gaps (unhandled input) | 25 → **25** after triage (15 of those reached after real progress) |
-| &nbsp;&nbsp;of which in an operational state | **25** |
+| candidate gaps (unhandled input) | 26 → **26** after triage (15 of those reached after real progress) |
+| &nbsp;&nbsp;of which in an operational state | **26** |
 | &nbsp;&nbsp;of which setup-only (lower priority) | 0 |
 | &nbsp;&nbsp;of which unranked (no rule 4b) | 0 |
 | invariant violated | 0 |
 | checked, nothing found | 9 (of which 4 explored too little to mean anything) |
-| **not checkable** (see below) | **6** |
+| **not checkable** (see below) | **5** |
 | model-asserted unspecified cases (unverified) | 33 note(s) in 21 unit(s) |
 | total | 40 |
 
-34 of 40 modules were actually model-checked. The rest produced no verdict either way.
+35 of 40 modules were actually model-checked. The rest produced no verdict either way.
 
 ## Candidate gaps
 
@@ -30,6 +30,10 @@ An **unhandled input** is a reachable state in which an event is waiting and no 
 - ranker score: 34.62
 - module: `core_4_14_1_2.tla`
 - 🔴 **operational state** — the module says the device genuinely sits in this state; the event did not arrive during setup
+- 📎 **possibly handled nearby** — read these before calling it a gap:
+    - `core_6.2.3`: *"The Commissionee SHALL make the Certificate Chain available whenever requested using CertificateChainRequest."*
+    - `core_4.14.2.3`: *"Msg1 = { initiatorRandom (1) = InitiatorRandom, initiatorSessionId (2) = InitiatorSessionId, destinationId (3) = DestinationId, initiatorEphPubKey (4) = InitiatorEphKeyPair.publicKey initiatorSessionParams (5) = session-parameter-struct (optional), resumptionID (6) = ResumptionID (optional, only pre"*
+    - `core_4.14.2.2`: *"Session Resumption In the case where a Responder is not able to resume a session as requested by a Sigma1 with Resumption, the information included in the Sigma1 with Resumption message SHALL be processed as a Sig­ ma1 message without any resumption fields to construct a Sigma2 message and continue "*
 - 🔴 **declared but handled nowhere**: `StatusReport` — the module lists these as events this section can receive, and no action in it handles them in any state
 - constants (inferred kind): `NoInput`=sentinel, `NoSessionId`=opaque, `SessionIds`=set, `MaxMessageCounter`=numeric
 
@@ -81,6 +85,10 @@ State 14: <ReceiveInput line 117, col 5 to line 120, col 50 of module core_4_14_
 - ranker score: 36.68
 - module: `core_4_12_2_2.tla`
 - 🔴 **operational state** — the module says the device genuinely sits in this state; the event did not arrive during setup
+- 📎 **possibly handled nearby** — read these before calling it a gap:
+    - `core_4.12.1`: *"To support unreliable messages, this flag bit MAY be clear, so that no acknowledgements are requested from the receiver."*
+    - `core_4.12.4`: *"Transport Considerations When the upper layer requests a reliable message over a UDP transport, the R Flag SHALL be set on that message indicating that MRP SHALL be used."*
+    - `core_4.12.5.1`: *"Reliable Message Processing of Outgoing Messages To prepare a given Protocol Message for transmission, the message SHALL be processed as follows: 1."*
 - constants (inferred kind): `Senders`=set, `NoSender`=opaque, `MaxMsgCounter`=numeric, `NoMsgCounter`=numeric, `MaxPendingAcks`=numeric, `NoInput`=sentinel
 
 **Unhandled input under no capability flags** after 8 state(s) (1334 distinct states explored):
@@ -133,6 +141,10 @@ State 8: <ReceiveInput line 54, col 5 to line 67, col 77 of module core_4_12_2_2
 - ranker score: 111.9
 - module: `core_5_5.tla`
 - 🔴 **operational state** — the module says the device genuinely sits in this state; the event did not arrive during setup
+- 📎 **possibly handled nearby** — read these before calling it a gap:
+    - `core_11.10.7.4`: *"If the LocationCapability attribute is not Indoor/Outdoor and the NewRegulatoryConfig value received does not match either the Indoor or Outdoor fixed value in LocationCapability, then the SetRegulatoryConfigResponse replied SHALL have the ErrorCode field set to ValueOutsideRange error and the Regul"*
+    - `core_11.10.7.8`: *"TCUserResponse field This field SHALL contain the user responses to the Enhanced Setup Flow Terms & Conditions as a map where each bit set in the bitmap corresponds to an accepted term in the file located at Section 11.23.6.23, “EnhancedSetupFlowTCUrl”."*
+    - `core_11.18.6.5`: *"If the IsForUpdateNOC field is present and set to true, but the command was received over a PASE session, the command SHALL fail with an INVALID_COMMAND status code, as it would never be possible to use a resulting subsequent certificate issued from the CSR with the UpdateNOC command, which is forbi"*
 - 🔴 **declared but handled nowhere**: `PASE_PBKDFParamResponse`, `SetRegulatoryConfig`, `SetTCAcknowledgements`, `CSRRequest`, `AddTrustedRootCertificate`, `AddNOC`, `UpdateFabricLabel`, `ScanNetworks`, `AddOrUpdateWiFiNetwork`, `AddOrUpdateThreadNetwork`, `OperationalDiscovery` — the module lists these as events this section can receive, and no action in it handles them in any state
 - constants (inferred kind): `ConcurrentConnectionCap`=boolean, `IsCommissioningWithoutPower`=boolean, `NoInput`=sentinel
 
@@ -270,6 +282,10 @@ State 6: <ReceiveInput line 64, col 5 to line 67, col 121 of module core_5_5>
 - ranker score: 112.1
 - module: `core_4_19_4_8.tla`
 - 🔴 **operational state** — the module says the device genuinely sits in this state; the event did not arrive during setup
+- 📎 **possibly handled nearby** — read these before calling it a gap:
+    - `core_4.19.4.5`: *"If the reassembled buffer’s length does not match that specified by the sender, or if received BTP segment payload size would exceed the maximum BTP packet size, or receiver receives an Ending Segment without the presence of a previous Beginning Segment, or a Beginning Segment when another BTP SDU’s"*
+    - `core_4.19.2.1`: *"When set, this bit indicates a BTP handshake packet for session establishment and has a different packet format described below."*
+    - `core_4.19.4.2`: *"BTP GATT service Attribute Description BTP Service UUID = MATTER_BLE_SERVICE_UUID C1 Characteristic (Client TX Buffer) UUID = 18EE2EF5-263D-4559-959F-4F9C429F9D11 Characteristic Properties = Write max length = 244 bytes C2 Characteristic (Client RX Buffer) UUID = 18EE2EF5-263D-4559-959F-4F9C429F9D12"*
 - constants (inferred kind): `CounterModulus`=numeric, `MaxWindowSize`=numeric, `NoSeqNum`=numeric, `NoInput`=sentinel
 
 **Unhandled input under no capability flags** after 2 state(s) (4 distinct states explored):
@@ -320,6 +336,10 @@ State 4: <ReceiveInput line 56, col 5 to line 64, col 39 of module core_4_19_4_8
 - ranker score: 81.1
 - module: `core_4_14_2_3.tla`
 - 🔴 **operational state** — the module says the device genuinely sits in this state; the event did not arrive during setup
+- 📎 **possibly handled nearby** — read these before calling it a gap:
+    - `core_4.13.3.1`: *"The CAT fields are 32-bit values that MAY have been present in RDN case-authenticated-tag of the remote peer’s operational certificate, during CASE."*
+    - `core_4.14.2.6`: *"For the generation of the Destination Identifier, the originator SHALL use the operational group key with the second newest EpochStartTime, if one exists, otherwise it SHALL use the single operational group key available."*
+    - `core_4.14.2.8`: *"Minimal Number of CASE Sessions A node SHALL support at least 3 CASE session contexts per fabric."*
 - constants (inferred kind): `NoInput`=sentinel, `NullValue`=sentinel, `Now`=opaque, `MSG_SIGMA1`=opaque, `MSG_SIGMA2`=opaque, `MSG_SIGMA3`=opaque, `MSG_SIGMA2_RESUME`=opaque, `MSG_STATUS_REPORT`=opaque, `STATUS_SUCCESS`=opaque, `STATUS_FAILURE`=opaque, `INVALID_PARAMETER`=opaque, `NO_SHARED_TRUST_ROOTS`=opaque, `SESSION_ESTABLISHMENT_SUCCESS`=opaque, `LocalSessionIdInit`=opaque, `LocalSessionIdResp`=opaque, `ResumptionId1`=opaque, `ResumptionId2`=opaque, `DestId1`=opaque
 
 **Unhandled input under no capability flags** after 4 state(s) (7 distinct states explored):
@@ -382,6 +402,9 @@ State 4: <ReceiveInput line 131, col 5 to line 140, col 50 of module core_4_14_2
 - ranker score: 47.51
 - module: `core_4_20_3_7.tla`
 - 🔴 **operational state** — the module says the device genuinely sits in this state; the event did not arrive during setup
+- 📎 **possibly handled nearby** — read these before calling it a gap:
+    - `core_4.20.3.5`: *"If the reassembled buffer’s length does not match that specified by the sender, or if received PAFTP segment payload size would exceed the maximum PAFTP packet size, or receiver receives an Ending Segment without the presence of a previous Beginning Segment, or a Beginning Segment when another PAFTP"*
+    - `core_4.20.3.6`: *"Sequence Numbers All PAFTP packets SHALL be sent with sequence numbers, regardless of whether they contain SDU segments (for example, a packet acknowledgement with no attached segment payload)."*
 - constants (inferred kind): `MaxWindowSize`=numeric, `MaxPendingTx`=numeric, `NoInput`=sentinel
 
 **Unhandled input under no capability flags** after 2 state(s) (4 distinct states explored):
@@ -424,6 +447,10 @@ State 4: <ReceiveInput line 44, col 5 to line 47, col 87 of module core_4_20_3_7
 - ranker score: 45.97
 - module: `core_4_19_4_7.tla`
 - 🔴 **operational state** — the module says the device genuinely sits in this state; the event did not arrive during setup
+- 📎 **possibly handled nearby** — read these before calling it a gap:
+    - `core_4.19.4.5`: *"If the reassembled buffer’s length does not match that specified by the sender, or if received BTP segment payload size would exceed the maximum BTP packet size, or receiver receives an Ending Segment without the presence of a previous Beginning Segment, or a Beginning Segment when another BTP SDU’s"*
+    - `core_4.19.4.8`: *"Per BTP Frame Formats, BTP packet receipt acknowledgements SHALL be received as unsigned 8- bit integer values in the header of a BTP packet."*
+    - `core_4.19.2.1`: *"When set, this bit indicates a BTP handshake packet for session establishment and has a different packet format described below."*
 - constants (inferred kind): `MaxWindowSizeLimit`=numeric, `MaxQueueSize`=numeric, `NoInput`=sentinel
 
 **Unhandled input under no capability flags** after 2 state(s) (26 distinct states explored):
@@ -576,6 +603,10 @@ State 4: <ReceiveInput line 84, col 5 to line 87, col 234 of module core_4_19_4_
 - ranker score: 26.95
 - module: `core_4_19_4_6.tla`
 - 🔴 **operational state** — the module says the device genuinely sits in this state; the event did not arrive during setup
+- 📎 **possibly handled nearby** — read these before calling it a gap:
+    - `core_4.19.4.5`: *"If the reassembled buffer’s length does not match that specified by the sender, or if received BTP segment payload size would exceed the maximum BTP packet size, or receiver receives an Ending Segment without the presence of a previous Beginning Segment, or a Beginning Segment when another BTP SDU’s"*
+    - `core_4.19.2.1`: *"When set, this bit indicates a BTP handshake packet for session establishment and has a different packet format described below."*
+    - `core_4.19.4.4`: *"All BTP packets sent on an open BLE connection SHALL adhere to the BTP Packet PDU binary data format specified in BTP Frame Formats."*
 - constants (inferred kind): `MaxSeqNum`=numeric, `NoInput`=sentinel, `NoActor`=opaque, `NoSeqNum`=numeric
 
 **Unhandled input under no capability flags** after 2 state(s) (14 distinct states explored):
@@ -618,6 +649,10 @@ State 4: <ReceiveInput line 42, col 5 to line 47, col 65 of module core_4_19_4_6
 - ranker score: 26.8
 - module: `core_4_20_3_6.tla`
 - 🔴 **operational state** — the module says the device genuinely sits in this state; the event did not arrive during setup
+- 📎 **possibly handled nearby** — read these before calling it a gap:
+    - `core_4.20.3.5`: *"If the reassembled buffer’s length does not match that specified by the sender, or if received PAFTP segment payload size would exceed the maximum PAFTP packet size, or receiver receives an Ending Segment without the presence of a previous Beginning Segment, or a Beginning Segment when another PAFTP"*
+    - `core_4.20.3.8`: *"A peer SHALL restart its send-acknowledgement timer when a pending acknowledgement is sent, either as a stand-alone PAFTP packet or piggybacked onto an outgoing buffer segment, for any but its received unacknowledged packet with the largest packet sequence number."*
+    - `core_4.20.2.1`: *"When set, this bit indicates a PAFTP handshake packet for session establishment and has a different packet format described below."*
 - constants (inferred kind): `NoInput`=sentinel, `NoSeqNum`=numeric
 
 **Unhandled input under no capability flags** after 2 state(s) (4 distinct states explored):
@@ -660,6 +695,10 @@ State 4: <ReceiveInput line 26, col 5 to line 32, col 85 of module core_4_20_3_6
 - ranker score: 24.68
 - module: `core_4_21_4_2.tla`
 - 🔴 **operational state** — the module says the device genuinely sits in this state; the event did not arrive during setup
+- 📎 **possibly handled nearby** — read these before calling it a gap:
+    - `core_4.21.4`: *"In case the size of the Matter message to transmit in the TRANSPORT command APDU is bigger than the maximum size that can be transmitted by this APDU, the APDU chaining procedure specified in ISO/IEC 7816-4 SHALL be used, even though the TRANSPORT command belongs to proprietary class."*
+    - `core_4.21.4.1`: *"SELECT command Matter commissioning SHALL be initiated by the NFC Reader/Writer by issuing the 7816-4 SELECT command with the Application Identifier (AID) 'A0 00 00 09 09 8A 77 E4 01' as shown in Table 44."*
+    - `core_4.21.4.3`: *"GET RESPONSE command This command SHALL be issued following the reception of an incomplete successful R-APDU, in compliance with ISO/IEC 7816-4."*
 - 🔴 **declared but handled nowhere**: `Receive_GET_RESPONSE_Command` — the module lists these as events this section can receive, and no action in it handles them in any state
 - constants (inferred kind): `MaxMessageSize`=numeric, `NoInput`=sentinel
 
@@ -709,6 +748,10 @@ State 4: <ReceiveInput line 45, col 5 to line 48, col 148 of module core_4_21_4_
 - ranker score: 22.74
 - module: `core_4_23_3_1.tla`
 - 🔴 **operational state** — the module says the device genuinely sits in this state; the event did not arrive during setup
+- 📎 **possibly handled nearby** — read these before calling it a gap:
+    - `core_4.23.3.2`: *"If the contents of the DNS Announcement do not match the intents of the Commissioner, the Commissioner SHALL ignore the DNS Announcement and SHALL NOT initiate commissioning with that Commissionee."*
+    - `core_4.3.1`: *"If a Node is connected to multiple IP-bearing networks, and it receives either the OpenCommissioningWindow or the OpenBasicCommissioningWindow command, it MAY make itself discoverable only on the network on which the command was received."*
+    - `core_4.23.2.2`: *"For non-concurrent connection commissioning, the MAC extended address MAY change after the commissioning connection is closed."*
 - 🔴 **declared but handled nowhere**: `ReceiveDNSAnnouncementResponse` — the module lists these as events this section can receive, and no action in it handles them in any state
 - constants (inferred kind): `MaxRetransmissions`=numeric, `NoInput`=sentinel
 
@@ -744,6 +787,10 @@ State 4: <ReceiveInput line 29, col 5 to line 32, col 43 of module core_4_23_3_1
 - ranker score: 22.17
 - module: `core_4_20_3_3.tla`
 - 🔴 **operational state** — the module says the device genuinely sits in this state; the event did not arrive during setup
+- 📎 **possibly handled nearby** — read these before calling it a gap:
+    - `core_4.20.3.8`: *"Because the server’s handshake response bears an implicit PAFTP sequence number of zero, a server SHALL start its acknowledgement-received timer when it sends a handshake response."*
+    - `core_4.20.2.1`: *"When set, this bit indicates a PAFTP handshake packet for session establishment and has a different packet format described below."*
+    - `core_4.20.3.6`: *"The sequence number of the first packet sent by the Commissioner after completion of the PAFTP session handshake SHALL be zero."*
 - constants (inferred kind): `PAFTP_CONN_RSP_TIMEOUT`=numeric, `CommissionerSupportedVersions`=set, `CommissionerMaxInfoLength`=numeric, `CommissionerMaxWindowSize`=numeric, `DeviceSupportedVersions`=set, `DeviceMaxInfoLength`=numeric, `DeviceMaxWindowSize`=numeric, `NoVersion`=opaque, `NoSize`=numeric, `NoInput`=sentinel
 
 **Unhandled input under no capability flags** after 2 state(s) (3 distinct states explored):
@@ -860,6 +907,10 @@ State 4: <ReceiveInput line 67, col 5 to line 70, col 125 of module core_4_7_2>
 - ranker score: 127.15
 - module: `core_4_20_3_8.tla`
 - 🔴 **operational state** — the module says the device genuinely sits in this state; the event did not arrive during setup
+- 📎 **possibly handled nearby** — read these before calling it a gap:
+    - `core_4.20.3.5`: *"If the reassembled buffer’s length does not match that specified by the sender, or if received PAFTP segment payload size would exceed the maximum PAFTP packet size, or receiver receives an Ending Segment without the presence of a previous Beginning Segment, or a Beginning Segment when another PAFTP"*
+    - `core_4.20.3.6`: *"Sequence Numbers All PAFTP packets SHALL be sent with sequence numbers, regardless of whether they contain SDU segments (for example, a packet acknowledgement with no attached segment payload)."*
+    - `core_4.20.3.7`: *"Each peer SHALL decrement this counter when it sends a packet and increment this counter when a sent packet is acknowledged."*
 - constants (inferred kind): `MaxSeqNum`=numeric, `NoSeqNum`=numeric, `NoInput`=sentinel
 
 **Unhandled input under no capability flags** after 2 state(s) (19 distinct states explored):
@@ -912,6 +963,10 @@ State 2: <ReceiveInput line 54, col 5 to line 66, col 30 of module core_4_20_3_8
 - ranker score: 54.01
 - module: `core_4_12_2_1.tla`
 - 🔴 **operational state** — the module says the device genuinely sits in this state; the event did not arrive during setup
+- 📎 **possibly handled nearby** — read these before calling it a gap:
+    - `core_4.12.3`: *"MRP SHALL support one pending acknowledgement and one pending retransmission per Exchange."*
+    - `core_4.12.5.1`: *"Any message flagged for reliable delivery (R Flag set) SHALL be stored in the retransmission table to track the message until it has been successfully acknowledged by the peer."*
+    - `core_4.12.5.2`: *"If the timer triggers before being cancelled, a standalone acknowledgment SHALL be sent to the source of the message."*
 - constants (inferred kind): `MRP_MAX_TRANSMISSIONS`=numeric, `MRP_BACKOFF_BASE`=numeric, `MRP_BACKOFF_THRESHOLD`=numeric, `MRP_BACKOFF_MARGIN`=numeric, `SESSION_ACTIVE_INTERVAL`=numeric, `SESSION_IDLE_INTERVAL`=numeric, `FastPollingInterval`=numeric, `NoInput`=sentinel
 
 **Unhandled input under no capability flags** after 2 state(s) (3 distinct states explored):
@@ -966,6 +1021,8 @@ State 2: <ReceiveInput line 82, col 5 to line 85, col 124 of module core_4_12_2_
 - ranker score: 52.11
 - module: `core_4_12_5_1.tla`
 - 🔴 **operational state** — the module says the device genuinely sits in this state; the event did not arrive during setup
+- 📎 **possibly handled nearby** — read these before calling it a gap:
+    - `core_4.12.4`: *"Transport Considerations When the upper layer requests a reliable message over a UDP transport, the R Flag SHALL be set on that message indicating that MRP SHALL be used."*
 - constants (inferred kind): `MaxRetries`=numeric, `UnsecuredSessionType`=opaque, `NoInput`=sentinel, `NullMsgId`=sentinel
 
 **Unhandled input under no capability flags** after 2 state(s) (3 distinct states explored):
@@ -1082,6 +1139,45 @@ State 2: <ReceiveInput line 99, col 5 to line 108, col 141 of module core_4_18_5
 /\ pendingInput = "JitterTimerExpired"
 ```
 
+### `core_4.19.4.11` — Protocol State Diagrams
+
+- steps to the unhandled input: 2
+- ranker score: 27.69
+- module: `core_4_19_4_11.tla`
+- 🔴 **operational state** — the module says the device genuinely sits in this state; the event did not arrive during setup
+- 📎 **possibly handled nearby** — read these before calling it a gap:
+    - `core_4.19.4.5`: *"If the reassembled buffer’s length does not match that specified by the sender, or if received BTP segment payload size would exceed the maximum BTP packet size, or receiver receives an Ending Segment without the presence of a previous Beginning Segment, or a Beginning Segment when another BTP SDU’s"*
+    - `core_4.19.4.6`: *"Sequence Numbers All BTP packets SHALL be sent with sequence numbers, regardless of whether they contain SDU segments (for example, a packet acknowledgement with no attached segment payload)."*
+    - `core_4.19.4.7`: *"Each peer SHALL decrement this counter when it sends a packet via GATT write or indication and increment this counter when a sent packet is acknowledged."*
+- 🔴 **declared but handled nowhere**: `AckTimeout` — the module lists these as events this section can receive, and no action in it handles them in any state
+- constants (inferred kind): `Role`=string, `NoInput`=sentinel
+
+**Unhandled input under no capability flags** after 2 state(s) (5 distinct states explored):
+
+Last action to fire: **`ReceiveInput`** (line 31 of the module)
+
+State in which the input went unhandled:
+
+```
+State 2: <ReceiveInput line 31, col 5 to line 34, col 42 of module core_4_19_4_11>
+/\ state = "PostEstablishment"
+/\ lastSendMethod = "None"
+/\ pendingInput = "AckTimeout"
+```
+
+**Unhandled input under no capability flags** after 2 state(s) (5 distinct states explored):
+
+Last action to fire: **`ReceiveInput`** (line 31 of the module)
+
+State in which the input went unhandled:
+
+```
+State 2: <ReceiveInput line 31, col 5 to line 34, col 42 of module core_4_19_4_11>
+/\ state = "PostEstablishment"
+/\ lastSendMethod = "None"
+/\ pendingInput = "AckTimeout"
+```
+
 ### `core_5.9.3` — Network Recovery Flow
 
 - steps to the unhandled input: 2
@@ -1129,6 +1225,10 @@ State 2: <ReceiveInput line 38, col 5 to line 41, col 95 of module core_5_9_3>
 - ranker score: 26.4
 - module: `core_4_12_6_1.tla`
 - 🔴 **operational state** — the module says the device genuinely sits in this state; the event did not arrive during setup
+- 📎 **possibly handled nearby** — read these before calling it a gap:
+    - `core_4.12.2.1`: *"The duration of the retransmission timer SHALL be calculated as follows: "mrpBackoffTime" = i * "MRP_BACKOFF_BASE"^(max(0,n-"MRP_BACKOFF_THRESHOLD")) * (1.0 + "random"(0,1) * "MRP_BACKOFF_JITTER") Where: {:("mrpBackoffTime", =, "the resultant retransmission timeout for this transmission"),(n, =, "th"*
+    - `core_4.12.3`: *"MRP SHALL support one pending acknowledgement and one pending retransmission per Exchange."*
+    - `core_4.12.5.1`: *"Any message flagged for reliable delivery (R Flag set) SHALL be stored in the retransmission table to track the message until it has been successfully acknowledged by the peer."*
 - 🔴 **declared but handled nowhere**: `RetransmissionTimeout` — the module lists these as events this section can receive, and no action in it handles them in any state
 - constants (inferred kind): `MRP_MAX_TRANSMISSIONS`=numeric, `NoInput`=sentinel, `NullContext`=sentinel, `MaxMessageCounter`=numeric
 
@@ -1168,6 +1268,10 @@ State 2: <ReceiveInput line 41, col 5 to line 48, col 65 of module core_4_12_6_1
 - ranker score: 24.84
 - module: `core_4_17_3_5.tla`
 - 🔴 **operational state** — the module says the device genuinely sits in this state; the event did not arrive during setup
+- 📎 **possibly handled nearby** — read these before calling it a gap:
+    - `core_4.17.3.2`: *"Any update of the key set, including a partial update, SHALL remove all previous keys in the set, however many were defined."*
+    - `core_4.17.3.4`: *"The Administrator SHOULD provide a sufficient set of epoch keys to Nodes that do not maintain synchronized time so that they can maintain communication with other group members while a key update is in progress."*
+    - `core_4.17.1.1`: *"Administrators SHALL assign Group Ids such that no two operational groups within a Fabric have the same Group ID."*
 - constants (inferred kind): `Fabrics`=set, `GroupKeySetIDs`=set, `KeyIDs`=set, `MaxTime`=numeric, `IPKGroupKeySetID`=opaque, `NoInput`=sentinel
 
 **Unhandled input under no capability flags** after 2 state(s) (131073 distinct states explored):
@@ -1282,6 +1386,10 @@ State 2: <ReceiveInput line 58, col 5 to line 70, col 124 of module core_4_20_3_
 - ranker score: 21.76
 - module: `core_4_19_4_5.tla`
 - 🔴 **operational state** — the module says the device genuinely sits in this state; the event did not arrive during setup
+- 📎 **possibly handled nearby** — read these before calling it a gap:
+    - `core_4.4.4`: *"This message size limit SHALL apply to the UDP transport ."*
+    - `core_4.19.2.1`: *"A segment MAY have both the Beginning and Ending bits set indicating that a full BTP SDU is included in the message."*
+    - `core_4.19.4.3`: *"If this timer expires before the client receives a handshake response from the server, the client SHALL close the BTP session and report an error to the application."*
 - constants (inferred kind): `MaxSduSize`=numeric, `MaxBtpPacketSize`=numeric, `BtpHeaderSizeWithMsgLength`=numeric, `BtpHeaderSizeWithoutMsgLength`=numeric, `MaxQueueLen`=numeric, `NullSdu`=sentinel, `NoInput`=sentinel
 
 **Unhandled input under no capability flags** after 2 state(s) (5 distinct states explored):
@@ -1483,7 +1591,7 @@ They are listed for **every generated module**, including those TLC could not re
 
 ### `core_4.3.1.11` — TXT key for pairing hint (PH)
 
-- TLC outcome: **runtime_error**
+- TLC outcome: **timeout**
 - ranker score: 44.85
 
 > how to handle an attempt to set an invalid PH configuration
@@ -1544,7 +1652,7 @@ They are listed for **every generated module**, including those TLC could not re
 
 ### `core_4.19.4.11` — Protocol State Diagrams
 
-- TLC outcome: **runtime_error**
+- TLC outcome: **unhandled_input**
 - ranker score: 27.69
 
 > exact state updates or replies for liveliness enforcement are in the figure, not the text.
@@ -1677,10 +1785,9 @@ These modules parsed (SANY passed) but TLC could not reach a verdict. They are *
 | unit | outcome | why |
 |---|---|---|
 | `core_4.12.5.2` | runtime_error | TLC evaluation error inside the model |
-| `core_4.3.1.11` | runtime_error | TLC evaluation error inside the model |
+| `core_4.3.1.11` | timeout | state space too large to finish within the time budget |
 | `core_4.6.7` | runtime_error | TLC evaluation error inside the model |
 | `core_5.5.1` | incomplete_next_state | an action leaves a variable neither assigned nor UNCHANGED (`inputBreadcrumb`) |
-| `core_4.19.4.11` | runtime_error | TLC evaluation error inside the model |
 | `core_4.8.2` | timeout | state space too large to finish within the time budget |
 
 ## Checked, nothing found
@@ -1689,7 +1796,7 @@ TLC explored these models completely and found no deadlock. How much that is wor
 
 | unit | states | depth | meaningful? | title |
 |---|---|---|---|---|
-| `core_4.8.3` | 51537 | 4 | yes | Security Processing of Incoming Messages |
+| `core_4.8.3` | 50193 | 4 | yes | Security Processing of Incoming Messages |
 | `core_4.6.5` | 2304 | 18 | yes | Replay Prevention and Duplicate Message Detection |
 | `core_4.12.1` | 864 | 4 | yes | Reliable Messaging Header Fields |
 | `core_4.18.2` | 129 | 3 | yes | Group Peer State |

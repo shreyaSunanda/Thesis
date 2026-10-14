@@ -367,8 +367,10 @@ def check_module(tla_path, tla_tools_jar, timeout: int = 120,
     for i, cfg in enumerate(plan["configs"]):
         # Re-render the constants for the wrapper, which EXTENDS the module and
         # so must supply the same values.
-        const_lines = [f"    {c} = {constant_value(c, plan['constant_kinds'][c], cfg['bool_assignment'].get(c, True))}"
-                       for c in plan["constants"]]
+        const_lines = [
+            f"    {c} = "
+            f"{constant_value(c, plan['constant_kinds'][c], cfg['bool_assignment'].get(c, True), plan.get('string_literals', {}).get(c))}"
+            for c in plan["constants"]]
         # Each invariant gets its own run: TLC stops at the first violation,
         # so checking both together would let the weak one mask the strong.
         invariants = [None]
